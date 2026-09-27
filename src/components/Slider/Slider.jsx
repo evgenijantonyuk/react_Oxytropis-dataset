@@ -3,16 +3,16 @@ import "./Slider.css";
 
 /* Данные слайдов */
 const SLIDES = [
-    { id: 1,  src: "images/countryPhoto/Czike-taman-pass.webp",                    caption: "Перевал Чике-Таман" },
-    { id: 2,  src: "images/countryPhoto/Czuiskaja_step_Ортолык.webp",              caption: "Чуйская степь. Ортолык." },
-    { id: 3,  src: "images/countryPhoto/Hovd_aymak_Bulgan.webp",                   caption: "Монгольский Алтай. Аймак Ховд. Недалеко от Булгана." },
-    { id: 4,  src: "images/countryPhoto/Charysh-district_near-Sentelek-village.webp", caption: "Чарышский район, недалеко от пос. Сентелек" },
-    { id: 5,  src: "images/countryPhoto/Near_Aja.webp",                            caption: "Окрестности оз. Ая." },
-    { id: 6,  src: "images/countryPhoto/near-Ak-tash-mine.webp",                   caption: "Окрестности Ак-ташского рудника." },
-    { id: 7,  src: "images/countryPhoto/Razrabotnaj-mount_Tigerekskij-range.webp", caption: "г. Разработная, Тигирекский хр." },
-    { id: 8,  src: "images/countryPhoto/Chuja-value_Severo-chujskiy_range.webp",   caption: "дол. р. Чуя и Северо-Чуйский хребет." },
-    { id: 9,  src: "images/countryPhoto/North-Chuj_range_near_Kurai.webp",         caption: "Северо-Чуйский хр. близ пос. Курай." },
-    { id: 10, src: "images/countryPhoto/Belij-Bom-Chuja-value.webp",               caption: "Белый Бом, дол. р. Чуя." },
+    { id: 1,  src: `${import.meta.env.BASE_URL}images/countryPhoto/Czike-taman-pass.webp`,                    caption: "Перевал Чике-Таман" },
+    { id: 2,  src: `${import.meta.env.BASE_URL}images/countryPhoto/Czuiskaja_step_Ортолык.webp`,              caption: "Чуйская степь. Ортолык." },
+    { id: 3,  src: `${import.meta.env.BASE_URL}images/countryPhoto/Hovd_aymak_Bulgan.webp`,                   caption: "Монгольский Алтай. Аймак Ховд. Недалеко от Булгана." },
+    { id: 4,  src: `${import.meta.env.BASE_URL}images/countryPhoto/Charysh-district_near-Sentelek-village.webp`, caption: "Чарышский район, недалеко от пос. Сентелек" },
+    { id: 5,  src: `${import.meta.env.BASE_URL}images/countryPhoto/Near_Aja.webp`,                            caption: "Окрестности оз. Ая." },
+    { id: 6,  src: `${import.meta.env.BASE_URL}images/countryPhoto/near-Ak-tash-mine.webp`,                   caption: "Окрестности Ак-ташского рудника." },
+    { id: 7,  src: `${import.meta.env.BASE_URL}images/countryPhoto/Razrabotnaj-mount_Tigerekskij-range.webp`, caption: "г. Разработная, Тигирекский хр." },
+    { id: 8,  src: `${import.meta.env.BASE_URL}images/countryPhoto/Chuja-value_Severo-chujskiy_range.webp`,   caption: "дол. р. Чуя и Северо-Чуйский хребет." },
+    { id: 9,  src: `${import.meta.env.BASE_URL}images/countryPhoto/North-Chuj_range_near_Kurai.webp`,         caption: "Северо-Чуйский хр. близ пос. Курай." },
+    { id: 10, src: `${import.meta.env.BASE_URL}images/countryPhoto/Belij-Bom-Chuja-value.webp`,               caption: "Белый Бом, дол. р. Чуя." },
 ];
 /* Хук: сколько слайдов показывать в зависимости от ширины экрана */
 function getPerView() {
