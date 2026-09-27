@@ -1,0 +1,331 @@
+/* Современные CSS переменные для гибкой настройки */
+:root {
+    --primary-color: #3e2093;
+    --primary-hover: #311975;
+    --bg-card: #ffffff;
+    --text-dark: #222222;
+    --text-light: #666666;
+    --overlay-bg: rgba(15, 15, 25, 0.45);
+    --border-radius: 16px;
+    --input-radius: 8px;
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 1. Полноэкранный оверлей (затемнение фона) */
+.contacts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* Поддержка Safari */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 16px; /* Безопасный отступ на мобильных */
+    box-sizing: border-box;
+    animation: fadeIn 0.25s ease-out forwards;
+}
+
+/* 2. Основная карточка (Контейнер) */
+.contacts .content {
+    position: relative;
+    background: var(--bg-card);
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh; /* Чтобы окно не вылезало за пределы экрана */
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    display: flex;
+    overflow: hidden; /* Обрезает углы внутренних блоков */
+    animation: slideUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Кнопка закрытия (крестик) */
+.form__close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.form__close-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--text-light);
+    transition: var(--transition);
+}
+
+.form__close-btn:hover {
+    background: #fff;
+    transform: scale(1.05);
+}
+.form__close-btn:hover svg {
+    fill: #ff4d4d;
+}
+
+/* 3. Левая панель (Информация) */
+.left-side {
+    width: 38%;
+    background: #f7f6fd;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 28px;
+    border-right: 1px solid #eae6f8;
+}
+
+.details {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.details i {
+    font-size: 18px;
+    color: var(--primary-color);
+    background: rgba(62, 32, 147, 0.08);
+    padding: 10px;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Иконка не сожмется */
+}
+
+.details .topic {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.details .text-one,
+.details .text-two {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.4;
+    word-break: break-word; /* Защита от длинных строк */
+}
+
+/* 4. Правая панель (Форма) */
+.right-side {
+    width: 62%;
+    padding: 40px;
+    overflow-y: auto; /* Скролл только для формы, если контент огромный */
+}
+
+.right-side .topic-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.right-side p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+/* Поля ввода */
+.input-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.input-box input,
+.input-box textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #e1e1e1;
+    border-radius: var(--input-radius);
+    font-size: 14px;
+    color: var(--text-dark);
+    background: #ffffff;
+    outline: none;
+    box-sizing: border-box;
+    transition: var(--transition);
+}
+
+.input-box input:focus,
+.input-box textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(62, 32, 147, 0.1);
+}
+
+/* Кастомные мини-подсказки под инпутами */
+.input-box label {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    color: #8c8c8c;
+}
+
+.message-box textarea {
+    min-height: 100px;
+    max-height: 180px;
+    resize: vertical;
+}
+
+/* Кнопка отправки */
+.button {
+    margin-top: 6px;
+}
+
+.button input[type="submit"] {
+    width: auto;
+    min-width: 140px;
+    background: var(--primary-color);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    padding: 13px 28px;
+    border-radius: var(--input-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(62, 32, 147, 0.2);
+}
+
+.button input[type="submit"]:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(62, 32, 147, 0.3);
+}
+
+.button input[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+
+/* ========================================================
+   5. АДАПТИВНЫЕ СТИЛИ (Планшеты и Мобильные)
+   ======================================================== */
+
+/* Планшетная версия (до 800px) */
+@media (max-width: 800px) {
+    .left-side {
+        width: 40%;
+        padding: 30px 20px;
+    }
+    .right-side {
+        width: 60%;
+        padding: 30px;
+    }
+}
+
+/* Мобильная версия (до 680px) — Перестроение в один столбец */
+@media (max-width: 680px) {
+    .contacts .content {
+        flex-direction: column; /* Складываем лево и право вертикально */
+        max-height: 85vh; /* Ограничиваем высоту карточки на мобильных */
+        overflow-y: auto; /* Включаем внутреннюю прокрутку для всей карточки */
+    }
+
+    /* Левый блок превращаем в компактную горизонтальную плашку */
+    .left-side {
+        width: 100%;
+        padding: 32px 24px 20px 24px;
+        gap: 16px;
+        border-right: none;
+        border-bottom: 1px solid #eae6f8;
+        background: #fbfbfe;
+    }
+
+    .details {
+        align-items: center; /* Центрируем иконку и текст по строке */
+        gap: 12px;
+    }
+
+    .details i {
+        padding: 8px; /* Уменьшаем иконки */
+    }
+
+    .details .text-two {
+        display: none; /* Прячем дублирующий адрес на маленьких экранах для экономии места */
+    }
+
+    /* Правый блок с формой */
+    .right-side {
+        width: 100%;
+        padding: 24px;
+        overflow-y: visible; /* Прокрутка теперь идет на уровне всего .content */
+    }
+
+    .right-side .topic-text {
+        font-size: 20px; /* Чуть уменьшаем заголовки */
+    }
+
+    .input-box {
+        margin-bottom: 14px;
+    }
+
+    .button input[type="submit"] {
+        width: 100%; /* Кнопка становится на всю ширину — по ней легче попасть пальцем */
+        padding: 14px;
+    }
+
+    /* Корректируем кнопку закрытия для мобильных */
+    .form__close-btn {
+        top: 12px;
+        right: 12px;
+        background: #ffffff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+}
+
+/* Совсем маленькие экраны (до 400px) */
+@media (max-width: 400px) {
+    .left-side {
+        padding: 24px 16px 12px 16px;
+    }
+    .right-side {
+        padding: 20px 16px;
+    }
+    .details .topic {
+        font-size: 12px;
+    }
+    .details .text-one {
+        font-size: 13px;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
