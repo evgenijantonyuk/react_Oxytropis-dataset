@@ -239,7 +239,7 @@ function Key () {
 				</span>
                         </p>
                         <p className="key__string">
-					<span className="key__text">+ Слабоопушенное, зеленое или серовато-зленое растение. Зубцы чашечки равны трубке. Флаг на верхушке закругленный.<br/> Бобы на ножке, равной трубке чашечки.
+					<span className="key__text">+ Слабоопушенное, зеленое или серовато-зленое растение. Зубцы чашечки равны трубке. Флаг на<br /> верхушке закругленный. Бобы на ножке, равной трубке чашечки.
 					</span>
                             <span className="key__species-block">
 						<span className="key__species-number">50. </span>
@@ -263,7 +263,7 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-					<span className="key__text">17. Растение беловато-пушистое от длинных оттопыренных волосков. По черешку длинно- и курчаво-волосистые, листочки длинноволосистые (волоски снизу оттопыренные). Чашечка и бобы покрыты длинными отстоящими белыми волосками.
+					<span className="key__text">17. Растение беловато-пушистое от длинных оттопыренных волосков. По черешку длинно- и курчаво-волосистые,<br /> листочки длинноволосистые (волоски снизу оттопыренные). Чашечка и бобы покрыты<br /> длинными отстоящими белыми волосками.
 					</span>
                             <span className="key__species-block">
 						<span className="key__species-number">46. </span>
@@ -279,7 +279,7 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">18. Сероватое или почти зеленое растение. Листочки 12-17 парные. Венчик 12-15 мм дл. Приветики линейно-шиловидные,<br/> 4-5 мм длины. Носик лодочки около 2,5 мм.</span>
+                            <span className="key__text">18. Сероватое или почти зеленое растение. Листочки 12-17 парные. Венчик 12-15 мм дл. Приветики линейно-шиловидные,<br /> 4-5 мм длины. Носик лодочки около 2,5 мм.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">53. </span>
 						<span className="key__species"><a className="species__name-lat"
@@ -299,7 +299,7 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">19. Растение седое от мягких волосков. Стебли многочисленные простертые или восходящие. Флаг выемчатый. Прицветники<br/> линейно-щетиновидные, 2-4 мм длины. Листочки у нижних листьев более короткие, эллиптические тупые,<br/> у верхних же почти ланцетовидные, заостренные. Носик лодочки около 2 мм</span>
+                            <span className="key__text">19. Растение седое от мягких волосков. Стебли многочисленные простертые или восходящие. Флаг выемчатый.<br /> Прицветники линейно-щетиновидные, 2-4 мм длины. Листочки у нижних листьев более короткие,<br /> эллиптические тупые, у верхних же почти ланцетовидные, заостренные. Носик лодочки около 2 мм</span>
                             <span className="key__species-block">
 						<span className="key__species-number">44. </span>
 						<span className="key__species"><a className="species__name-lat"
@@ -308,14 +308,14 @@ function Key () {
 				</span>
                         </p>
                         <p className="key__string">
-                            <span className="key__text">+ Растения зеленые, слабоопушенные. Стебли в числе нескольких обычно прямостоячие. Флаг на верхушке закругленный</span>
+                            <span className="key__text">+ Растения зеленые, слабоопушенные. Стебли в числе нескольких обычно прямостоячие. Флаг на <br />верхушке закругленный</span>
                             <span className="key__number">20</span>
                         </p>
                     </div>
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">20. Листочки 8-12 парные, 7-16 мм дл., линейно-продолговатые. Зубцы чашечки почти равны трубке.<br/> Завязь  покрыта прижатыми белыми волосками</span>
+                            <span className="key__text">20. Листочки 8-12 парные, 7-16 мм дл., линейно-продолговатые. Зубцы чашечки почти равны трубке. Завязь  покрыта<br /> прижатыми белыми волосками</span>
                             <span className="key__species-block">
 						<span className="key__species-number">47. </span>
 						<span className="key__species"><a className="species__name-lat"
@@ -340,7 +340,7 @@ function Key () {
 					<span className="key__text">+ Бобы ко времени созревания остаются заключенными в чашечку. Она (чашечка) при плодоношении вздувающаяся.<br/> Цветоносы с 1-2 цветками
 					</span>
                             <span className="key__species-block">
-						<span className="key__species-number">87. .</span>
+						<span className="key__species-number">87. </span>
 					<span className="key__species"><a className="species__name-lat"
                                                       href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:51134 8-1"
                                                       target="_blank">О. bungei</a></span>
@@ -361,7 +361,7 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">23. Растения голые или мало-волосистые, зеленые, покрытые, в особенности на листовых черешках и цветочных стрелках, желтыми железками.</span>
+                            <span className="key__text">23. Растения голые или мало-волосистые, зеленые, покрытые, в особенности на листовых черешках и цветочных стрелках,<br /> желтыми железками.</span>
                             <span className="key__number">24</span>
                         </p>
                         <p className="key__string">
@@ -385,14 +385,14 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">25. Наружные прилистники почти голые. Цветоносы и листовые черешки прижато-волосистые или голые. Листочки почти голые.</span>
+                            <span className="key__text">25. Наружные прилистники почти голые. Цветоносы и листовые черешки прижато-волосистые или голые.<br /> Листочки почти голые.</span>
                             <span className="key__number">26</span>
                         </p>
                         <p className="key__string">
-					<span className="key__text">+ Наружные прилистники густо-волосистые. Цветоносы и листовые черешки мохнато-беловолосистые.<br/> Чашечка 10-12 мм дл. Зубцы ее около 2 мм дл. Остроконечие лодочки около 2 мм. Бобы 12-16 мм линейно-продолговатые.
+					<span className="key__text">+ Наружные прилистники густо-волосистые. Цветоносы и листовые черешки мохнато-беловолосистые. <br />Чашечка 10-12 мм дл. Зубцы ее около 2 мм дл. Остроконечие лодочки около 2 мм. Бобы 12-16 мм <br />линейно-продолговатые.
 					</span>
                             <span className="key__species-block">
-						<span className="key__species-number">85. .</span>
+						<span className="key__species-number">85. </span>
 					<span className="key__species"><a className="species__name-lat"
                                                       href="https://www.gbif.org/occurrence/3908982973" target="_blank"> О. microphylla</a></span>
 					</span>
@@ -402,7 +402,7 @@ function Key () {
                     <div className="key__block">
                         <p className="key__string">
 					<span className="key__text">26. Цветки грязновато-желтые. Листочки в мутовках. Бобы бугорчато-железистые, голые,
-			продолговато-ланцетовидные, 20-25 мм дл.</span>
+			продолговато-ланцетовидные, <br />20-25 мм дл.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">83. </span>
 						<span className="key__species"><a className="species__name-lat"
@@ -411,7 +411,7 @@ function Key () {
 				</span>
                         </p>
                         <p className="key__string">
-                            <span className="key__text">+ Цветки пурпурово-фиолетовые (иногда белые). Листочки преимущественно парные, в средней части листа и у поздних листьев они мутовчатые. Бобы без бугорчатых железок, прижато-волосистые.</span>
+                            <span className="key__text">+ Цветки пурпурово-фиолетовые (иногда белые). Листочки преимущественно парные, в средней части листа и у<br /> поздних листьев они мутовчатые. Бобы без бугорчатых железок, прижато-волосистые.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">84. </span>
 					<span className="key__species"><a className="species__name-lat"
@@ -422,7 +422,7 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">27. Листья с 12-25 мутовками листочков, цветки в числе 8-20 на оттопырено-опушенных цветоносах. Бобы пушистые.</span>
+                            <span className="key__text">27. Листья с 12-25 мутовками листочков, цветки в числе 8-20 на оттопырено-опушенных цветоносах.<br /> Бобы пушистые.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">82. </span>
 						<span className="key__species"><a className="species__name-lat"
@@ -442,12 +442,12 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-					<span className="key__text">28. Чашечка коротко-колокольчатая, 5 мм дл. Соцветия рыхлые 5-9 цветковые. Листочки линейно-продолговатые 8-11 мутовках.
+					<span className="key__text">28. Чашечка коротко-колокольчатая, 5 мм дл. Соцветия рыхлые 5-9 цветковые. Листочки линейно-продолговатые <br />8-11 мутовках.
 					</span>
                             <span className="key__species-block">
-						<span className="key__species-number">78. .</span>
+						<span className="key__species-number">78. </span>
 					<span className="key__species"><a className="species__name-lat"
-                                                      href="https://www.gbif.org/occurrence/4920347909" target="_blank"> О. racemosa</a></span>
+                                                      href="https://www.gbif.org/occurrence/4920347909" target="_blank">О. racemosa</a></span>
 					</span>
                         </p>
                         <p className="key__string">
@@ -473,7 +473,7 @@ function Key () {
 			неравномерно.
 					</span>
                             <span className="key__species-block">
-						<span className="key__species-number">68. .</span>
+						<span className="key__species-number">68. </span>
 					<span className="key__species"><a className="species__name-lat"
                                                       href="https://www.gbif.org/occurrence/1697333630" target="_blank"> O. mongolica</a></span>
 					</span>
@@ -485,7 +485,7 @@ function Key () {
                     </div>
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">31. Мелкие растения, листья 3-6 см дл. Прилистники беловато-пленчатые, только по краям длинно-реснитчатые. Листья с 4-6 мутовками.</span>
+                            <span className="key__text">31. Мелкие растения, листья 3-6 см дл. Прилистники беловато-пленчатые, только по краям длинно-реснитчатые. <br />Листья с 4-6 мутовками.</span>
                             <span className="key__number">32</span>
                         </p>
                         <p className="key__string">
@@ -499,7 +499,7 @@ function Key () {
 					<span className="key__text">32. Венчик фиолетовый. Листья с 4-5 мутовкам.
 					</span>
                             <span className="key__species-block">
-						<span className="key__species-number">72. .</span>
+						<span className="key__species-number">72. </span>
 					<span className="key__species"><a className="species__name-lat"
                                                       href="https://www.gbif.org/occurrence/439134931" target="_blank"> O. pumila</a></span>
 					</span>
@@ -510,7 +510,7 @@ function Key () {
 			мутовкам.
 					</span>
                             <span className="key__species-block">
-						<span className="key__species-number">77. .</span>
+						<span className="key__species-number">77. </span>
 					<span className="key__species"><a className="species__name-lat"
                                                       href="https://www.gbif.org/occurrence/1697333939" target="_blank"> O. viridiflava</a></span>
 					</span>
@@ -522,7 +522,7 @@ function Key () {
 					<span className="key__text">33. Листья сероватые от прижатых волосков. Листочки прижато-волосистые. Цветочные стрелки
 			плотно-бело-пушистые.<br/> Флаг на верхушке широко-выемчатый.</span>
                             <span className="key__species-block">
-						<span className="key__species-number">67. .</span>
+						<span className="key__species-number">67. </span>
 					<span className="key__species"><a className="species__name-lat"
                                                       href="https://www.gbif.org/occurrence/4406454200" target="_blank"> О. inaria</a></span>
 					</span>
@@ -532,7 +532,7 @@ function Key () {
 					<span className="key__text">+ Листья оттопырено жестковато-волосистые. Листочки негусто опушены длинными белыми волосками. Цветочные стрелки оттопырено-волосистые. Флаг на верхушке почти округлый.
 					</span>
                             <span className="key__species-block">
-						<span className="key__species-number">65. .</span>
+						<span className="key__species-number">65. </span>
 					<span className="key__species"><a className="species__name-lat"
                                                       href="https://www.cvh.ac.cn/spms/detail.php?id=204cb3d9"
                                                       target="_blank">O . fetissovii</a></span>
@@ -542,10 +542,10 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-					<span className="key__text">34. Растения колючие, листья могут быть с шипиком на верхушке, листочки мелкие, продолговато-ланцетные,<br/> бело-шелковистые, в мутовках по 3-6, число мутовок 7-10. Бобы продолговато-яйцевидные жестко-перепончатые, 15-18 мм. дл.
+					<span className="key__text">34. Растения колючие, листья могут быть с шипиком на верхушке, листочки мелкие, продолговато-ланцетные, бело-шелковистые, в мутовках по 3-6, число мутовок 7-10. Бобы продолговато-яйцевидные жестко-перепончатые,<br /> 15-18 мм. дл.
 					</span>
                             <span className="key__species-block">
-						<span className="key__species-number">79. .</span>
+						<span className="key__species-number">79. </span>
 					<span className="key__species"><a className="species__name-lat"
                                                       href="https://www.gbif.org/ru/occurrence/1697259103"
                                                       target="_blank">О . acanthacea</a></span>
@@ -570,7 +570,7 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">36. Цветки в числе 2-5(8) в зонтиковидном соцветии. Листочки густо серебристо-шерстистые в 6-14 сближенных мутовках. Мелкие плотно-дерновинные растения.</span>
+                            <span className="key__text">36. Цветки в числе 2-5(8) в зонтиковидном соцветии. Листочки густо серебристо-шерстистые в 6-14 сближенных мутовках.<br /> Мелкие плотно-дерновинные растения.</span>
                             <span className="key__number">39</span>
                         </p>
                         <p className="key__string">
@@ -578,10 +578,10 @@ function Key () {
 			овальные.
 					</span>
                             <span className="key__species-block">
-						<span className="key__species-number">66. .</span>
+						<span className="key__species-number">66. </span>
 					<span className="key__species"><a className="species__name-lat"
                                                       href="https://www.gbif.org/ru/occurrence/1697333668"
-                                                      target="_blank">O . heterophylla</a></span>
+                                                      target="_blank">O. heterophylla</a></span>
 					</span>
                         </p>
                     </div>
@@ -595,7 +595,7 @@ function Key () {
 					<span className="key__text">+ Цветоносы и листья простертые или восходящие. Цветоносы короче листьев или равны им.<br/> Бобы мелкие шаровидные (до 10 мм дл.).
 					</span>
                             <span className="key__species-block">
-						<span className="key__species-number">70. .</span>
+						<span className="key__species-number">70. </span>
 					<span className="key__species"><a className="species__name-lat"
                                                       href="https://www.gbif.org/occurrence/2817833317" target="_blank"> О. pavlovii</a></span>
 					</span>
@@ -607,7 +607,7 @@ function Key () {
 					<span className="key__text">38. Мутовок 10-15. Чашечка покрыта черными прижатыми волосками. Зубцы чашечки 3-3,5 мм дл. Носик у боба<br/> длинный конический 5-8 мм дл
 					</span>
                             <span className="key__species-block">
-						<span className="key__species-number">75. .</span>
+						<span className="key__species-number">75. </span>
 					<span className="key__species"><a className="species__name-lat"
                                                       href="https://www.gbif.org/occurrence/1697257893" target="_blank"> О. sumneviczii</a></span>
 					</span>
@@ -617,7 +617,7 @@ function Key () {
 					<span className="key__text">+ Мутовок 6-8. Чашечка мохнатая от белых, длинных, отстоящих волосков. Зубцы чашечки 4-5 мм дл.<br/> Боб с коротким носиком - 2-3 мм дл
 					</span>
                             <span className="key__species-block">
-						<span className="key__species-number">73. .</span>
+						<span className="key__species-number">73. </span>
 					<span className="key__species"><a className="species__name-lat"
                                                       href="https://www.gbif.org/occurrence/912659214" target="_blank">  О. rhynchophysa</a></span>
 					</span>
@@ -629,7 +629,7 @@ function Key () {
 					<span className="key__text">39. Стеблевые надземные побеги 3-10 см дл. Флаг 20-22 мм дл. Носик лодочки 1,5 - 2 мм дл.
 					</span>
                             <span className="key__species-block">
-						<span className="key__species-number">71. .</span>
+						<span className="key__species-number">71. </span>
 					<span className="key__species"><a className="species__name-lat"
                                                       href="https://www.gbif.org/occurrence/438728569" target="_blank"> О. pellita</a></span>
 					</span>
@@ -642,21 +642,21 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">40. Цветки в числе 1 или 2 (реже 3). Листочки 1-3 мм дл. узко-яйцевидные или ланцетовидные. Цветочные стрелки короче листьев</span>
+                            <span className="key__text">40. Цветки в числе 1 или 2 (реже 3). Листочки 1-3 мм дл. узко-яйцевидные или ланцетовидные. Цветочные стрелки <br />короче листьев</span>
                             <span className="key__number">41</span>
                         </p>
                         <p className="key__string">
-                            <span className="key__text">+ Цветки в числе 3-9. Листочки 3-9 мм дл. эллиптические или продолговатые, туповатые. Цветочные стрелки равны листьям, либо длиннее их.</span>
+                            <span className="key__text">+ Цветки в числе 3-9. Листочки 3-9 мм дл. эллиптические или продолговатые, туповатые. Цветочные стрелки равны листьям,<br /> либо длиннее их.</span>
                             <span className="key__number">42</span>
                         </p>
                     </div>
 
                     <div className="key__block">
                         <p className="key__string">
-					<span className="key__text">41. Листочки 1-1‚5 мм дл. в 6-10 мутовках, яйцевидные или эллиптические. Цветоносы с рассеянными мелкими железками, с 2,<br/> реже 1-3 цветками, венчик 10-13 мм дл.
+					<span className="key__text">41. Листочки 1-1‚5 мм дл. в 6-10 мутовках, яйцевидные или эллиптические. Цветоносы с рассеянными мелкими железками, с <br />2, реже 1-3 цветками, венчик 10-13 мм дл.
 					</span>
                             <span className="key__species-block">
-						<span className="key__species-number">76. .</span>
+						<span className="key__species-number">76. </span>
 					<span className="key__species"><a className="species__name-lat"
                                                       href="https://www.gbif.org/occurrence/1697333901" target="_blank"> О. sutaica</a></span>
 					</span>
@@ -666,7 +666,7 @@ function Key () {
 					<span className="key__text">+ Листочки 2-3 мм дл. в 10-12 мутовках. Цветоносы без железок, с 1-3 цветками, венчик 13-16 мм. дл.
 					</span>
                             <span className="key__species-block">
-						<span className="key__species-number">64. .</span>
+						<span className="key__species-number">64. </span>
 					<span className="key__species"><a className="species__name-lat"
                                                       href="https://www.gbif.org/occurrence/1799019761" target="_blank"> O. chionobia</a></span>
 					</span>
@@ -678,7 +678,7 @@ function Key () {
 					<span className="key__text">42. Цветков обычно 3-6 (реже 2-9). Венчик пурпурово-фиолетовый. Цветоносы, прицветники и чашечка<br/> шелковисто-волосистые. Бобы густо покрытые длинными белыми и короткими черными волосками.
 					</span>
                             <span className="key__species-block">
-						<span className="key__species-number">69. .</span>
+						<span className="key__species-number">69. </span>
 					<span className="key__species"><a className="species__name-lat"
                                                       href="https://www.gbif.org/occurrence/1799020032" target="_blank"> О. oligantha</a></span>
 					</span>
@@ -686,7 +686,7 @@ function Key () {
                         <p className="key__string">
                             <span className="key__text">+ Бобы голые.</span>
                             <span className="key__species-block">
-						<span className="key__species-number">69. .1</span>
+						<span className="key__species-number">69.1 </span>
 					<span className="key__species">
 						<a className="species__name-lat"
                            href="https://photos.google.com/photo/AF1Qip MhWe-i5jlnCSL86_6p8KHp09aOt2bdsi33-PvV"
@@ -699,7 +699,7 @@ function Key () {
 					<span className="key__text">++ Цветков до 8. Венчик белый, при высушивании желтоватый или синеватый, 16-17 мм дл. Цветоносы<br/> оттопырено-волосистые, прицветники и чашечка мохнато-волосистые.
 					</span>
                             <span className="key__species-block">
-						<span className="key__species-number">64. .</span>
+						<span className="key__species-number">64. </span>
 					<span className="key__species"><a className="species__name-lat"
                                                       href="https://en.herbariumle.ru/?t=occ&id=155099" target="_blank"> О. saurica</a></span>
 					</span>
@@ -731,10 +731,10 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-					<span className="key__text">45. Цветки желтоватые, смещены к основанию растения, на очень коротких цветоносах. Листочки в числе 3-5 пар линейные, гладкие. Бобы орешковидные, твердокожие.
+					<span className="key__text">45. Цветки желтоватые, смещены к основанию растения, на очень коротких цветоносах. Листочки в числе<br /> 3-5 пар линейные, гладкие. Бобы орешковидные, твердокожие.
 					</span>
                             <span className="key__species-block">
-						<span className="key__species-number">80. .</span>
+						<span className="key__species-number">80. </span>
 					<span className="key__species"><a className="species__name-lat"
                                                       href="https://plant.depo.msu.ru/open/public/item/MW0184008"
                                                       target="_blank">О . squamulosa</a></span>
@@ -749,10 +749,10 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-					<span className="key__text">46. Листочки ланцетно-линейные со слабо завернутыми кверху краями, сверху негусто покрыты прозрачными волосками, снизу голые. Цветоносы тонкие 0,5 – 0,8 мм в диам. Цветки в малоцветковой кисти или одиночные. Бобы овально-продолговатые 20 – 25 мм дл.
+					<span className="key__text">46. Листочки ланцетно-линейные со слабо завернутыми кверху краями, сверху негусто покрыты прозрачными волосками, снизу голые. Цветоносы тонкие 0,5 – 0,8 мм в диам. Цветки в малоцветковой кисти или одиночные.<br /> Бобы овально-продолговатые 20 – 25 мм дл.
 					</span>
                             <span className="key__species-block">
-						<span className="key__species-number">39. .</span>
+						<span className="key__species-number">39. </span>
 					<span className="key__species"><a className="species__name-lat"
                                                       href="https://plant.depo.msu.ru/open/public/item/MW0099829"
                                                       target="_blank">O . suprajenissejensis</a></span>
@@ -846,7 +846,7 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">52. Цветки желтоватые, лишь с фиолетовой на конце лодочкой, почти прикорневые, в числе 1-2 на очень коротких цветоносах. Бобы не густо-опушенные.</span>
+                            <span className="key__text">52. Цветки желтоватые, лишь с фиолетовой на конце лодочкой, почти прикорневые, в числе 1-2 на очень коротких <br />цветоносах. Бобы не густо-опушенные.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">55. </span>
 						<span className="key__species"><a className="species__name-lat"
@@ -1006,8 +1006,9 @@ function Key () {
 				</span>
                         </p>
                         <p className="key__string">
-                        <span
-                            className="key__text">+ Цветки более ярко окрашенные — пурпуровые, лиловые или фиолетовые.</span>
+                            <span
+                            className="key__text">+ Цветки более ярко окрашенные — пурпуровые, лиловые или фиолетовые.
+                            </span>
                             <span className="key__number">62</span>
                         </p>
                     </div>
@@ -1018,10 +1019,8 @@ function Key () {
                             <span className="key__number">63</span>
                         </p>
                         <p className="key__string">
-                            <p className="key__string">
-                                <span className="key__text">+ Бобы вверх торчащие. Растения зеленые или серовато-зеленые, сравнительно слабо опушенные. <br/>Зубцы чашечки в 2–3 раза короче трубки.</span>
-                                <span className="key__number">65</span>
-                            </p>
+                            <span className="key__text">+ Бобы вверх торчащие. Растения зеленые или серовато-зеленые, сравнительно слабо опушенные. Зубцы чашечки в 2–3 раза<br /> короче трубки.</span>
+                            <span className="key__number">65</span>
                         </p>
                     </div>
                     <div className="key__block">
@@ -1031,7 +1030,8 @@ function Key () {
 						<span className="key__species-number">9. </span>
 						<span className="key__species"><a className="species__name-lat"
                                                       href="https://www.gbif.org/occurrence/1799020026" target="_blank"> О. merkensis</a></span>
-				</span>
+                            </span>
+
                         </p>
                         <p className="key__string">
                             <span className="key__text">+ Кисти укороченные, головчатые или короткоовальные.</span>
@@ -1041,7 +1041,7 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">64. Флаг 10–12 мм дл., на верхушке выямчатый. Бобы 10(15)–20(25) мм дл., на ножке – 3–4 мм дл., с прямым носиком.</span>
+                            <span className="key__text">64. Флаг 10–12 мм дл., на верхушке выямчатый. Бобы 10(15)–20(25) мм дл., на ножке – 3–4 мм дл., с прямым <br />носиком.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">5. </span>
 						<span className="key__species"><a className="species__name-lat"
@@ -1049,11 +1049,11 @@ function Key () {
 				</span>
                         </p>
                         <p className="key__string">
-                            <span className="key__text">+ Флаг 8–9 мм дл., на верхушке закругленный. Бобы 8(10)-12 мм дл., на ножке – 1,5–1,75 мм дл., с коротким загнутым носиком</span>
+                            <span className="key__text">+ Флаг 8–9 мм дл., на верхушке закругленный. Бобы 8(10)-12 мм дл., на ножке – 1,5–1,75 мм дл., с коротким<br /> загнутым носиком</span>
                             <span className="key__species-block">
 						<span className="key__species-number">1. </span>
 					<span className="key__species"><a className="species__name-lat"
-                                                  href="https://www.gbif.org/occurrence/1799020096" target="_blank">O. g lobiflora</a></span>
+                                                  href="https://www.gbif.org/occurrence/1799020096" target="_blank">O. globiflora</a></span>
 					</span>
                         </p>
                     </div>
@@ -1065,7 +1065,7 @@ function Key () {
 						<span className="key__species-number">10. </span>
 						<span className="key__species"><a className="species__name-lat"
                                                       href="https://www.gbif.org/ru/occurrence/4976146278"
-                                                      target="_blank">O . saposhnikovii</a></span>
+                                                      target="_blank">O. saposhnikovii</a></span>
 				</span>
                         </p>
                         <p className="key__string">
@@ -1082,7 +1082,7 @@ function Key () {
 						<span className="key__species-number">2. </span>
 						<span className="key__species"><a className="species__name-lat"
                                                       href="https://plant.depo.msu.ru/open/public/item/MW0183946"
-                                                      target="_blank">О . pauciﬂоra</a></span>
+                                                      target="_blank">О. pauciﬂоra</a></span>
 				</span>
                         </p>
                         <p className="key__string">
@@ -1090,7 +1090,7 @@ function Key () {
                             <span className="key__species-block">
 						<span className="key__species-number">3. </span>
 					<span className="key__species"><a className="species__name-lat"
-                                                  href="https://www.gbif.org/occurrence/912659331" target="_blank">О. p latysema</a></span>
+                                                  href="https://www.gbif.org/occurrence/912659331" target="_blank">О. platysema</a></span>
 					</span>
                         </p>
                     </div>
@@ -1115,24 +1115,24 @@ function Key () {
                         </p>
 
                         <p className="key__string">
-                            <span className="key__text">+ Растения с укороченными стеблями, 1-4 см дл. Чашечка 4-6 мм дл. остроконечие лодочки около 1 мм. Листочки в числе 8-12 пар, заостренные, вдоль сложенные или по краям завернутые.</span>
+                            <span className="key__text">+ Растения с укороченными стеблями, 1-4 см дл. Чашечка 4-6 мм дл. остроконечие лодочки около 1 мм. Листочки в<br /> числе 8-12 пар, заостренные, вдоль сложенные или по краям завернутые.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">7. </span>
 						<span className="key__species"><a className="species__name-lat"
                                                       href="http://altb.asu.ru/page.php?page=1100019747"
-                                                      target="_blank">О . krylovii</a></span>
+                                                      target="_blank">О. krylovii</a></span>
 				</span>
                         </p>
                     </div>
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">69. Чашечка 2,5-3 мм дл, остроконечие лодочки до 2 мм. Венчик сине-фиолетовый или пурпуровый, флаг слегка выемчатый.</span>
+                            <span className="key__text">69. Чашечка 2,5-3 мм дл, остроконечие лодочки до 2 мм. Венчик сине-фиолетовый или пурпуровый, флаг слегка<br /> выемчатый.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">4. </span>
 						<span className="key__species"><a className="species__name-lat"
                                                       href="https://plant.depo.ms.ru/open/public/item/MW0183717"
-                                                      target="_blank">О . filiformis</a></span>
+                                                      target="_blank">О. filiformis</a></span>
 				</span>
                         </p>
                         <p className="key__string">
@@ -1148,11 +1148,11 @@ function Key () {
 						<span className="key__species-number"></span>
 						<span className="key__species"><a className="species__name-lat"
                                                       href="https://plant.depo.ms.ru/open/public/item/MW0100791"
-                                                      target="_blank">О . coerulea</a></span>
+                                                      target="_blank">О. coerulea</a></span>
 				</span>
                         </p>
                         <p className="key__string">
-                            <span className="key__text">+ Прицветники около 3 мм дл. Венчик пурпуровый (при высушивании – сиреневый), фаг на верхушке округлый, без выемки.</span>
+                            <span className="key__text">+ Прицветники около 3 мм дл. Венчик пурпуровый (при высушивании – сиреневый), фаг на верхушке округлый,<br /> без выемки.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">6. </span>
 						<span className="key__species">
@@ -1179,32 +1179,32 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">72 Цветочные стрелки усажены отстоящими, почти перпендикулярно, волосками. Венчик серно-желтый. Флаг двулопастной 20-23 мм дл. Чашечка 11-13мм дл. зубцы ее равны или почти равны трубке. Прилистники сетчато-нервные.</span>
+                            <span className="key__text">72 Цветочные стрелки усажены отстоящими, почти перпендикулярно, волосками. Венчик серно-желтый. <br />Флаг двулопастной 20-23 мм дл. Чашечка 11-13мм дл. зубцы ее равны или почти равны трубке. <br />Прилистники сетчато-нервные.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">38. </span>
 						<span className="key__species"><a className="species__name-lat"
                                                       href="https://plant.depo.msu.ru/open/public/item/MW0099832"
-                                                      target="_blank">О .  sulphurea</a></span>
+                                                      target="_blank">О.  sulphurea</a></span>
 				</span>
                         </p>
                         <p className="key__string">
-                            <span className="key__text">+ Цветочные стрелки покрыты прилегающими волосками. Цветки бледно-желтые. Флаг выемчатый, 17-20 мм дл. Чашечка 8-10 мм дл., зубцы ее в 3-4 раза короче трубки. Прилистники с 1, нередко немного разветвленным, срединным нервом, редко 3-нервные.</span>
+                            <span className="key__text">+ Цветочные стрелки покрыты прилегающими волосками. Цветки бледно-желтые. Флаг выемчатый, 17-20 мм дл. <br />Чашечка 8-10 мм дл., зубцы ее в 3-4 раза короче трубки. Прилистники с 1, нередко немного разветвленным,<br /> срединным нервом, редко 3-нервные.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">35. </span>
 						<span className="key__species"><a className="species__name-lat"
                                                       href="https://plant.depo.msu.ru/open/public/item/MW0100049"
-                                                      target="_blank">О . recognita</a></span>
+                                                      target="_blank">О. recognita</a></span>
 				</span>
                         </p>
                     </div>
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">73 Прилистники, листья и нижняя часть цветочной стрелки, почти совершенно гладкие лишь кое-где c немногими отстоящими волосками. Боб одногнездный, без перегородок на обоих швах.</span>
+                            <span className="key__text">73 Прилистники, листья и нижняя часть цветочной стрелки, почти совершенно гладкие лишь кое-где c немногими<br /> отстоящими волосками. Боб одногнездный, без перегородок на обоих швах.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">20. </span>
 						<span className="key__species"><a className="species__name-lat"
-                                                      href="https://www.gbif.org/occurrence/4426983088" target="_blank"> О. altaica</a></span>
+                                                      href="https://www.gbif.org/occurrence/4426983088" target="_blank"> O. altaica</a></span>
 				</span>
                         </p>
 
@@ -1233,15 +1233,14 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">75 Цветочные кисти, удлиненные с разделенными в нижней части цветками, по отцветании еще более удлиняющиеся. Зубцы чашечки очень короткие, в 4-6 раз короче трубки. Довольно крупные растения (20-35 см выс.).</span>
+                            <span className="key__text">75 Цветочные кисти, удлиненные с разделенными в нижней части цветками, по отцветании еще более удлиняющиеся. <br />Зубцы чашечки очень короткие, в 4-6 раз короче трубки. Довольно крупные растения (20-35 см выс.).</span>
                             <span className="key__number">76</span>
                         </p>
                         <p className="key__string">
-                            <p className="key__string">
-                                <span className="key__text">+ Цветки собраны укороченной кистью, иногда зонтиковидной или же плотной головкой, при отцветании удлиняющиеся.</span>
-                                <span className="key__number">77</span>
-                            </p>
+                            <span className="key__text">+ Цветки собраны укороченной кистью, иногда зонтиковидной или же плотной головкой, при отцветании удлиняющиеся.</span>
+                            <span className="key__number">77</span>
                         </p>
+
                     </div>
 
                     <div className="key__block">
@@ -1291,11 +1290,11 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">79 Довольно крупное 15-25 см выс. мало-волосистое, почти голое растение с зелеными листьями. Носик лодочки около 2 мм дл</span>
+                            <span className="key__text">79 Довольно крупное 15-25 см выс. мало-волосистое, почти голое растение с зелеными листьями. Носик лодочки<br /> около 2 мм дл.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">30. </span>
 						<span className="key__species"><a className="species__name-lat"
-                                                      href="https://www.gbif.org/occurrence/438727489" target="_blank"> О. O. longirostra</a></span>
+                                                      href="https://www.gbif.org/occurrence/438727489" target="_blank"> О. longirostra</a></span>
 				</span>
                         </p>
 
@@ -1323,7 +1322,7 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">81 Растения образуют плотноватые дерновинки, листочки с обеих сторон шелковисто-волосистые. Бобы длинно оттопыренно-беломохнатые.</span>
+                            <span className="key__text">81 Растения образуют плотноватые дерновинки, листочки с обеих сторон шелковисто-волосистые. Бобы длинно <br />оттопыренно-беломохнатые.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">43. </span>
 						<span className="key__species"><a className="species__name-lat"
@@ -1332,7 +1331,7 @@ function Key () {
 				</span>
                         </p>
                         <p className="key__string">
-                            <span className="key__text">+ Растения не образуют дерновинки. Листочки с нижней стороны шелковисто-волосистые, а с верхней –рассеяно-прижато-волосистые. Бобы покрыты густыми, короткими буро-черными волосками.</span>
+                            <span className="key__text">+ Растения не образуют дерновинки. Листочки с нижней стороны шелковисто-волосистые, а с верхней - <br />рассеяно-прижато-волосистые. Бобы покрыты густыми, короткими буро-черными волосками.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">51. </span>
 						<span className="key__species"><a className="species__name-lat" href="" target="_blank">О. schrenkii</a></span>
@@ -1354,7 +1353,7 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">83 Листочки в числе 9-12 пар. Чашечка 12-14 мм дл., пушистая от черных волосков с примесью белых. Зубцы ее немного длиннее половины трубки. Флаг 18-20 мм дл.</span>
+                            <span className="key__text">83 Листочки в числе 9-12 пар. Чашечка 12-14 мм дл., пушистая от черных волосков с примесью белых. Зубцы ее<br /> немного длиннее половины трубки. Флаг 18-20 мм дл.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">33. </span>
 						<span className="key__species"><a className="species__name-lat"
@@ -1362,7 +1361,7 @@ function Key () {
 				</span>
                         </p>
                         <p className="key__string">
-                            <span className="key__text">+ Листочки в числе 12-18(22) пар. Чашечка (13)15-17 мм дл. покрыта отстоящими белыми волосками с примесью коротких, прижатых черных. Зубцы ее в 4-6 раз короче трубки, флаг 22-25 мм дл.</span>
+                            <span className="key__text">+ Листочки в числе 12-18(22) пар. Чашечка (13)15-17 мм дл. покрыта отстоящими белыми волосками с примесью<br /> коротких, прижатых черных. Зубцы ее в 4-6 раз короче трубки, флаг 22-25 мм дл.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">31. </span>
 						<span className="key__species"><a className="species__name-lat"
@@ -1373,7 +1372,7 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">84 Завязь и боб с хорошо заметной спинной перегородкой, доходящей обычно, до середины и соприкасающейся с перегородкой от брюшного шва. Бобы двугнездные. Цветоносы и черешки листьев оттопырено-волосистые.</span>
+                            <span className="key__text">84 Завязь и боб с хорошо заметной спинной перегородкой, доходящей обычно, до середины и соприкасающейся<br /> с перегородкой от брюшного шва. Бобы двугнездные. Цветоносы и черешки листьев оттопырено-волосистые.</span>
                             <span className="key__number">87</span>
                         </p>
 
@@ -1386,7 +1385,7 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">85 Зеленое растение, листочки сверху почти голые, снизу негусто покрыты прилегающими волосками, лишь молодые серовато зеленые. Соцветия не поникающие.</span>
+                            <span className="key__text">85 Зеленое растение, листочки сверху почти голые, снизу негусто покрыты прилегающими волосками, лишь молодые<br /> серовато зеленые. Соцветия не поникающие.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">18. </span>
 						<span className="key__species"><a className="species__name-lat"
@@ -1402,7 +1401,7 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">86 Молодые растения часто поникающие. Чашечка прижато-волосистая, прицветники равны или немного превышают чашечку, зубцы ее в два раза короче трубки.</span>
+                            <span className="key__text">86 Молодые растения часто поникающие. Чашечка прижато-волосистая, прицветники равны или немного превышают<br /> чашечку, зубцы ее в два раза короче трубки.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">22. </span>
 						<span className="key__species"><a className="species__name-lat"
@@ -1410,7 +1409,7 @@ function Key () {
 				</span>
                         </p>
                         <p className="key__string">
-                            <span className="key__text">+ Соцветия не поникающие. Чашечка оттопырено-волосистая, прицветники наполовину или немного короче чашечки, зубцы ее очень короткие, в несколько раз короче трубки.</span>
+                            <span className="key__text">+ Соцветия не поникающие. Чашечка оттопырено-волосистая, прицветники наполовину или немного короче чашечки,<br /> зубцы ее очень короткие, в несколько раз короче трубки.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">27. </span>
 						<span className="key__species"><a className="species__name-lat"
@@ -1421,7 +1420,7 @@ function Key () {
 
                     <div className="key__block">
                         <p className="key__string">
-                            <span className="key__text">87 Низкорослое (6-15 см выс.) кустистое растение со значительным числом цветочных стрелок. Листочки в числе 9-12(15) пар. Зубцы чашечки в 3 раза короче трубки, остроконечие лодочки около 1 мм дл.</span>
+                            <span className="key__text">87 Низкорослое (6-15 см выс.) кустистое растение со значительным числом цветочных стрелок. Листочки в числе<br /> 9-12(15) пар. Зубцы чашечки в 3 раза короче трубки, остроконечие лодочки около 1 мм дл.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">37. </span>
 						<span className="key__species"><a className="species__name-lat"
@@ -1429,7 +1428,7 @@ function Key () {
 				</span>
                         </p>
                         <p className="key__string">
-                            <span className="key__text">+ Более крупное растение (15-40 см выс.), стрелки обыкновенно в числе 1-3. Листочков (10)12-18(20) пар, зубцы чашечки в 4-5 раз короче трубки. Остроконечие лодочки около 1 мм дл.</span>
+                            <span className="key__text">+ Более крупное растение (15-40 см выс.), стрелки обыкновенно в числе 1-3. Листочков (10)12-18(20) пар, зубцы<br /> чашечки в 4-5 раз короче трубки. Остроконечие лодочки около 1 мм дл.</span>
                             <span className="key__species-block">
 						<span className="key__species-number">23. </span>
 						<span className="key__species"><a className="species__name-lat"
