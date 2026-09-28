@@ -13,7 +13,7 @@ import './index.css'
 function App() {
 
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
             <Header />
             <Navbar />
             <Routes>

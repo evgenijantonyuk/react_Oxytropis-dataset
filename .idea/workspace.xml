@@ -6,12 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="21b0877e-92e5-4bc8-9f77-a250eb008b0a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/index-5ce-15CY.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/index-BcPedSqe.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/logoHerb-DzhPk9_W.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/herb-logo/logoHerb.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/herb-logo/logoHerb.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Slider/Slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Slider/Slider.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MountCountryMap/MountCountryMap.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MountCountryMap/MountCountryMap.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
