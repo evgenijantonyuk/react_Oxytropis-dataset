@@ -1,6 +1,6 @@
 import './index.css'
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// 1. Импортируйте HashRouter вместо BrowserRouter
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/NavPanel/NavPanel.jsx";
 import Main from "./pages/MainPage.jsx";
 import Key from "./pages/KeyPage.jsx";
@@ -9,11 +9,10 @@ import AfterwordPage from "./pages/AfterwordPage.jsx";
 import Header from "./components/Header/Header.jsx";
 import MorphologyPage from "./pages/MorphologyPage.jsx";
 
-
 function App() {
-
     return (
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
+        // 2. Замените BrowserRouter на HashRouter (basename больше не нужен)
+        <HashRouter>
             <Header />
             <Navbar />
             <Routes>
@@ -23,7 +22,7 @@ function App() {
                 <Route path="/species-list" element={<SpeciesListItemPage />} />
                 <Route path="/afterword" element={<AfterwordPage />} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
