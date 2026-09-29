@@ -1,0 +1,236 @@
+/* ==========================================================================
+   Базовые переменные дизайна (Спокойная академическая палитра)
+   ========================================================================== */
+:root {
+    --morph-accent-dark: #2c3e50;    /* Глубокий графитово-синий для заголовков */
+    --morph-accent-main: #4a6572;    /* Сдержанный серо-синий для номеров и рамок */
+    --morph-accent-light: #f0f4f8;   /* Мягкий светлый пастельный фон при наведении */
+    --morph-text-dark: #2c3238;      /* Основной цвет текста (комфортный для чтения) */
+    --morph-text-muted: #607d8b;     /* Приглушенный стальной для подписей и цитат */
+    --morph-bg-card: #ffffff;        /* Фоновый цвет карточек */
+    --morph-border: #dcdfe3;         /* Тонкие спокойные границы */
+    --morph-shadow: rgba(44, 62, 80, 0.03);
+    --morph-radius: 10px;
+    --morph-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Сетка для всего списка страниц */
+.morphology-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Стилизация основной карточки */
+.morphology {
+    background-color: var(--morph-bg-card);
+    border: 1px solid var(--morph-border);
+    border-radius: var(--morph-radius);
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px var(--morph-shadow);
+    position: relative;
+    overflow: hidden;
+    transition: var(--morph-transition);
+}
+
+/* Минималистичный интерактивный эффект без агрессивного свечения */
+.morphology:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.06);
+    border-color: var(--morph-accent-main);
+}
+
+/* Строгая декоративная полоса слева, подчеркивающая структуру */
+.morphology::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 4px;
+    background-color: var(--morph-accent-main);
+    opacity: 0.6;
+}
+
+/* Текстовые стили */
+.morphology-title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--morph-accent-dark);
+    margin: 0 0 1.25rem 0;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+}
+
+.morphology-number {
+    color: var(--morph-accent-main);
+    font-weight: 600;
+}
+
+.morphology-descr {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--morph-text-dark);
+    margin: 0 0 2rem 0;
+}
+
+/* Блок подпунктов (Subsections) */
+.morphology-subsections {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    border-top: 1px dashed var(--morph-border);
+    padding-top: 1.5rem;
+}
+
+.morphology-sub {
+    background-color: #fcfdfe;
+    border-left: 2px solid transparent;
+    border-radius: 6px;
+    padding: 1.25rem;
+    transition: var(--morph-transition);
+}
+
+/* Мягкое проявление спокойного тона при наведении на подпункт */
+.morphology-sub:hover {
+    background-color: var(--morph-accent-light);
+    border-left-color: var(--morph-accent-main);
+}
+
+.morphology-subtitle {
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: var(--morph-accent-dark);
+    margin: 0 0 0.5rem 0;
+}
+
+.morphology-subdescr {
+    font-size: 0.975rem;
+    line-height: 1.55;
+    color: var(--morph-text-muted);
+    margin: 0;
+}
+/* ==========================================================================
+   Умный блок изображений (Медиа-сетка) — Без эффектов hover
+   ========================================================================== */
+.morphology-media-block {
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--morph-border, #dcdfe3);
+    padding-top: 2rem;
+    display: grid;
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Если картинка одна — центрируем её (id: morphology-2) */
+.morphology-media-block.has-single {
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.morphology-media-block.has-single .morphology-img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+/* Если картинок две — выстраиваем side-by-side (id: morphology-3) */
+.morphology-media-block.has-multiple {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.morphology-media-block.has-multiple .morphology-img {
+    max-width: 100%;
+    object-fit: contain;
+    background-color: #fcfdfe;
+    padding: 8px;
+}
+
+/* Контейнеры для картинок с подписями (<figure>) */
+.morphology-figure {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+/* Сами изображения (<img>) — С правильным сохранением пропорций */
+.morphology-img {
+    width: 100%;
+    height: auto;             /* Разрешаем картинке самой определять высоту пропорционально ширине */
+    max-height: 450px;        /* Ограничиваем максимальную высоту, чтобы рисунки не были огромными */
+    object-fit: contain;      /* Гарантирует правильное отображение без деформации */
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(44, 62, 80, 0.04);
+    border: 1px solid var(--morph-border, #dcdfe3);
+    background-color: transparent;
+}
+/* Настройки для блока с двумя изображениями (id: morphology-3) */
+.morphology-media-block.has-multiple .morphology-img {
+    height: auto;             /* Сбрасываем любые фиксированные ограничения высоты */
+    max-height: 350px;        /* Чуть уменьшаем для двух колонок, чтобы они смотрелись аккуратно */
+    background-color: #fcfdfe;
+    padding: 8px;
+}
+/* Подписи к рисункам (<figcaption>) */
+.morphology-caption {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--morph-text-muted, #607d8b);
+    text-align: center;
+    line-height: 1.4;
+    max-width: 90%;
+    padding: 0 0.5rem;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .morphology-media-block.has-multiple {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .morphology-img {
+        height: 240px;
+    }
+}
+@media (max-width: 600px) {
+    .morphology {
+        padding: 1.5rem;
+    }
+    .morphology-title {
+        font-size: 1.25rem;
+    }
+    .morphology-media-block {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        gap: 1.5rem;
+    }
+}
+@media (max-width: 480px) {
+    .morphology-media-block {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+    }
+    .morphology-img {
+        height: 180px;
+    }
+    .morphology-caption {
+        font-size: 0.8rem;
+        max-width: 100%;
+    }
+}
+
+/*@media (max-width: 768px) {*/
+/*    .morphology-media-block.has-multiple {*/
+/*        grid-template-columns: 1fr;*/
+/*    }*/
+
+/*    .morphology-img {*/
+/*        height: 220px;*/
+/*    }*/
+/*}*/
+

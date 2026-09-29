@@ -29,6 +29,11 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li>
+                            <Link to="/morphology" onClick={() => setIsOpen(false)}>
+                                Морфология растений
+                            </Link>
+                        </li>
+                        <li>
                             <Link to="/key" onClick={() => setIsOpen(false)}>
                                 Ключ для определения видов
                             </Link>

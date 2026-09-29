@@ -1,6 +1,5 @@
 // taxonomy.js
 const taxonomy = [
-    /* ============ РОД ============ */
     {
         id: 'genus-oxytropis',
         type: 'genus',

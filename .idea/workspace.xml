@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21b0877e-92e5-4bc8-9f77-a250eb008b0a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Morphology/Morphology.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Morphology/Morphology.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MorphologyReferences./MorphologyReferences.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MorphologyReferences./MorphologyReferences.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/dateMorphology/morphology.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/MorphologyPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Key/Key.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Key/Key.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavPanel/NavPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavPanel/NavPanel.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/data/oxytropis.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/data/oxytropis.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

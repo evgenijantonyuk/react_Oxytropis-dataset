@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Список литературы / References
+   ========================================================================== */
+.morphology-references {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background-color: var(--morph-bg-card, #ffffff);
+    border: 1px solid var(--morph-border, #dcdfe3);
+    border-radius: var(--morph-radius, 10px);
+    box-shadow: 0 4px 20px var(--morph-shadow, rgba(44, 62, 80, 0.03));
+}
+
+.references-heading {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--morph-accent-dark, #2c3e50);
+    border-bottom: 2px solid var(--morph-border, #dcdfe3);
+    padding-bottom: 0.75rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+}
+
+.references-list {
+    margin: 0;
+    padding-left: 1.6rem; /* Ровный отступ для двухзначной нумерации */
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.references-item {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--morph-text-dark, #2c3238);
+    padding-left: 0.4rem;
+}
+
+/* Оформление номеров списков */
+.references-item::marker {
+    font-weight: 600;
+    color: var(--morph-accent-main, #4a6572);
+    font-feature-settings: "tnum";
+}
+
+/* Стилизация кликабельных научных ссылок */
+.references-item a {
+    color: var(--morph-accent-main, #4a6572);
+    text-decoration: none;
+    font-weight: 500;
+    /* Безопасный перенос длинных адресов на маленьких экранах */
+    display: inline-block;
+    word-break: break-all;
+}
+
+.references-item a:hover {
+    text-decoration: underline;
+    color: var(--morph-accent-dark, #2c3e50);
+}
+
+/* Адаптивный сброс отступов для смартфонов */
+@media (max-width: 600px) {
+    .morphology-references {
+        margin: 1.5rem auto;
+        padding: 1.5rem;
+    }
+
+    .references-heading {
+        font-size: 1.15rem;
+    }
+
+    .references-item {
+        font-size: 0.875rem;
+    }
+}
