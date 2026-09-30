@@ -156,9 +156,14 @@
     align-items: center;
     gap: 0.75rem;
     width: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.morphology-figure:hover {
+    transform: scale(1.3);
 }
 
-/* Сами изображения (<img>) — С правильным сохранением пропорций */
+/* Сами изображения (<img>)  */
 .morphology-img {
     width: 100%;
     height: auto;             /* Разрешаем картинке самой определять высоту пропорционально ширине */
@@ -166,10 +171,10 @@
     object-fit: contain;      /* Гарантирует правильное отображение без деформации */
     border-radius: 6px;
     box-shadow: 0 4px 15px rgba(44, 62, 80, 0.04);
-    border: 1px solid var(--morph-border, #dcdfe3);
+    /*border: 1px solid var(--morph-border, #dcdfe3);*/
     background-color: transparent;
 }
-/* Настройки для блока с двумя изображениями (id: morphology-3) */
+    /* Настройки для блока с двумя изображениями (id: morphology-3) */
 .morphology-media-block.has-multiple .morphology-img {
     height: auto;             /* Сбрасываем любые фиксированные ограничения высоты */
     max-height: 350px;        /* Чуть уменьшаем для двух колонок, чтобы они смотрелись аккуратно */

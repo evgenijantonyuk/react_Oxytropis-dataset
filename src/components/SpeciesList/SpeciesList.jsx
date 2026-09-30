@@ -173,7 +173,7 @@ export default function SpeciesList({ items = taxonomy }) {
                            type="search"
                            value={query}
                            onChange={(e) => setQuery(e.target.value)}
-                           placeholder="Поиск…"
+                           placeholder="Поиск..."
                            aria-label="Поиск"
                     />
                 </div>
