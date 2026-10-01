@@ -4,6 +4,7 @@ import { DEFAULT_REFERENCES } from "./references";
 import { buildTextContent, downloadAsTextFile, filterItems } from "./utils";
 import "./LiteratureList.css";
 import ButtonUp from "../ButtonUp/ButtonUp.jsx";
+import styles from "../Afterword/Aterword.module.css";
 
 /**
  * Адаптивный список литературы с поиском и экспортом в .txt
@@ -34,7 +35,8 @@ export default function LiteratureList({
     };
 
     return (
-        <div className="lit-scope">
+        <>
+            <div className="lit-scope">
             <section className="lit-card" aria-labelledby="lit-title">
                 <header className="lit-header">
                     <div className="lit-title-row">
@@ -129,5 +131,16 @@ export default function LiteratureList({
             </section>
             <ButtonUp />
         </div>
+            <footer className={styles.footer__afterword}>
+                <p>&#169; Антонюк Е. В.</p>
+                <p className={styles.footer__text}>
+                    Если есть замечания или вопросы, а так же предложения о сотрудничестве обрайтесь по элекронной
+                    почте:
+                    <a className={styles.contactsButton} target="_blank"
+                       href="mailto:evgenijantonyuk@gmail.com?subject=Вопрос&body=Привет">evgenijantonyuk@gmail.com</a>
+                </p>
+            </footer>
+        </>
+
     );
 }

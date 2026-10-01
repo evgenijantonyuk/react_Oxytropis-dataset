@@ -4,6 +4,7 @@ import MorphologyReferences from "../MorphologyReferences./MorphologyReferences.
 
 import './Morphology.css';
 import ButtonUp from "../ButtonUp/ButtonUp.jsx";
+import styles from "../Afterword/Aterword.module.css";
 
 function Morphology({ item }) {
     switch (item.type) {
@@ -87,6 +88,15 @@ export default function MorphologyList({ items = morphology }) {
             </div>
             <MorphologyReferences />
             <ButtonUp />
+            <footer className={styles.footer__afterword}>
+                <p>&#169; Антонюк Е. В.</p>
+                <p className={styles.footer__text}>
+                    Если есть замечания или вопросы, а так же предложения о сотрудничестве обрайтесь по элекронной
+                    почте:
+                    <a className={styles.contactsButton} target="_blank"
+                       href="mailto:evgenijantonyuk@gmail.com?subject=Вопрос&body=Привет">evgenijantonyuk@gmail.com</a>
+                </p>
+            </footer>
         </>
     );
 }
