@@ -3,6 +3,7 @@ import Highlight from "./Highlight";
 import { DEFAULT_REFERENCES } from "./references";
 import { buildTextContent, downloadAsTextFile, filterItems } from "./utils";
 import "./LiteratureList.css";
+import ButtonUp from "../ButtonUp/ButtonUp.jsx";
 
 /**
  * Адаптивный список литературы с поиском и экспортом в .txt
@@ -126,6 +127,7 @@ export default function LiteratureList({
                     </p>
                 )}
             </section>
+            <ButtonUp />
         </div>
     );
 }
