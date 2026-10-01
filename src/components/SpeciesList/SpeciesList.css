@@ -27,7 +27,6 @@
 .species-list {
     padding: 0 15px;
 }
-/**/
 /* Базовое состояние блока вида */
 .species__block {
     margin: 0;
@@ -50,6 +49,7 @@
     transform: translateY(-2px);
     border-color: #4a6572;              /* Сдержанный серо-синий цвет при наведении */
     box-shadow: 0 10px 25px rgba(44, 62, 80, 0.06);
+    background-color: rgba(79, 70, 229, 0.10);
 }
 
 /* Строгая декоративная полоса слева, которая плавно становится ярче */

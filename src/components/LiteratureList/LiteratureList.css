@@ -41,7 +41,6 @@
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 }
-/**/
 /* ---------- Элемент списка литературы ---------- */
 .lit-item {
     display: grid;
