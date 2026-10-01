@@ -27,7 +27,50 @@
 .species-list {
     padding: 0 15px;
 }
+/**/
+/* Базовое состояние блока вида */
+.species__block {
+    margin: 0;
+    padding: 1.5rem 1.5rem 1.5rem 30px; /* Добавили внутренние отступы (padding) */
+    text-indent: 0;                     /* Сбрасываем text-indent, так как добавили padding слева */
 
+    background-color: #ffffff;          /* Чистый белый фон карточки */
+    border: 1px solid #dcdfe3;          /* Тонкая спокойная граница */
+    border-radius: 10px;                /* Закругление углов */
+    position: relative;
+    overflow: hidden;
+
+    /* Плавный переход для всех изменяемых свойств на основе кубического Безье */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 20px rgba(44, 62, 80, 0.03);
+}
+
+/* Эффект аккуратного приподнимания блока при наведении */
+.species__block:hover {
+    transform: translateY(-2px);
+    border-color: #4a6572;              /* Сдержанный серо-синий цвет при наведении */
+    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.06);
+}
+
+/* Строгая декоративная полоса слева, которая плавно становится ярче */
+.species__block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #4a6572;          /* Цвет полосы */
+    opacity: 0.4;                       /* В обычном состоянии приглушена */
+    transition: opacity 0.3s ease;
+}
+
+/* Полоса становится четче при наведении на блок */
+.species__block:hover::before {
+    opacity: 0.9;
+}
+
+/**/
 .main__content {
     width: 100%;
     display: flex;

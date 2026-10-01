@@ -41,6 +41,51 @@
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 }
+/**/
+/* ---------- Элемент списка литературы ---------- */
+.lit-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: start;
+    padding: 15px clamp(12px, 2vw, 20px) 15px 25px; /* Добавили отступ слева под полосу */
+    border-radius: 12px;                          /* Сделали радиус чуть аккуратнее */
+    background-color: #ffffff;                    /* Каждая запись становится отдельной карточкой */
+    border: 1px solid var(--lit-border);
+    margin-bottom: 12px;                          /* Отступ между записями */
+    position: relative;
+    overflow: hidden;
+
+    /* Плавный переход Безье для эффекта приподнимания */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 14px rgba(44, 62, 80, 0.02);
+}
+
+/* Измененный интерактивный эффект при наведении */
+.lit-item:hover {
+    background: var(--lit-surface-solid);         /* Сохраняем белый фон для контраста тени */
+    transform: translateY(-2px);                  /* Вместо сдвига вправо — приподнимание вверх */
+    border-color: #4a6572;                        /* Сдержанный стальной акцент вместо фиолетового */
+    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.06); /* Плавная тень */
+}
+
+/* Строгая вертикальная декоративная полоса слева */
+.lit-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #4a6572;                    /* Цвет полосы, объединяющий дизайн */
+    opacity: 0.3;                                 /* Приглушена по умолчанию */
+    transition: opacity 0.3s ease;
+}
+
+/* Полоса становится ярче при наведении */
+.lit-item:hover::before {
+    opacity: 0.9;
+}
 
 /* ---------- Шапка ---------- */
 .lit-header {
@@ -399,6 +444,14 @@
         padding-top: 3px;
     }
 }
+
+@media (max-width: 560px) {
+    .lit-item {
+        gap: 12px;
+        padding: 12px 12px 12px 18px; /* Скорректированный отступ для маленьких экранов */
+    }
+}
+
 
 @media (prefers-reduced-motion: reduce) {
     .lit-item,

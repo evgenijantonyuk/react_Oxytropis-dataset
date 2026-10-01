@@ -1,5 +1,50 @@
 
 /*================ main ========================*/
+/* Базовое состояние строки определительного ключа */
+.key__string {
+    margin-bottom: 8px;                  /* Чуть увеличили отступ между строками */
+    padding: 0.75rem 1.5rem 0.75rem 25px;/* Внутренние отступы для формы карточки */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;                 /* Выравниваем элементы строки по центру */
+
+    background-color: #ffffff;           /* Чистый белый фон карточки */
+    border: 1px solid #dcdfe3;           /* Тонкая спокойная граница */
+    border-radius: 8px;                  /* Закругление углов */
+    position: relative;
+    overflow: hidden;
+
+    /* Плавный переход Безье для эффекта приподнимания */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.02);
+}
+
+/* Интерактивный эффект при наведении на строку */
+.key__string:hover {
+    transform: translateY(-1px);         /* Легкое приподнимание (меньше, чем у больших карточек) */
+    border-color: #4a6572;               /* Сдержанный стальной акцент */
+    box-shadow: 0 6px 16px rgba(44, 62, 80, 0.05); /* Мягкая тень */
+}
+
+/* Вертикальная декоративная полоса слева */
+.key__string::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #4a6572;           /* Цвет полосы */
+    opacity: 0.3;                        /* Приглушена по умолчанию */
+    transition: opacity 0.3s ease;
+}
+
+/* Полоса становится ярче при наведении */
+.key__string:hover::before {
+    opacity: 0.8;
+}
+
+/**/
 .main__content {
     width: 100%;
 }

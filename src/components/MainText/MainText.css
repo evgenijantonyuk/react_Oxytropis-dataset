@@ -1,5 +1,46 @@
 /* Descriptions*/
+/* Базовое состояние блока региона */
+.ags__regions {
+    margin-bottom: 2rem;                 /* Увеличили отступ между блоками */
+    padding: 1.5rem 1.5rem 1.5rem 25px; /* Заменяем text-indent внутренними отступами */
 
+    background-color: #ffffff;          /* Чистый белый фон */
+    border: 1px solid #dcdfe3;          /* Тонкая спокойная граница */
+    border-radius: 10px;                /* Закругление углов */
+    position: relative;
+    overflow: hidden;
+
+    /* Плавный переход Безье для эффекта приподнимания */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 20px rgba(44, 62, 80, 0.03);
+}
+
+/* Интерактивный эффект при наведении */
+.ags__regions:hover {
+    transform: translateY(-2px);        /* Легкое приподнимание */
+    border-color: #4a6572;              /* Сдержанный стальной акцент */
+    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.06); /* Мягкая тень */
+}
+
+/* Вертикальная декоративная полоса слева */
+.ags__regions::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #4a6572;          /* Цвет полосы */
+    opacity: 0.4;                       /* Приглушена по умолчанию */
+    transition: opacity 0.3s ease;
+}
+
+/* Полоса становится ярче при наведении */
+.ags__regions:hover::before {
+    opacity: 0.9;
+}
+
+/**/
 .title {
     text-align: center;
     margin-bottom: 15px;
@@ -89,4 +130,12 @@
 .footer__text {
     max-width: 600px;
     line-height: 2rem;
+}
+/**/
+.ags__text {
+    text-align: justify;
+    margin: 0;
+    margin-bottom: 5px;
+    text-indent: 0;                     /* Сбрасываем, так как у карточки теперь есть padding */
+    padding: 0;                         /* Обнуляем старые внутренние отступы */
 }

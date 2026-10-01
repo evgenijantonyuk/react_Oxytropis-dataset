@@ -69,8 +69,51 @@ a {
     background: #bfacf5;
     border-radius: 15px;
 }
+/**/
+/* Базовое состояние карточки человека */
+.person {
+    margin-bottom: 2rem;                 /* Чуть увеличили отступ между карточками */
+    padding: 1.5rem 1.5rem 1.5rem 25px; /* Заменяем text-indent внутренними отступами */
+    text-indent: 0;                     /* Сбрасываем старый индент, чтобы верстка не поехала */
+
+    background-color: #ffffff;          /* Чистый белый фон */
+    border: 1px solid #dcdfe3;          /* Тонкая спокойная граница */
+    border-radius: 10px;                /* Закругление углов */
+    position: relative;
+    overflow: hidden;
+
+    /* Плавный переход Безье для эффекта приподнимания */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 20px rgba(44, 62, 80, 0.03);
+}
+
+/* Интерактивный эффект при наведении */
+.person:hover {
+    transform: translateY(-2px);        /* Легкое приподнимание */
+    border-color: #4a6572;              /* Сдержанный стальной акцент на рамке */
+    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.06); /* Мягкая глубокая тень */
+}
+
+/* Аккуратная вертикальная декоративная полоса слева */
+.person::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #4a6572;          /* Цвет полосы, гармонирующий со вторым блоком */
+    opacity: 0.4;                       /* В обычном состоянии приглушена */
+    transition: opacity 0.3s ease;
+}
+
+/* Полоса становится ярче при наведении */
+.person:hover::before {
+    opacity: 0.9;
+}
 
 /* ========================================================== */
+
 @media (max-width: 365px) {
     .person__teacher_frame {
         padding: 1.5px;
@@ -78,7 +121,10 @@ a {
     .person__teacher {
         white-space: nowrap;
     }
+    /* Заменяем старый text-indent на компактный padding для мобильных */
     .person {
-        text-indent: 15px;
+        text-indent: 0;
+        padding: 1rem 1rem 1rem 15px;
     }
 }
+
