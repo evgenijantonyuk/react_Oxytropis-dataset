@@ -94,8 +94,7 @@ export const DEFAULT_REFERENCES = [
     "Gray A. Astragalus // Proceedings of the American Academy of Arts and Sciences. 1864. Vol. 6. P. 234.",
     "Gureeva I.I., Balashova N.V. Типификация таксонов, описанных П.Н. Крыловым. 2011.",
     "Гуреева И.И., Соколова И.В. Типификация видов Oxytropis (Fabaceae), описанных из Южной Сибири // Новости систематики высших растений. 2022. Т. 53. С. 59–67.",
-    "Антонюк Е.В. Критические заметки о некоторых видах Oxytropis (Fabaceae) Алтая и Тувы // Turczaninowia. 2019.",
-    "Антонюк Е.В. Обзор рода Oxytropis (Fabaceae) Алтайской горной страны. 2020.",
+
     "Крылов П.Н. Материалы к флоре Алтая и Томской губернии. 1891.",
     "Flora of Pakistan. Oxytropis // Flora of Pakistan. 2011. Vol. 100.",
     "Князев М.С. Заметки о некоторых видах Oxytropis (Fabaceae) Урала и Западной Сибири // Ботанический журнал. 2001. Т. 86, № 5.",
@@ -104,4 +103,11 @@ export const DEFAULT_REFERENCES = [
     "Regel E. Descriptiones plantarum novarum. 1880.",
     "Steiler A. Generis Baicalia // Flora. 1814.",
     "Максимович К.И. Diagnoses plantarum novarum asiaticarum. St. Petersburg, 1880.",
+    "Vaganov A, Shmakov A, Zaikov V, Zholnerova E, Shalimov A, Belkin D, Batkin A, Kasatkin D, Kosachev P, Antonyuk E, Medvedeva K, Usik N, Mitina V (2020). Virtual Herbarium ALTB (South-Siberian Botanical Garden). Version 1.2. Altai State University. Occurrence dataset https://doi.org/10.15468/y6xmme accessed via GBIF.org on 2020-07-28.",
+    "Антонюк Е. В., Косачев П. А., Смирнов С. В. Oxytropis heterophylla Bunge (Fabaceae) – новый вид для флоры России // Turczaninowia, 2019. Т. 22. № 2. С. 181-186. URL: http://turczaninowia.asu.ru/article/view/5799",
+    "Антонюк Е. В., Косачев П. А., Шмаков А. И. Oxytropis krylovii Schipz. (Fabaceae) – новый вид для флоры России // Turczaninowia, 2019. Т. 22. № 4. С. 76-81. URL: http://turczaninowia.asu.ru/article/view/6970",
+    "Антонюк Е. В. Заметка об Oxytropis setifera Kom. // Turczaninowia, 2001. Т. 4. № 3. С. 35-37.",
+    "Антонюк Е. В. Род Oxytropis // Определитель растений Алтайского края / [И.М. Красноборов и др.]; отв. ред. И. М. Красноборов; Рос. акад. наук, Сиб. отд-ние, Центр. сиб. ботан. сад [и др.]. - Новосибирск : Изд-во СО РАН : Гео, 2003. – С. 266-268.",
+    "Антонюк Е.В. Род Oxytropis DC. во флоре Алтайского края // Флора и растительность Алтая: Труды Южно-Сибирского ботанического сада. – Барнаул: Изд-во Алт. гос. ун-та, 1999. – С. 67–71.",
+    "Антонюк Е. В., Косачев П. А., Шмаков А. И. Дополнение к флоре Алтая (Oxytropis DC.). I // Turczaninowia, 2020. Т. 23. № 3. С. 22-28. URL: http://turczaninowia.asu.ru/article/view/8546",
 ];
