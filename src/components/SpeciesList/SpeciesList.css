@@ -325,6 +325,9 @@
 
 /* media */
 @media screen and (max-width: 720px) {
+    .species__block {
+        padding: 5px;
+    }
   .block-search {
       width: 35px;
       height: 35px;
