@@ -48,6 +48,9 @@ const Navbar = () => {
                                 Послесловие
                             </Link>
                         </li>
+                        <li>
+                            <Link to="/literature">Литература</Link>
+                        </li>
                     </ul>
                 </div>
             </nav>

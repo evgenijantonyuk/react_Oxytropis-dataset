@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21b0877e-92e5-4bc8-9f77-a250eb008b0a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/LiteratureList/Highlight.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LiteratureList/LiteratureList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LiteratureList/LiteratureList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LiteratureList/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LiteratureList/references.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LiteratureList/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/LiteraturePage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Morphology/Morphology.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Morphology/Morphology.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SpeciesList/SpeciesList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SpeciesList/SpeciesList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavPanel/NavPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavPanel/NavPanel.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/data/oxytropis.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/data/oxytropis.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,6 +65,7 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -103,6 +109,8 @@
       <updated>1790104700346</updated>
       <workItem from="1790104701376" duration="126507000" />
       <workItem from="1790487823535" duration="619000" />
+      <workItem from="1790786871595" duration="1143000" />
+      <workItem from="1790831524030" duration="10381000" />
     </task>
     <servers />
   </component>

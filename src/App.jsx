@@ -8,6 +8,7 @@ import SpeciesListItemPage from "./pages/SpeciesListPage.jsx";
 import AfterwordPage from "./pages/AfterwordPage.jsx";
 import Header from "./components/Header/Header.jsx";
 import MorphologyPage from "./pages/MorphologyPage.jsx";
+import LiteraturePage from "./pages/LiteraturePage.jsx";
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/key" element={<Key />} />
                 <Route path="/species-list" element={<SpeciesListItemPage />} />
                 <Route path="/afterword" element={<AfterwordPage />} />
+                <Route path="/literature" element={<LiteraturePage />} />
             </Routes>
         </HashRouter>
     );
