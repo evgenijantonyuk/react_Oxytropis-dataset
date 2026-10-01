@@ -171,6 +171,7 @@
     margin: 0;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .subgenus__description {
@@ -327,6 +328,9 @@
 @media screen and (max-width: 720px) {
     .species__block {
         padding: 5px;
+    }
+    .species-list {
+        padding: 0 7px;
     }
   .block-search {
       width: 35px;
