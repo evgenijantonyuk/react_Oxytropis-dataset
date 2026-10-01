@@ -169,9 +169,11 @@
 
 .subgenus__title {
     margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    text-align: center;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*flex-direction: column;*/
 }
 
 .subgenus__description {
