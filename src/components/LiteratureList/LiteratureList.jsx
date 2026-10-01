@@ -80,7 +80,7 @@ export default function LiteratureList({
                                     onClick={() => setQuery("")}
                                     aria-label="Очистить поиск"
                                 >
-                                    ×
+
                                 </button>
                             )}
                         </div>
