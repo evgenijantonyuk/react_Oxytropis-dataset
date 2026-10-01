@@ -65,7 +65,7 @@ export const DEFAULT_REFERENCES = [
     "Конспект флоры Внешней Монголии. М.: Изд-во МГУ, 1996. 136 с.",
     "Определитель сосудистых растений Монголии. Л.: Наука, 1982. С. 164–169.",
 
-    // === 61–79: источники, цитируемые в morphology.js ===
+    // === 61–79: источники из morphology.js ===
     "Золотов В.В., Черных Е.Г. и др. Морфологическая дифференциация рода Oxytropis DC. на Алтае. 2019.",
     "Пленник Р.Я. Эколого-морфологическая эволюция бобовых в горах Южной Сибири. Новосибирск: Наука, 1999.",
     "Сумневич Г.П. Материалы к познанию Oxytropis Алтая // Известия Томского университета. 1937.",
@@ -85,6 +85,23 @@ export const DEFAULT_REFERENCES = [
     "Temperate Plants Database. 2026.",
     "КиберЛенинка: научная электронная библиотека. 2026.",
     "SaskWildflower. 2026.",
-];
 
-export default DEFAULT_REFERENCES;
+    // === 80–98: источники из oxytropis.js ===
+    "Kuvaev V.B., Sonnikova A.A. Новый вид рода Oxytropis (Fabaceae) из Западного Саяна // Новости систематики высших растений. 1990. Т. 27. С. 99.",
+    "Ulbrich E. Ein neuer Oxytropis aus China // Botanische Jahrbücher für Systematik, Pflanzengeschichte und Pflanzengeographie. 1905. Bd. 35. S. 680.",
+    "Попов М.Г. Новые виды среднеазиатских растений // Notulae Systematicae (Leningrad). 1938. Т. 7. С. 116.",
+    "Ascherson P., Graebner P. Synopsis der mitteleuropäischen Flora. Bd. VI. Leipzig: Engelmann, 1906–1910.",
+    "Gray A. Astragalus // Proceedings of the American Academy of Arts and Sciences. 1864. Vol. 6. P. 234.",
+    "Gureeva I.I., Balashova N.V. Типификация таксонов, описанных П.Н. Крыловым. 2011.",
+    "Гуреева И.И., Соколова И.В. Типификация видов Oxytropis (Fabaceae), описанных из Южной Сибири // Новости систематики высших растений. 2022. Т. 53. С. 59–67.",
+    "Антонюк Е.В. Критические заметки о некоторых видах Oxytropis (Fabaceae) Алтая и Тувы // Turczaninowia. 2019.",
+    "Антонюк Е.В. Обзор рода Oxytropis (Fabaceae) Алтайской горной страны. 2020.",
+    "Крылов П.Н. Материалы к флоре Алтая и Томской губернии. 1891.",
+    "Flora of Pakistan. Oxytropis // Flora of Pakistan. 2011. Vol. 100.",
+    "Князев М.С. Заметки о некоторых видах Oxytropis (Fabaceae) Урала и Западной Сибири // Ботанический журнал. 2001. Т. 86, № 5.",
+    "Abdussalamov A. О подроде Eumorpha (Bunge) Abduss. рода Oxytropis DC. // Флора Узбекистана.",
+    "Ruprecht F.J., Osten-Sacken F. Baron Fr. v. d. Osten-Sacken. Sertum Tianschanicum. St. Petersburg, 1869.",
+    "Regel E. Descriptiones plantarum novarum. 1880.",
+    "Steiler A. Generis Baicalia // Flora. 1814.",
+    "Максимович К.И. Diagnoses plantarum novarum asiaticarum. St. Petersburg, 1880.",
+];
