@@ -10,6 +10,8 @@
     --lit-muted: #64748b;
     --lit-accent: #4f46e5;
     --lit-accent-soft: rgba(79, 70, 229, 0.10);
+    --lit-link: #4338ca;
+    --lit-link-hover: #312e81;
     --lit-mark-bg: #fde68a;
     --lit-mark-text: #713f12;
     --lit-shadow: 0 30px 60px -35px rgba(15, 23, 42, 0.45);
@@ -43,7 +45,7 @@
 /* ---------- Шапка ---------- */
 .lit-header {
     position: sticky;
-    top: 0;
+    top: 80px;               /* высота NavPanel, чтобы шапка не заезжала под неё */
     z-index: 5;
     padding: clamp(18px, 3vw, 28px) clamp(18px, 3.5vw, 36px) 20px;
     background: var(--lit-surface);
@@ -247,6 +249,43 @@
     color: var(--lit-text);
 }
 
+/* ---------- Ссылки ---------- */
+.lit-link {
+    display: inline;
+    color: var(--lit-link);
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(67, 56, 202, 0.35);
+    transition: color 0.15s ease, border-color 0.15s ease;
+    word-break: break-word;
+}
+
+.lit-link:hover,
+.lit-link:focus-visible {
+    color: var(--lit-link-hover);
+    border-bottom-color: var(--lit-link-hover);
+    border-bottom-style: solid;
+    outline: none;
+}
+
+.lit-link:focus-visible {
+    box-shadow: 0 0 0 3px var(--lit-accent-soft);
+    border-radius: 4px;
+}
+
+.lit-link-icon {
+    display: inline-flex;
+    vertical-align: -1px;
+    margin-left: 4px;
+    opacity: 0.55;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.lit-link:hover .lit-link-icon {
+    opacity: 1;
+    transform: translate(1px, -1px);
+}
+
+/* ---------- Подсветка и пустое состояние ---------- */
 .lit-mark {
     padding: 1px 4px;
     border-radius: 5px;
@@ -265,17 +304,87 @@
 
 /* ---------- Мобильная адаптация ---------- */
 @media (max-width: 560px) {
-    .lit-toolbar {
-        flex-direction: column;
-        align-items: stretch;
+    .lit-scope {
+        /* Уменьшаем внешние отступы страницы */
+        padding: 12px 10px 24px;
     }
 
+    .lit-card {
+        border-radius: 18px;
+    }
+
+    /* Шапка больше не залипает — она скроллится вместе с содержимым */
+    .lit-header {
+        position: static;
+        padding: 16px 16px 14px;
+        border-radius: 18px 18px 0 0;
+    }
+
+    /* Компактный заголовок: скрываем надпись, чтобы не занимать строку */
+    .lit-eyebrow {
+        display: none;
+    }
+
+    .lit-title {
+        font-size: 22px;
+    }
+
+    /* Счётчик делаем маленьким и переносим рядом с заголовком */
+    .lit-title-row {
+        align-items: center;
+        margin-bottom: 12px;
+        gap: 10px;
+    }
+
+    .lit-count {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    /* Тулбар: поиск и кнопка в одну строку */
+    .lit-toolbar {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .lit-search {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    .lit-search input {
+        padding: 10px 38px 10px 38px;
+        font-size: 14px;
+        border-radius: 12px;
+    }
+
+    .lit-search-icon {
+        left: 12px;
+    }
+
+    .lit-clear {
+        right: 6px;
+        width: 24px;
+        height: 24px;
+        font-size: 16px;
+    }
+
+    /* Кнопка — только иконка, чтобы не растягивать строку */
     .lit-btn {
-        justify-content: center;
+        flex: 0 0 auto;
+        padding: 10px;
+        border-radius: 12px;
+    }
+
+    .lit-btn-text {
+        display: none;
     }
 
     .lit-item {
         gap: 12px;
+        padding: 12px 12px;
     }
 
     .lit-num {
@@ -291,13 +400,14 @@
     }
 }
 
-/* ---------- Уважение к reduced-motion ---------- */
 @media (prefers-reduced-motion: reduce) {
     .lit-item,
     .lit-num,
     .lit-search input,
     .lit-clear,
-    .lit-btn {
+    .lit-btn,
+    .lit-link,
+    .lit-link-icon {
         transition: none;
     }
 

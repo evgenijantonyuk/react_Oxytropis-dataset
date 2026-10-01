@@ -1,55 +1,103 @@
+// import { useState } from 'react';
+// import './NavPanel.css';
+// import { Link } from "react-router-dom";
+//
+// const Navbar = () => {
+//     // Состояние для открытия/закрытия мобильного меню
+//     const [isOpen, setIsOpen] = useState(false);
+//
+//     const toggleMenu = () => {
+//         setIsOpen(!isOpen);
+//     };
+//
+//     return (
+//         <>
+//             <nav className="navbar">
+//                 <div className="navbar-container">
+//                     {/* Иконка бургера для мобильных */}
+//                     <div className={`navbar-toggle ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+//                         <span className="bar"></span>
+//                         <span className="bar"></span>
+//                         <span className="bar"></span>
+//                     </div>
+//
+//                     {/* Ссылки навигации */}
+//                     <ul className={`navbar-links ${isOpen ? 'active' : ''}`}>
+//                         <li>
+//                             <Link to="/" onClick={() => setIsOpen(false)}>
+//                                 Главная
+//                             </Link>
+//                         </li>
+//                         <li>
+//                             <Link to="/morphology" onClick={() => setIsOpen(false)}>
+//                                 Морфология растений
+//                             </Link>
+//                         </li>
+//                         <li>
+//                             <Link to="/key" onClick={() => setIsOpen(false)}>
+//                                 Ключ для определения видов
+//                             </Link>
+//                         </li>
+//                         <li>
+//                             <Link to="/species-list" onClick={() => setIsOpen(false)}>
+//                                 Конспект видов
+//                             </Link>
+//                         </li>
+//                         <li>
+//                             <Link to="/afterword" onClick={() => setIsOpen(false)}>
+//                                 Послесловие
+//                             </Link>
+//                         </li>
+//                         <li>
+//                             <Link to="/literature">Литература</Link>
+//                         </li>
+//                     </ul>
+//                 </div>
+//             </nav>
+//         </>
+//     );
+// };
+//
+// export default Navbar;
+
 import { useState } from 'react';
 import './NavPanel.css';
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    // Состояние для открытия/закрытия мобильного меню
     const [isOpen, setIsOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
+    const toggleMenu = () => setIsOpen(!isOpen);
+    const closeMenu = () => setIsOpen(false);
 
     return (
         <>
             <nav className="navbar">
                 <div className="navbar-container">
-                    {/* Иконка бургера для мобильных */}
                     <div className={`navbar-toggle ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
                         <span className="bar"></span>
                         <span className="bar"></span>
                         <span className="bar"></span>
                     </div>
 
-                    {/* Ссылки навигации */}
                     <ul className={`navbar-links ${isOpen ? 'active' : ''}`}>
                         <li>
-                            <Link to="/" onClick={() => setIsOpen(false)}>
-                                Главная
-                            </Link>
+                            <Link to="/" onClick={closeMenu}>Главная</Link>
                         </li>
                         <li>
-                            <Link to="/morphology" onClick={() => setIsOpen(false)}>
-                                Морфология растений
-                            </Link>
+                            <Link to="/morphology" onClick={closeMenu}>Морфология растений</Link>
                         </li>
                         <li>
-                            <Link to="/key" onClick={() => setIsOpen(false)}>
-                                Ключ для определения видов
-                            </Link>
+                            <Link to="/key" onClick={closeMenu}>Ключ для определения видов</Link>
                         </li>
                         <li>
-                            <Link to="/species-list" onClick={() => setIsOpen(false)}>
-                                Конспект видов
-                            </Link>
+                            <Link to="/species-list" onClick={closeMenu}>Конспект видов</Link>
                         </li>
                         <li>
-                            <Link to="/afterword" onClick={() => setIsOpen(false)}>
-                                Послесловие
-                            </Link>
+                            <Link to="/afterword" onClick={closeMenu}>Послесловие</Link>
                         </li>
                         <li>
-                            <Link to="/literature">Литература</Link>
+                            <Link to="/literature" onClick={closeMenu}>Литература</Link>
                         </li>
                     </ul>
                 </div>
