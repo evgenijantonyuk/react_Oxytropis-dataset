@@ -1,36 +1,29 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import Highlight from "./Highlight";
 import { DEFAULT_REFERENCES } from "./references";
-import {
-    buildTextContent,
-    downloadAsTextFile,
-    filterItems,
-    normalizeReference,
-} from "./utils";
+import { buildTextContent, downloadAsTextFile, filterItems } from "./utils";
 import "./LiteratureList.css";
 
 /**
- * Адаптивный список литературы с поиском, ссылками и экспортом в .txt.
+ * Адаптивный список литературы с поиском и экспортом в .txt
  *
  * @param {Object} props
- * @param {(string | { text: string, url?: string, doi?: string })[]} [props.references]
- * @param {string} [props.title]
- * @param {string} [props.eyebrow]
- * @param {string} [props.fileName]
- * @param {'url' | 'search' | 'none'} [props.linkMode='search']
+ * @param {string[]} [props.references] — массив строк. По умолчанию — встроенный список.
+ * @param {string}   [props.title]      — заголовок (по умолчанию «Литература»).
+ * @param {string}   [props.eyebrow]    — надпись над заголовком (по умолчанию «Библиография»).
+ * @param {string}   [props.fileName]   — имя файла при скачивании (по умолчанию «literatura.txt»).
  */
 export default function LiteratureList({
                                            references = DEFAULT_REFERENCES,
                                            title = "Литература",
                                            eyebrow = "Библиография",
                                            fileName = "literatura.txt",
-                                           linkMode = "search",
                                        }) {
     const [query, setQuery] = useState("");
 
     const items = useMemo(
-        () => references.map((ref, i) => normalizeReference(ref, i, linkMode)),
-        [references, linkMode]
+        () => references.map((text, index) => ({ n: index + 1, text })),
+        [references]
     );
 
     const filtered = useMemo(() => filterItems(items, query), [items, query]);
@@ -76,7 +69,7 @@ export default function LiteratureList({
                                 type="search"
                                 value={query}
                                 onChange={(e) => setQuery(e.target.value)}
-                                placeholder="Поиск…"
+                                placeholder="Поиск по автору, названию, году…"
                                 aria-label="Поиск по списку литературы"
                             />
                             {query && (
@@ -96,8 +89,6 @@ export default function LiteratureList({
                             className="lit-btn"
                             onClick={handleDownload}
                             disabled={filtered.length === 0}
-                            aria-label="Скачать список"
-                            title="Скачать список"
                         >
                             <svg
                                 width="16"
@@ -113,7 +104,7 @@ export default function LiteratureList({
                                 <polyline points="7 10 12 15 17 10" />
                                 <line x1="12" y1="15" x2="12" y2="3" />
                             </svg>
-                            <span className="lit-btn-text">Скачать список</span>
+                            Скачать список
                         </button>
                     </div>
                 </header>
@@ -124,35 +115,7 @@ export default function LiteratureList({
                             <li className="lit-item" key={item.n}>
                                 <span className="lit-num">{item.n}</span>
                                 <p className="lit-text">
-                                    {item.url ? (
-                                        <a
-                                            className="lit-link"
-                                            href={item.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            title="Открыть источник"
-                                        >
-                                            <Highlight text={item.text} query={query} />
-                                            <span className="lit-link-icon" aria-hidden="true">
-                        <svg
-                            width="12"
-                            height="12"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        >
-                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                          <polyline points="15 3 21 3 21 9" />
-                          <line x1="10" y1="14" x2="21" y2="3" />
-                        </svg>
-                      </span>
-                                        </a>
-                                    ) : (
-                                        <Highlight text={item.text} query={query} />
-                                    )}
+                                    <Highlight text={item.text} query={query} />
                                 </p>
                             </li>
                         ))}
