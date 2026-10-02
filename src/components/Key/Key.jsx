@@ -443,6 +443,7 @@ function Key() {
                             <span className="key__species">
                                 <a
                                     className="species__name-lat"
+                                    target={"_blank"}
                                     href="#"
                                 >О. macrobotrys</a>
                             </span>
@@ -456,7 +457,8 @@ function Key() {
                             <span className="key__species">
                                 <a
                                     className="species__name-lat"
-                                    href="#"
+                                    target={"_blank"}
+                                    href="https://commons.wikimedia.org/wiki/Category:Oxytropis_tenuis"
                                 >О. tenuis</a>
                             </span>
                         </span>

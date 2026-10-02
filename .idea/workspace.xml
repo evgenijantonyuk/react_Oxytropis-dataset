@@ -6,18 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="21b0877e-92e5-4bc8-9f77-a250eb008b0a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Afterword/Afterword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Afterword/Afterword.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Afterword/Aterword.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Afterword/Aterword.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Key/Key.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Key/Key.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LiteratureList/LiteratureList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LiteratureList/LiteratureList.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LiteratureList/LiteratureList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LiteratureList/LiteratureList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainText/MainText.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainText/MainText.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Morphology/Morphology.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Morphology/Morphology.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation-old/Navigation.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/styles/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/KeyPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/KeyPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SpeciesListPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SpeciesListPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LiteratureList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LiteratureList/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LiteratureList/references.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LiteratureList/references.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LiteraturePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LiteraturePage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +106,7 @@
       <workItem from="1790104701376" duration="126507000" />
       <workItem from="1790487823535" duration="619000" />
       <workItem from="1790786871595" duration="1143000" />
-      <workItem from="1790831524030" duration="28668000" />
+      <workItem from="1790831524030" duration="32370000" />
     </task>
     <servers />
   </component>

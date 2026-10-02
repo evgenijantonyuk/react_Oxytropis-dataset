@@ -108,3 +108,25 @@ export const DEFAULT_REFERENCES = [
     "Vaganov A, Shmakov A, Zaikov V, Zholnerova E, Shalimov A, Belkin D, Batkin A, Kasatkin D, Kosachev P, Antonyuk E, Medvedeva K, Usik N, Mitina V (2020). Virtual Herbarium ALTB (South-Siberian Botanical Garden). Version 1.2. Altai State University. Occurrence dataset https://doi.org accessed via GBIF.org on 2020-07-28.",
     "Wikipedia — Oxytropis. 2026."
 ];
+/**
+ * Определяет алфавит записи по первой букве (кириллица или латиница).
+ */
+function detectAlphabet(text) {
+    const firstChar = text.trim().charAt(0);
+    return /[А-Яа-яЁё]/.test(firstChar) ? 'cyrillic' : 'latin';
+}
+
+/**
+ * Преобразует массив строк в массив объектов { text, url, alphabet }.
+ */
+export const REFERENCES_WITH_LINKS = DEFAULT_REFERENCES.map((text) => {
+    const urlMatch = text.match(/https?:\/\/[^\s]+/);
+
+    return {
+        text,
+        url: urlMatch
+            ? urlMatch[0]
+            : `https://www.google.com/search?q=${encodeURIComponent(text)}`,
+        alphabet: detectAlphabet(text),
+    };
+});
