@@ -47,21 +47,21 @@ a {
     margin-bottom: 10px;
 }
 
-.footer__afterword {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    width: 100%;
-    min-height: 100px;
-    background-color: #cfdffc;
-}
+/*.footer__afterword {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    text-align: center;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*    min-height: 100px;*/
+/*    background-color: #cfdffc;*/
+/*}*/
 
-.footer__text {
-    max-width: 600px;
-    line-height: 2rem;
-}
+/*.footer__text {*/
+/*    max-width: 600px;*/
+/*    line-height: 2rem;*/
+/*}*/
 
 .contactsButton {
     border: 1px solid #845fef;

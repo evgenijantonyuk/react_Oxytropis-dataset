@@ -1,10 +1,10 @@
 import './Key.css'
 import ButtonUp from "../ButtonUp/ButtonUp.jsx";
-import styles from "../Afterword/Aterword.module.css";
 
 function Key() {
     return (
         <>
+            <ButtonUp />
             <section className="container main-content">
                 <h3 className="key__header">Ключ для определения видов рода Oxytropis DC. на
                     территории АГС.</h3>
@@ -20,7 +20,7 @@ function Key() {
                             <span className="key__number">6</span>
                         </p>
                     </div>
-                    <ButtonUp />
+
                     <div className="key__block">
                         <p className="key__string">
                         <span className="key__text">2. Листочки мутовчато-перистые, мутовки в
@@ -2183,7 +2183,6 @@ function Key() {
                     </div>
                 </div>
             </section>
-            <ButtonUp />
         </>
     );
 }
