@@ -1,62 +1,60 @@
-import { useMemo } from 'react';
-import { REFERENCES_WITH_LINKS } from './references';
+import { useMemo, useState } from 'react';
+import {
+    REFERENCES_WITH_LINKS,
+    searchReferences,
+    toCitation,
+} from './references.js';
 import './LiteratureList.css';
 
 export default function LiteratureList() {
-    const { cyrillic, latin } = useMemo(() => {
-        return {
-            cyrillic: REFERENCES_WITH_LINKS.filter((r) => r.alphabet === 'cyrillic'),
-            latin: REFERENCES_WITH_LINKS.filter((r) => r.alphabet === 'latin'),
-        };
-    }, []);
+    const [query, setQuery] = useState('');
+
+    const list = useMemo(
+        () => (query ? searchReferences(query) : REFERENCES_WITH_LINKS),
+        [query]
+    );
 
     return (
-        <section className="references">
-            <h1 className="references__title">Список литературы</h1>
+        <div className="container">
+            <div className="literature-list">
+                <h2 className="literature__title">Литература</h2>
 
-            <div className="references__block">
-                <h2 className="references__subtitle">
-                    Кириллический алфавит (русский)
-                </h2>
-                <ol className="references__list">
-                    {cyrillic.map((ref, i) => (
-                        <li key={`cyr-${i}`} className="references__item">
-                            <a
-                                href={ref.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="references__link"
-                            >
-                                {ref.text}
-                            </a>
-                        </li>
-                    ))}
-                </ol>
+                <div className="literature-list__search">
+                    <input
+                        type="search"
+                        className="search-input"
+                        placeholder="Поиск по авторам, названиям, источнику…"
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                        aria-label="Поиск по литературе"
+                    />
+                </div>
+
+                <p className="literature__count">
+                    Найдено записей: <b>{list.length}</b>
+                </p>
+
+                {list.length === 0 ? (
+                    <p className="literature__empty">Ничего не найдено</p>
+                ) : (
+                    <ul className="literature__items">
+                        {list.map((ref) => (
+                            <li key={ref.id} className="literature__block">
+                                <a
+                                    className="literature__link"
+                                    href={ref.url}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                  <span className="literature__citation">
+                    {toCitation(ref)}
+                  </span>
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                )}
             </div>
-
-            <div className="references__block">
-                <h2 className="references__subtitle">
-                    Латинский алфавит (English / Latin / и др.)
-                </h2>
-                <ol className="references__list">
-                    {latin.map((ref, i) => (
-                        <li key={`lat-${i}`} className="references__item">
-                            <a
-                                href={ref.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="references__link"
-                            >
-                                {ref.text}
-                            </a>
-                        </li>
-                    ))}
-                </ol>
-            </div>
-
-            <p className="references__count">
-                Всего источников: {REFERENCES_WITH_LINKS.length}
-            </p>
-        </section>
+        </div>
     );
 }

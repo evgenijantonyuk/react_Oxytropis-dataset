@@ -1,520 +1,192 @@
-/* ============================================================
-   Изолированные стили. Все классы и переменные с префиксом .lit-
-   ============================================================ */
+/* ==========================================================
+   Литература — оформление в стиле SpeciesList.css
+   ========================================================== */
 
-.lit-scope {
-    --lit-surface: rgba(255, 255, 255, 0.72);
-    --lit-surface-solid: #ffffff;
-    --lit-border: rgba(15, 23, 42, 0.08);
-    --lit-text: #0f172a;
-    --lit-muted: #64748b;
-    --lit-accent: #4f46e5;
-    --lit-accent-soft: rgba(79, 70, 229, 0.10);
-    --lit-link: #4338ca;
-    --lit-link-hover: #312e81;
-    --lit-mark-bg: #fde68a;
-    --lit-mark-text: #713f12;
-    --lit-shadow: 0 30px 60px -35px rgba(15, 23, 42, 0.45);
+/* -------- поиск (как .species-list__search / .search-input) -------- */
 
-    padding: clamp(16px, 4vw, 48px);
-    color: var(--lit-text);
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
+.literature-list__search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.lit-scope *,
-.lit-scope *::before,
-.lit-scope *::after {
-    box-sizing: border-box;
+.search-input {
+    width: 50%;
+    padding: 15px;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid #6b6375;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    outline: none;
+    font: inherit;
+    color: #1c2333;
+    transition: border-color .3s ease, box-shadow .3s ease;
 }
 
-/* ---------- Карточка ---------- */
-.lit-card {
-    max-width: 980px;
+.search-input::placeholder {
+    color: #6b6375;
+    opacity: .8;
+}
+
+.search-input:focus {
+    border-color: #4a6572;
+    box-shadow: 0 0 0 3px rgba(74, 101, 114, .12);
+}
+
+/* -------- контейнер и заголовок -------- */
+
+.container {
+    max-width: 1200px;
     margin: 0 auto;
-    background: var(--lit-surface);
-    border: 1px solid var(--lit-border);
-    border-radius: 26px;
-    box-shadow: var(--lit-shadow);
-    overflow: clip;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background-color: #fbf7f7;
 }
-/* ---------- Элемент списка литературы ---------- */
-.lit-item {
+
+.literature-list {
+    padding: 0 15px 30px;
+}
+
+.literature__title {
+    margin: 0;
+    padding-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.literature__count {
+    margin: 0 0 15px;
+    text-align: center;
+    color: #6b6375;
+    font-size: 14px;
+}
+
+.literature__count b {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.literature__empty {
+    padding: 32px 16px;
+    text-align: center;
+    color: #6b6375;
+    background: #ffffff;
+    border: 1px dashed #dcdfe3;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+/* -------- список -------- */
+
+.literature__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 16px;
-    align-items: start;
-    padding: 15px clamp(12px, 2vw, 20px) 15px 25px; /* Добавили отступ слева под полосу */
-    border-radius: 12px;                          /* Сделали радиус чуть аккуратнее */
-    background-color: #ffffff;                    /* Каждая запись становится отдельной карточкой */
-    border: 1px solid var(--lit-border);
-    margin-bottom: 12px;                          /* Отступ между записями */
+    gap: 10px;
+}
+
+.literature__block {
+    margin: 0;
+    padding: 1.25rem 1.5rem 1.25rem 30px;
+    background-color: #ffffff;
+    border: 1px solid #dcdfe3;
+    border-radius: 10px;
     position: relative;
     overflow: hidden;
-
-    /* Плавный переход Безье для эффекта приподнимания */
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 4px 14px rgba(44, 62, 80, 0.02);
+    transition: all .3s cubic-bezier(.25, .8, .25, 1);
+    box-shadow: 0 4px 20px rgba(44, 62, 80, .03);
 }
 
-/* Измененный интерактивный эффект при наведении */
-.lit-item:hover {
-    background: var(--lit-surface-solid);         /* Сохраняем белый фон для контраста тени */
-    transform: translateY(-2px);                  /* Вместо сдвига вправо — приподнимание вверх */
-    border-color: #4a6572;                        /* Сдержанный стальной акцент вместо фиолетового */
-    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.06); /* Плавная тень */
+.literature__block:hover {
+    transform: translateY(-2px);
+    border-color: #4a6572;
+    box-shadow: 0 10px 25px rgba(44, 62, 80, .06);
+    background-color: rgba(79, 70, 229, .10);
 }
 
-/* Строгая вертикальная декоративная полоса слева */
-.lit-item::before {
+.literature__block::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     width: 4px;
-    background-color: #4a6572;                    /* Цвет полосы, объединяющий дизайн */
-    opacity: 0.3;                                 /* Приглушена по умолчанию */
-    transition: opacity 0.3s ease;
+    background-color: #4a6572;
+    opacity: .4;
+    transition: opacity .3s ease;
 }
 
-/* Полоса становится ярче при наведении */
-.lit-item:hover::before {
-    opacity: 0.9;
+.literature__block:hover::before {
+    opacity: .9;
 }
 
-/* ---------- Шапка ---------- */
-.lit-header {
-    position: sticky;
-    top: 80px;               /* высота NavPanel, чтобы шапка не заезжала под неё */
-    z-index: 5;
-    padding: clamp(18px, 3vw, 28px) clamp(18px, 3.5vw, 36px) 20px;
-    background: var(--lit-surface);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--lit-border);
-}
+/* -------- ссылка и текст цитаты -------- */
 
-.lit-title-row {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-bottom: 18px;
-}
-
-.lit-eyebrow {
-    margin: 0 0 4px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--lit-accent);
-}
-
-.lit-title {
-    margin: 0;
-    font-size: clamp(24px, 4vw, 34px);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-}
-
-.lit-count {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 14px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 600;
-    font-variant-numeric: tabular-nums;
-    color: var(--lit-accent);
-    background: var(--lit-accent-soft);
-    border: 1px solid rgba(79, 70, 229, 0.18);
-    white-space: nowrap;
-}
-
-/* ---------- Панель инструментов ---------- */
-.lit-toolbar {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.lit-search {
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex: 1 1 260px;
-}
-
-.lit-search-icon {
-    position: absolute;
-    left: 15px;
-    color: var(--lit-muted);
-    pointer-events: none;
-    display: flex;
-}
-
-.lit-search input {
-    width: 100%;
-    padding: 13px 46px 13px 44px;
-    font: inherit;
-    font-size: 15px;
-    color: var(--lit-text);
-    background: var(--lit-surface-solid);
-    border: 1px solid var(--lit-border);
-    border-radius: 15px;
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.lit-search input::placeholder {
-    color: var(--lit-muted);
-}
-
-.lit-search input:focus {
-    border-color: var(--lit-accent);
-    box-shadow: 0 0 0 4px var(--lit-accent-soft);
-}
-
-.lit-clear {
-    position: absolute;
-    right: 10px;
-    width: 28px;
-    height: 28px;
-    display: grid;
-    place-items: center;
-    border: none;
-    border-radius: 50%;
-    background: transparent;
-    color: var(--lit-muted);
-    font-size: 18px;
-    line-height: 1;
-    cursor: pointer;
-    transition: background 0.15s ease, color 0.15s ease;
-}
-
-.lit-clear:hover {
-    background: var(--lit-accent-soft);
-    color: var(--lit-accent);
-}
-
-.lit-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 18px;
-    font: inherit;
-    font-size: 14px;
-    font-weight: 600;
-    color: #fff;
-    background: linear-gradient(135deg, #4f46e5, #6366f1);
-    border: none;
-    border-radius: 14px;
-    cursor: pointer;
-    white-space: nowrap;
-    box-shadow: 0 10px 20px -10px rgba(79, 70, 229, 0.7);
-    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
-}
-
-.lit-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 14px 24px -12px rgba(79, 70, 229, 0.8);
-}
-
-.lit-btn:active {
-    transform: translateY(0);
-}
-
-.lit-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
-}
-
-/* ---------- Список ---------- */
-.lit-list {
-    margin: 0;
-    padding: 12px clamp(8px, 1.8vw, 16px) 20px;
-    list-style: none;
-}
-
-.lit-item {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 16px;
-    align-items: start;
-    padding: 15px clamp(12px, 2vw, 20px);
-    border-radius: 16px;
-    transition: background 0.18s ease, transform 0.18s ease;
-}
-
-.lit-item:hover {
-    background: var(--lit-accent-soft);
-    transform: translateX(3px);
-}
-
-.lit-num {
-    min-width: 36px;
-    height: 36px;
-    padding: 0 8px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    font-weight: 700;
-    font-variant-numeric: tabular-nums;
-    color: var(--lit-muted);
-    background: var(--lit-surface-solid);
-    border: 1px solid var(--lit-border);
-    border-radius: 11px;
-    transition: color 0.18s ease, border-color 0.18s ease;
-}
-
-.lit-item:hover .lit-num {
-    color: var(--lit-accent);
-    border-color: rgba(79, 70, 229, 0.35);
-}
-
-.lit-text {
-    margin: 0;
-    padding-top: 6px;
-    font-size: 15px;
-    line-height: 1.65;
-    text-wrap: pretty;
-    color: var(--lit-text);
-}
-
-/* ---------- Ссылки ---------- */
-.lit-link {
-    display: inline;
-    color: var(--lit-link);
+.literature__link {
+    display: block;
+    color: inherit;
     text-decoration: none;
-    border-bottom: 1px dashed rgba(67, 56, 202, 0.35);
-    transition: color 0.15s ease, border-color 0.15s ease;
-    word-break: break-word;
-}
-
-.lit-link:hover,
-.lit-link:focus-visible {
-    color: var(--lit-link-hover);
-    border-bottom-color: var(--lit-link-hover);
-    border-bottom-style: solid;
     outline: none;
 }
 
-.lit-link:focus-visible {
-    box-shadow: 0 0 0 3px var(--lit-accent-soft);
+.literature__link:focus-visible {
+    outline: 2px solid #4a6572;
+    outline-offset: 4px;
     border-radius: 4px;
 }
 
-.lit-link-icon {
-    display: inline-flex;
-    vertical-align: -1px;
-    margin-left: 4px;
-    opacity: 0.55;
-    transition: opacity 0.15s ease, transform 0.15s ease;
-}
-
-.lit-link:hover .lit-link-icon {
-    opacity: 1;
-    transform: translate(1px, -1px);
-}
-
-/* ---------- Подсветка и пустое состояние ---------- */
-.lit-mark {
-    padding: 1px 4px;
-    border-radius: 5px;
-    background: var(--lit-mark-bg);
-    color: var(--lit-mark-text);
-    font-weight: 600;
-}
-
-.lit-empty {
-    margin: 0;
-    padding: 56px 24px 72px;
-    text-align: center;
-    color: var(--lit-muted);
+.literature__citation {
+    display: block;
     font-size: 15px;
-}
-
-/* ---------- Мобильная адаптация ---------- */
-@media (max-width: 560px) {
-    .lit-scope {
-        /* Уменьшаем внешние отступы страницы */
-        padding: 12px 10px 24px;
-    }
-
-    .lit-card {
-        border-radius: 18px;
-    }
-
-    /* Шапка больше не залипает — она скроллится вместе с содержимым */
-    .lit-header {
-        position: static;
-        padding: 16px 16px 14px;
-        border-radius: 18px 18px 0 0;
-    }
-
-    /* Компактный заголовок: скрываем надпись, чтобы не занимать строку */
-    .lit-eyebrow {
-        display: none;
-    }
-
-    .lit-title {
-        font-size: 22px;
-    }
-
-    /* Счётчик делаем маленьким и переносим рядом с заголовком */
-    .lit-title-row {
-        align-items: center;
-        margin-bottom: 12px;
-        gap: 10px;
-    }
-
-    .lit-count {
-        padding: 5px 10px;
-        font-size: 12px;
-    }
-
-    /* Тулбар: поиск и кнопка в одну строку */
-    .lit-toolbar {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: stretch;
-        gap: 8px;
-    }
-
-    .lit-search {
-        flex: 1 1 auto;
-        min-width: 0;
-    }
-
-    .lit-search input {
-        padding: 10px 38px 10px 38px;
-        font-size: 14px;
-        border-radius: 12px;
-    }
-
-    .lit-search-icon {
-        left: 12px;
-    }
-
-    .lit-clear {
-        right: 6px;
-        width: 24px;
-        height: 24px;
-        font-size: 16px;
-    }
-
-    /* Кнопка — только иконка, чтобы не растягивать строку */
-    .lit-btn {
-        flex: 0 0 auto;
-        padding: 10px;
-        border-radius: 12px;
-    }
-
-    .lit-btn-text {
-        display: none;
-    }
-
-    .lit-item {
-        gap: 12px;
-        padding: 12px 12px;
-    }
-
-    .lit-num {
-        min-width: 30px;
-        height: 30px;
-        font-size: 12px;
-        border-radius: 9px;
-    }
-
-    .lit-text {
-        font-size: 14.5px;
-        padding-top: 3px;
-    }
-}
-
-.references {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 24px 16px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    color: #1a1a1a;
-    line-height: 1.6;
-}
-
-.references__title {
-    font-size: 2rem;
-    margin-bottom: 24px;
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 12px;
-}
-
-.references__subtitle {
-    font-size: 1.25rem;
-    margin: 32px 0 16px;
-    color: #333;
-}
-
-.references__list {
-    padding-left: 24px;
-    margin: 0;
-}
-
-.references__item {
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-}
-
-.references__link {
-    color: #222;
-    text-decoration: none;
+    line-height: 1.5;
+    color: #2c3e50;
+    text-indent: 30px;
     word-break: break-word;
-    transition: color 0.3s ease;
+    overflow-wrap: anywhere;
+    transition: color .3s;
 }
 
-.references__link:hover {
-    color: #003d80;
-    text-decoration: underline;
+.literature__block:hover .literature__citation {
+    color: #113c8a;
 }
 
-.references__count {
-    margin-top: 32px;
-    font-size: 0.9rem;
-    color: #666;
-    text-align: right;
-}
+/* -------- адаптив -------- */
 
-@media (max-width: 560px) {
-    .lit-item {
-        gap: 12px;
-        padding: 12px 12px 12px 18px; /* Скорректированный отступ для маленьких экранов */
+@media screen and (max-width: 720px) {
+    .literature-list {
+        padding: 0 7px 20px;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .literature__title {
+        font-size: 20px;
+    }
+
+    .literature__block {
+        padding: 12px 14px 12px 20px;
+    }
+
+    .literature__citation {
+        font-size: 14px;
+        text-indent: 20px;
     }
 }
 
-
-@media (prefers-reduced-motion: reduce) {
-    .lit-item,
-    .lit-num,
-    .lit-search input,
-    .lit-clear,
-    .lit-btn,
-    .lit-link,
-    .lit-link-icon {
-        transition: none;
+@media screen and (max-width: 380px) {
+    .literature__count {
+        text-align: left;
+        padding-left: 4px;
     }
 
-    .lit-item:hover {
-        transform: none;
+    .literature__block {
+        padding: 10px 12px 10px 16px;
     }
 }
+
