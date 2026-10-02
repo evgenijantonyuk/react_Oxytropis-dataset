@@ -75,7 +75,7 @@ function Afterword() {
                     <div className={styles.person}>
                         <p>
                             <a className={styles.person__teacher} target="_blank"
-                               href="https://vuzopedia.ru/teacher/smirnov-sergey-vladimirovich">
+                               href="https://www.asu.ru/persons/369/">
                                 Смирнов Сергей Владимирович</a> – кандидат биологических наук. Доцент. Директор
                             института
                             биологии и биотехнологии.
