@@ -1,8 +1,34 @@
-
 import React, { useMemo, useState } from 'react';
-import taxonomy from '../../components/data/oxytropis.js';
+import taxonomy from '../data/oxytropis.js';
 import './SpeciesList.css'
 import ButtonUp from "../../components/ButtonUp/ButtonUp.jsx";
+
+
+function Description({ text, className }) {
+    if (!text) return null;
+
+    if (Array.isArray(text)) {
+        return (
+            <>
+                {text.map((paragraph, index) => (
+                    <p key={index} className={className}>
+                        {paragraph}
+                    </p>
+                ))}
+            </>
+        );
+    }
+
+    return <p className={className}>{text}</p>;
+}
+
+/**
+ * Приводит description к одной строке — для поиска.
+ */
+function descriptionToText(desc) {
+    if (!desc) return '';
+    return Array.isArray(desc) ? desc.join(' ') : desc;
+}
 
 function SpeciesListItem({ item }) {
 
@@ -18,31 +44,29 @@ function SpeciesListItem({ item }) {
                     {item.typeName && (
                         <p className="genus__type">
                             {item.typeLabel}&nbsp;
-                            <span className="genus__type_oxytropis">{item.typeName}</span>{' '}
+                            <span className="genus__type_oxytropis">{item.typeName}</span>{' '}&nbsp;
                             {item.typeAuthor}
                         </p>
                     )}
-                    {item.description && (
-                        <p className="genus__description">{item.description}</p>
-                    )}
+                    <Description text={item.description} className="genus__description" />
                 </div>
             );
         case 'subgenus':
             return (
                 <div className="subgenus search" id={item.id}>
-                    <h3 className="subgenus__title">
-                        {item.title}&nbsp;
-                        <span className="species__author">{item.author}</span>
-                    </h3>
+                    <p className="subgenus__section">
+                        Подрод&nbsp;
+                        <span className="subgenus__title">{item.title}</span>&nbsp;
+                        <span className="species__section-author">{item.author}</span>
+                    </p>
                     {item.history && <p className="section-history">{item.history}</p>}
                     {item.typeName && (
                         <p className="section__type">
-                            {item.typeLabel}&nbsp;<i>{item.typeName}</i>
+                            {item.typeLabel}&nbsp;<i>{item.typeName}</i>&nbsp;
+                            {item.typeAuthor ? ` ${item.typeAuthor}` : ''}
                         </p>
                     )}
-                    {item.description && (
-                        <p className="subgenus__description">{item.description}</p>
-                    )}
+                    <Description text={item.description} className="subgenus__description" />
                 </div>
             );
         case 'section':
@@ -57,13 +81,11 @@ function SpeciesListItem({ item }) {
                     {item.typeName && (
                         <p className="section__type">
                             {item.typeLabel}&nbsp;
-                            <span className="section__type-name"><i>{item.typeName}</i></span>
+                            <span className="section__type-name"><i>{item.typeName}</i></span>&nbsp;
                             {item.typeAuthor ? ` ${item.typeAuthor}` : ''}
                         </p>
                     )}
-                    {item.description && (
-                        <p className="section__description">{item.description}</p>
-                    )}
+                    <Description text={item.description} className="section__description" />
                 </div>
             );
         case 'species':
@@ -77,19 +99,19 @@ function SpeciesListItem({ item }) {
                     {item.number && <span className="species__number">{item.number}</span>}
 
                     <span className="species__name-lat" >
-            {item.nameLatLink ? (
-                <a href={item.nameLatLink} target="_blank" rel="noreferrer">
-                    {item.nameLat}&nbsp;
-                </a>
-            ) : (
-                item.nameLat
-            )}
-          </span>
-                    {item.author && <span className="species__author">{item.author}</span>}
+                        {item.nameLatLink ? (
+                            <a href={item.nameLatLink} target="_blank" rel="noreferrer">
+                                {item.nameLat}
+                            </a>
+                        ) : (
+                            item.nameLat
+                        )}
+                    </span>
+                    {item.author && <span className="species__author">&nbsp;{item.author}</span>}
 
                     {item.literature && (
                         <span className="species-literature">
-              {item.literature}{' '}
+                            {item.literature}{' '}
                             {item.synonyms?.map((s) => (
                                 <React.Fragment key={s.id}>
                                     <span className="species__synonym">{s.lat}</span>{' '}
@@ -97,7 +119,7 @@ function SpeciesListItem({ item }) {
                                     <span className="species-literature">{s.lit}</span>{' '}
                                 </React.Fragment>
                             ))}
-            </span>
+                        </span>
                     )}
 
                     {item.nameRu && (
@@ -134,6 +156,7 @@ function SpeciesListItem({ item }) {
  */
 export default function SpeciesList({ items = taxonomy }) {
     const [query, setQuery] = useState('');
+
     const filtered = useMemo(() => {
         const q = query.trim().toLowerCase();
         if (!q) return items;
@@ -144,7 +167,7 @@ export default function SpeciesList({ items = taxonomy }) {
                 item.nameLat,
                 item.nameRu,
                 item.author,
-                item.description,
+                descriptionToText(item.description),
                 item.eco,
                 item.spreadLocal,
                 item.spreadGeneral,
@@ -163,7 +186,7 @@ export default function SpeciesList({ items = taxonomy }) {
                 <div className="main-content">
                     <div className="species__list">
                         <h2 className="species__title">
-                            Конспект видов рода&nbsp;Oxytropis&nbsp;DC.<br />
+                            Конспект видов рода&nbsp;<i>Oxytropis</i>&nbsp;DC.<br />
                             Алтайской горной страны
                         </h2>
                     </div>
@@ -191,3 +214,4 @@ export default function SpeciesList({ items = taxonomy }) {
         </main>
     );
 }
+

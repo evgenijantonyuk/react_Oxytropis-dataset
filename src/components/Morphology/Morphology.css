@@ -14,7 +14,6 @@
     --morph-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Сетка для всего списка страниц */
 .morphology-list {
     display: grid;
     grid-template-columns: 1fr;
@@ -36,13 +35,11 @@
     transition: var(--morph-transition);
 }
 
-/* Минималистичный интерактивный эффект без агрессивного свечения */
 .morphology:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(44, 62, 80, 0.06);
     border-color: var(--morph-accent-main);
 }
-
 /* Строгая декоративная полоса слева, подчеркивающая структуру */
 .morphology::before {
     content: '';
@@ -52,7 +49,6 @@
     background-color: var(--morph-accent-main);
     opacity: 0.6;
 }
-
 /* Текстовые стили */
 .morphology-title {
     font-size: 1.45rem;
@@ -73,6 +69,7 @@
     line-height: 1.65;
     color: var(--morph-text-dark);
     margin: 0 0 2rem 0;
+    text-indent: 30px;
 }
 
 /* Блок подпунктов (Subsections) */
@@ -82,6 +79,7 @@
     gap: 1.25rem;
     border-top: 1px dashed var(--morph-border);
     padding-top: 1.5rem;
+    text-indent: 30px;
 }
 
 .morphology-sub {
@@ -103,6 +101,7 @@
     font-weight: 600;
     color: var(--morph-accent-dark);
     margin: 0 0 0.5rem 0;
+    text-align: center;
 }
 
 .morphology-subdescr {

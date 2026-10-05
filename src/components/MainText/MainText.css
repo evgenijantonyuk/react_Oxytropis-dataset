@@ -1,12 +1,11 @@
-/* Descriptions*/
-/* Базовое состояние блока региона */
+
 .ags__regions {
-    margin-bottom: 2rem;                 /* Увеличили отступ между блоками */
-    padding: 1.5rem 1.5rem 1.5rem 25px; /* Заменяем text-indent внутренними отступами */
+    margin-bottom: 2rem;
+    padding: 1.5rem 1.5rem 1.5rem 25px;
 
     background-color: #ffffff;          /* Чистый белый фон */
     border: 1px solid #dcdfe3;          /* Тонкая спокойная граница */
-    border-radius: 10px;                /* Закругление углов */
+    border-radius: 10px;
     position: relative;
     overflow: hidden;
 
@@ -15,14 +14,12 @@
     box-shadow: 0 4px 20px rgba(44, 62, 80, 0.03);
 }
 
-/* Интерактивный эффект при наведении */
 .ags__regions:hover {
     transform: translateY(-2px);        /* Легкое приподнимание */
     border-color: #4a6572;              /* Сдержанный стальной акцент */
     box-shadow: 0 10px 25px rgba(44, 62, 80, 0.06); /* Мягкая тень */
     background-color: rgba(79, 70, 229, 0.10);
 }
-
 /* Вертикальная декоративная полоса слева */
 .ags__regions::before {
     content: '';
@@ -35,13 +32,11 @@
     opacity: 0.4;                       /* Приглушена по умолчанию */
     transition: opacity 0.3s ease;
 }
-
 /* Полоса становится ярче при наведении */
 .ags__regions:hover::before {
     opacity: 0.9;
 }
 
-/**/
 .title {
     text-align: center;
     margin-bottom: 15px;
@@ -131,12 +126,4 @@
 .footer__text {
     max-width: 600px;
     line-height: 2rem;
-}
-/**/
-.ags__text {
-    text-align: justify;
-    margin: 0;
-    margin-bottom: 5px;
-    text-indent: 0;                     /* Сбрасываем, так как у карточки теперь есть padding */
-    padding: 0;                         /* Обнуляем старые внутренние отступы */
 }

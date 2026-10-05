@@ -2,18 +2,14 @@
 import './MainText.css'
 import MountCountryMap from "../MountCountryMap/MountCountryMap.jsx"
 import AltaiGallery from "../Slider/Slider.jsx"
-// import { useState } from "react";
-// import ContactForm from "../ContactForm/ContactForm.jsx"
-// import Footer from "../Footer/Footer.jsx";
 import ButtonUp from "../ButtonUp/ButtonUp.jsx";
 
 
 const MainText = () => {
-    // const [isFormOpen, setIsFormOpen] = useState(false);
     return (
        <>
            <div className="container">
-               <h1 className="title">Oxytropis DC. Алтайской горной страны</h1>
+               <h1 className="title">Остролодочники (род <i>Oxytropis</i> DC.) Алтайской <br />горной страны</h1>
                <h2 className="subtitle">Алтайская горная страна</h2>
                <MountCountryMap />
 
@@ -102,15 +98,7 @@ const MainText = () => {
                        (Убсу&ndash;нур).
                    </p>
                </div>
-
            </div>
-           {/*<div>*/}
-           {/*    /!* Компонент формы (передаем состояние и функцию закрытия) *!/*/}
-           {/*    <ContactForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />*/}
-
-           {/*    /!* Компонент футера (передаем функцию открытия) *!/*/}
-           {/*    <Footer onOpenForm={() => setIsFormOpen(true)} />*/}
-           {/*</div>*/}
        </>
     );
 };

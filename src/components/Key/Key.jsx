@@ -6,7 +6,7 @@ function Key() {
         <>
             <ButtonUp />
             <section className="container main-content">
-                <h3 className="key__header">Ключ для определения видов рода Oxytropis DC. на
+                <h3 className="key__header">Ключ для определения видов рода <i>Oxytropis</i> DC. на
                     территории АГС.</h3>
                 <div className="species-key">
                     <div className="key__block">
