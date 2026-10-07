@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import './NavPanel.css';
 import { Link } from "react-router-dom";
@@ -20,23 +19,24 @@ const Navbar = () => {
                     </div>
 
                     <ul className={`navbar-links ${isOpen ? 'active' : ''}`}>
-                        <li>
-                            <Link to="/" onClick={closeMenu}>Главная</Link>
+                        {/* ФИКС: onClick перенесен на li, чтобы закрывать меню при клике в любую точку области */}
+                        <li onClick={closeMenu}>
+                            <Link to="/">Главная</Link>
                         </li>
-                        <li>
-                            <Link to="/morphology" onClick={closeMenu}>Морфология растений</Link>
+                        <li onClick={closeMenu}>
+                            <Link to="/morphology">Морфология растений</Link>
                         </li>
-                        <li>
-                            <Link to="/key" onClick={closeMenu}>Ключ для определения видов</Link>
+                        <li onClick={closeMenu}>
+                            <Link to="/key">Ключ для определения видов</Link>
                         </li>
-                        <li>
-                            <Link to="/species-list" onClick={closeMenu}>Конспект видов</Link>
+                        <li onClick={closeMenu}>
+                            <Link to="/species-list">Конспект видов</Link>
                         </li>
-                        <li>
-                            <Link to="/afterword" onClick={closeMenu}>Послесловие</Link>
+                        <li onClick={closeMenu}>
+                            <Link to="/afterword">Послесловие</Link>
                         </li>
-                        <li>
-                            <Link to="/literature" onClick={closeMenu}>Литература</Link>
+                        <li onClick={closeMenu}>
+                            <Link to="/literature">Литература</Link>
                         </li>
                     </ul>
                 </div>

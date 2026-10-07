@@ -91,18 +91,18 @@ function SpeciesListItem({ item, search }) {
                 <div className={style.genus} id={item.id}>
                     <p className={style['genus-title']}>
                         <HighlightedText text={item.title} search={search} />&nbsp;
-                        <HighlightedText text={item.author} search={search} className={style.species__author} />
+                        <HighlightedText text={item.author} search={search} className={style.species__author} />&nbsp;
                     </p>
                     {item.history && (
                         <p className={style.species__history}>
-                            <HighlightedText text={item.history} search={search} />
+                            <HighlightedText text={item.history} search={search} />&nbsp;
                         </p>
                     )}
                     {item.typeName && (
                         <p className={style.genus__type}>
                             <HighlightedText text={item.typeLabel} search={search} />&nbsp;
                             <span className={style.genus__type_oxytropis}>
-                                <Parts parts={item.typeName} search={search} />
+                                <Parts parts={item.typeName} search={search} />&nbsp;
                             </span>{' '}&nbsp;
                             <HighlightedText text={item.typeAuthor} search={search} />
                         </p>

@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
+    height: 100%; /* Растягиваем контейнер на всю высоту */
     max-width: 1200px;
     width: 100%;
     padding: 0 24px;
@@ -34,20 +34,36 @@
     display: flex;
     list-style: none;
     align-items: center;
+    height: 100%; /* ФИКС: задаем высоту для ul, чтобы li понимал, от чего брать 100% */
+    margin: 0;
+    padding: 0;
 }
 
 .navbar-links li {
-    padding: 0 16px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    height: 100%; /* Пункт занимает 80px высоты */
 }
 
-.navbar-links a {
+/* ФИКС: Стилизуем ссылки напрямую и через селектор для React-компонента */
+.navbar-links a,
+.navbar-links > li > a {
+    display: flex !important; /* Гарантируем флекс-контейнер для ссылки */
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    height: 100% !important; /* Принудительно растягиваем на всю высоту li */
+    width: 100%;
     color: #000;
     text-decoration: none;
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 .navbar-links a:hover {
     color: #808080;
+    background-color: rgba(0, 0, 0, 0.03); /* Подсветка зоны при наведении */
 }
 
 /* Стили для кнопки бургера */
@@ -65,18 +81,18 @@
     transition: all 0.3s ease;
 }
 
-/* Адаптивность (Медиа-запрос для экранов меньше 768px) */
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 950px) {
     .navbar-container {
         justify-content: end;
     }
+
     .navbar-links {
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 90vh;
+        height: calc(100vh - 80px); /* Высота выпадающего меню под размер экрана */
         position: absolute;
-        top: 60px;
+        top: 80px; /* Привязка строго под навбаром */
         left: -100%;
         opacity: 1;
         transition: all 0.5s ease;
@@ -91,9 +107,18 @@
     }
 
     .navbar-links li {
-        padding: 24px 0;
+        padding: 0;
         width: 100%;
+        height: auto; /* На мобилках li подстраивается под размер ссылки */
         text-align: center;
+    }
+
+    .navbar-links a,
+    .navbar-links > li > a {
+        display: block !important; /* На мобильных превращаем в блок */
+        padding: 20px 0;
+        width: 100%;
+        height: auto !important;
     }
 
     .navbar-toggle {
