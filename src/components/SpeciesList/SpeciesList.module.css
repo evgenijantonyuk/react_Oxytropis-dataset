@@ -423,7 +423,7 @@
     .subgenus__section,
     .species__section {
         display: block;
-        text-align: center;
+        text-align: center !important;
     }
 
     .species__block {
