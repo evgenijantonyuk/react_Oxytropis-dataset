@@ -7,7 +7,7 @@ import { BarChart2, BookOpen } from 'lucide-react';
 
 // Функция для безопасного экранирования спецсимволов поисковой строки
 function escapeRegExp(string) {
-    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return string.replace(/[.*+?^${}()|[\\]\\]/g, '\\$&');
 }
 
 // Вспомогательный компонент для динамического наложения тегов <mark>
@@ -124,7 +124,7 @@ function SpeciesListItem({ item, search }) {
                         </p>
                     )}
                     {item.typeName && (
-                        <p className={style.section__type}>
+                        <p className={style.sidebar__type}>
                             <HighlightedText text={item.typeLabel} search={search} />&nbsp;
                             <Parts parts={item.typeName} search={search} />&nbsp;
                             {item.typeAuthor ? <HighlightedText text={` ${item.typeAuthor}`} search={search} /> : ''}
@@ -158,14 +158,18 @@ function SpeciesListItem({ item, search }) {
                     <Description text={item.description} className={style.section__description} search={search} />
                 </div>
             );
-        case 'species':
+        case 'species': {
+            // Безопасное определение o. caerulea (учитываем любые варианты написания: coerulea, caerulea, cearulea)
+            const nameLower = item.nameLat ? String(item.nameLat).toLowerCase() : '';
+            const isCaerulea = nameLower.includes('caerulea') || nameLower.includes('coerulea') || nameLower.includes('cearulea');
+
             return (
                 <div
-                    className={`${style.species__block} search ${item.mistake ? style.species__block_mistake : ''}`}
+                    className={`${style.species__block} search ${item.mistake ? style.species__block_mistake : ''} ${isCaerulea ? style.species__block_skipNumber : ''}`}
                     id={item.id}
                 >
-                    {item.number && <span className={style.species__number}>{item.number}</span>}
-
+                    {/* Жесткая нумерация удалена. Все выводится автоматически через CSS-счетчики */}
+                    
                     <span className={style['species__name-lat']} >
                         {item.nameLatLink ? (
                             <a href={item.nameLatLink} target="_blank" rel="noreferrer">
@@ -240,6 +244,7 @@ function SpeciesListItem({ item, search }) {
                     )}
                 </div>
             );
+        }
         default:
             return null;
     }
@@ -301,7 +306,7 @@ export default function SpeciesList({ items = taxonomy }) {
                         </div>
                     </div>
 
-                    {/* Панель управления: инпут поиска отображается ТОЛЬКО когда конспект видов активен */}
+                    {/* Панель управления: переключатель конспекта/анализа и инпут поиска */}
                     <div className={style['species-list__controls']}>
                         <button
                             className={`${style['analysis-toggle-btn']} ${showAnalysis ? style['analysis-toggle-btn_active'] : ''}`}
@@ -328,7 +333,6 @@ export default function SpeciesList({ items = taxonomy }) {
                     <div className={style.tab__transition_container}>
                         {showAnalysis ? (
                             <div className={`${style['species-analysis-container']} ${style.fade_in}`}>
-                                {/* В аналитику передаются исходные элементы без фильтрации по поиску */}
                                 <OxytropisAnalysis />
                             </div>
                         ) : (

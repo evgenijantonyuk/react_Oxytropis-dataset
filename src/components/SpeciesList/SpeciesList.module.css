@@ -40,6 +40,7 @@
     padding-top: 15px;
     font-weight: 700;
     font-size: 24px;
+    text-indent: 0 !important;
 }
 
 .header__subtitle {
@@ -47,6 +48,13 @@
     color: #666;
     font-size: 14px;
     margin: 0;
+    text-indent: 0 !important;
+}
+
+/* Правило для всех абзацев: красная строка 30px */
+.container p {
+    text-indent: 30px; 
+    text-align: justify;
 }
 
 /* Стилизация автоматического маркера подсветки поисковой строки */
@@ -58,7 +66,7 @@
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 
-/* ================= Панель управления (Навигационные Кнопки) ================= */
+/* ================= Панель управления ================= */
 
 .species-list__controls {
     display: flex;
@@ -95,8 +103,8 @@
     color: #fff;
 }
 
-/* Кнопка переключения аналитики */
 .analysis-toggle-btn {
+    flex: 1;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -127,7 +135,8 @@
 
 .species-list__search {
     width: 100%;
-    display: flex; box-sizing: border-box;
+    display: flex; 
+    box-sizing: border-box;
 }
 
 .search-input {
@@ -141,44 +150,8 @@
     font-family: inherit;
     font-size: 16px;
 }
-/* Контейнер панели управления */
-.species-list__controls {
-    display: flex;
-    margin-bottom: 20px;
-    width: 100%;
-    box-sizing: border-box;
-}
 
-/* Кнопка переключения (теперь занимает всю ширину) */
-.analysis-toggle-btn {
-    flex: 1; /* Растягивает кнопку на всю ширину строки */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 12px 24px;
-    background-color: transparent;
-    color: #000;
-    border: 1px solid #6b6375;
-    border-radius: 4px;
-    outline: none;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 15px;
-    font-weight: bold;
-    white-space: nowrap;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.analysis-toggle-btn:hover {
-    background-color: rgba(107, 99, 117, 0.08);
-}
-
-.analysis-toggle-btn_active {
-    background-color: rgba(107, 99, 117, 0.15);
-}
-
-/* ================= Плавная анимация переключения (Transition) ================= */
+/* ================= Анимация ================= */
 
 .tab__transition_container {
     position: relative;
@@ -205,10 +178,12 @@
     width: 100%;
 }
 
+/* Инициализация автоматического счетчика */
 .species-list__body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    counter-reset: species-counter;
 }
 
 .species-list__empty {
@@ -216,9 +191,10 @@
     color: #666;
     font-size: 16px;
     padding: 30px 0;
+    text-indent: 0 !important;
 }
 
-/* ============== Таксономические заголовки и Тексты ================== */
+/* ============== Таксономические заголовки ================== */
 
 .genus {
     margin: 0 0 25px 0;
@@ -237,9 +213,9 @@
     font-weight: 700;
     text-transform: uppercase;
     font-style: italic;
+    text-indent: 0 !important;
 }
 
-/* Красная строка для описания Рода, Подрода и Секции (книжный стандарт 30px) */
 .genus__description,
 .subgenus__description,
 .section__description {
@@ -249,19 +225,18 @@
     text-align: justify;
 }
 
-/* Строки номенклатурной истории и типов (Строго по центру) */
 .species__history,
 .genus__type,
 .section-history,
 .section__type {
-    text-align: center;
+    text-align: center !important;
     font-size: 14px;
     color: #555;
     margin: 4px 0 12px 0;
     line-height: 1.4;
+    text-indent: 0 !important;
 }
 
-/* Подрод */
 .subgenus {
     margin: 0 0 20px 0;
     padding: 15px;
@@ -277,6 +252,7 @@
     justify-content: center;
     text-align: center;
     font-weight: 500;
+    text-indent: 0 !important;
 }
 
 .subgenus__title {
@@ -286,7 +262,6 @@
     font-style: italic;
 }
 
-/* Секция */
 .section {
     margin: 0 0 20px 0;
     padding: 15px;
@@ -302,6 +277,7 @@
     justify-content: center;
     text-align: center;
     font-weight: 500;
+    text-indent: 0 !important;
 }
 
 .species__section-name {
@@ -316,23 +292,11 @@
     font-weight: normal;
 }
 
-/* Автоматическое ботаническое выделение латыни курсивом внутри Parts */
-.genus__type i,
-.section__type i,
-.species__history i,
-.section-history i,
-.genus__type_oxytropis i,
-.section__type-name i {
-    font-style: italic;
-    font-weight: 500;
-}
-
-/* ================= Карточки видов & Мобильная адаптивность ================== */
+/* ================= Карточки видов & Автонумерация ================== */
 
 .species__block {
     margin: 0 0 15px 0;
     padding: 1.5rem 1.5rem 1.5rem 45px;
-    text-indent: 0;
     background-color: #ffffff;
     border: 1px solid #dcdfe3;
     border-radius: 10px;
@@ -342,6 +306,11 @@
     overflow-wrap: break-word;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     box-shadow: 0 4px 20px rgba(44, 62, 80, 0.03);
+}
+
+/* Отключаем абзацные отступы внутри информационных блоков видов */
+.species__block p {
+    /*text-indent: 0 !important; */
 }
 
 .species__block:hover {
@@ -361,12 +330,24 @@
     opacity: 0.4;
 }
 
-.species__number {
+/* Наращиваем счетчик только если у элемента НЕТ класса пропуска */
+.species__block:not(.species__block_skipNumber) {
+    counter-increment: species-counter;
+}
+
+/* Выводим номер */
+.species__block:not(.species__block_skipNumber)::after {
+    content: counter(species-counter);
     position: absolute;
     left: 15px;
     top: 1.5rem;
     font-weight: bold;
     color: #4a6572;
+}
+
+/* o. coerulea — убираем лишний отступ слева, так как номера нет */
+.species__block_skipNumber {
+    padding-left: 1.5rem !important;
 }
 
 .species__name-lat {
@@ -402,8 +383,6 @@
 }
 
 .species__place,
-.species__type,
-.species__protolog,
 .species__eco,
 .species__spread,
 .species__note {
@@ -412,7 +391,17 @@
     line-height: 1.4;
 }
 
-/* ================== Media Queries (Адаптив и Мобильные) =================================== */
+.species__type,
+.species__protolog {
+    margin: 6px 0 0 0;
+    font-size: 14px;
+    line-height: 1.4;
+    font-style: italic;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* ================== Media Queries (Адаптив) ================== */
 
 @media screen and (max-width: 720px) {
     .species-list__controls {
@@ -438,18 +427,18 @@
     }
 
     .species__block {
-        padding: 15px;
-        position: relative;
+        padding: 15px 15px 15px 20px !important;
     }
 
-    .species__block::before {
-        width: 3px;
-    }
-
-    .species__number {
+    .species__block:not(.species__block_skipNumber)::after {
         position: static;
         display: inline-block;
         margin-right: 6px;
+        content: counter(species-counter) ".";
+    }
+
+    .species__block_skipNumber {
+        padding: 15px !important;
     }
 
     .species__name-lat {
