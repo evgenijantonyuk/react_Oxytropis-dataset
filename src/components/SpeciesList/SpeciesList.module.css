@@ -427,13 +427,15 @@
     }
 
     .species__block {
-        padding: 15px 15px 15px 20px !important;
+        padding: 15px 15px 15px 40px !important;
     }
 
     .species__block:not(.species__block_skipNumber)::after {
-        position: static;
-        display: inline-block;
-        margin-right: 6px;
+        position: absolute;
+        display: block;
+        left: 15px;
+        top: 15px;
+        margin-right: 0;
         content: counter(species-counter) ".";
     }
 
