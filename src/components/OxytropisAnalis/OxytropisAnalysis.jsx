@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { table1Data, table2Data, table3Data } from '../oxytropisData/oxytropisData.js';
+import { table1Data, table2Data, table3Data } from '../data/oxytropisData.js';
 import style from './OxytropisAnalysis.module.css';
 
 export default function OxytropisAnalysis() {
