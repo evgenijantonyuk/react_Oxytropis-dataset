@@ -26,6 +26,10 @@
     border-radius: 8px;
     border: 1px solid #e3ecef;
     margin-bottom: 25px;
+    transition: all 0.25s ease;
+}
+.conclusion__block:hover {
+    background-color: rgba(79, 70, 229, 0.10);
 }
 
 .conclusion__end h3 {
