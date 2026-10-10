@@ -61,6 +61,7 @@
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(44, 62, 80, 0.06);
     background-color: rgba(79, 70, 229, 0.10);
+    transition: all 0.25s ease;
 }
 
 .section__name {
