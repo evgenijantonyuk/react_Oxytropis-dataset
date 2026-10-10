@@ -76,7 +76,7 @@
 /* Рамка для ушедших из жизни преподавателей */
 .person__teacher_frame {
     border: 1px solid #000000;
-    padding: 1px 6px;
+    padding: 5px 5px;
     border-radius: 2px;
     font-weight: 700;
     background-color: #fafafa;
@@ -110,9 +110,8 @@
 
     .person__teacher_frame {
         display: inline;
-        padding: 0;
-        border: none;
+        border: 1px solid #000000;
+        padding: 2px;
         background: none;
-        text-decoration: underline;
     }
 }

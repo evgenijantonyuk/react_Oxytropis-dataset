@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21b0877e-92e5-4bc8-9f77-a250eb008b0a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/data/afterwordData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Afterword/Afterword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Afterword/Afterword.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Afterword/Aterword.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Afterword/Aterword.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Afterword/Conclusion.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Afterword/Conclusion.module.css" afterDir="false" />
-    </list>
+    <list default="true" id="21b0877e-92e5-4bc8-9f77-a250eb008b0a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,7 +98,7 @@
       <workItem from="1790104701376" duration="126507000" />
       <workItem from="1790487823535" duration="619000" />
       <workItem from="1790786871595" duration="1143000" />
-      <workItem from="1790831524030" duration="188289000" />
+      <workItem from="1790831524030" duration="188767000" />
     </task>
     <servers />
   </component>
