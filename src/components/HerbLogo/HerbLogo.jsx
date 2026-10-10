@@ -1,4 +1,5 @@
 import herbLogo from '../../assets/herb-logo/logoHerb.png'
+import './HerbLogo.css'
 
 
 const HerbLogo = () => {
@@ -6,7 +7,7 @@ const HerbLogo = () => {
     return (
         <div>
             <a href="#">
-                <img className="logo__asu" src={herbLogo} alt="Лого АлтГУ"/>
+                <img className="herb__logo" src={herbLogo} alt="Лого АлтГУ"/>
             </a>
         </div>
     );

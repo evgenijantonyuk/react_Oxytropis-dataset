@@ -1,0 +1,11 @@
+.herb__logo {
+    width: 75px;
+    height: 70px;
+}
+
+@media screen and (max-width: 720px) {
+    .herb__logo {
+        width: 45px;
+        height: 45px;
+    }
+}

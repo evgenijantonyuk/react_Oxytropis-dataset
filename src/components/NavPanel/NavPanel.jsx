@@ -33,7 +33,7 @@ const Navbar = () => {
                             <Link to="/species-list">Конспект видов</Link>
                         </li>
                         <li onClick={closeMenu}>
-                            <Link to="/afterword">Послесловие</Link>
+                            <Link to="/afterword">Заключение</Link>
                         </li>
                         <li onClick={closeMenu}>
                             <Link to="/literature">Литература</Link>

@@ -1,11 +1,14 @@
 import styles from "./Aterword.module.css"
+import Conclusion from "./Conclusion.jsx";
 
 function Afterword() {
     return (
         <>
+            <Conclusion />
             <div className={styles.container}>
                 <div className={styles.persons}>
-                    <p className={styles.person__thanks}>Хочу выразить слова благодарности моим учителям - Вы не только
+                    <h3>Автор выражает глубокую и искреннюю признательность:</h3>
+                    <p className={styles.person__thanks}>Моим учителям - Вы не только
                         научили теории,
                         методике и практике, но и делились своими знаниями и опытом в научной деятельности. Спасибо за
                         мудрые
