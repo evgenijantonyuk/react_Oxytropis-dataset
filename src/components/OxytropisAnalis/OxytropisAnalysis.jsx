@@ -1,11 +1,40 @@
+
 import { useState } from 'react';
 import { table1Data, table2Data, table3Data } from '../data/oxytropisData.js';
 import style from './OxytropisAnalysis.module.css';
+
+// Универсальная функция вычисляет rowSpan для одинаковых смежных ячеек по указанному ключу (prop)
+const computeRowSpans = (data, prop) => {
+  const rowSpans = [];
+  let i = 0;
+
+  while (i < data.length) {
+    let span = 1;
+    while (i + span < data.length && data[i + span][prop] === data[i][prop]) {
+      span++;
+    }
+
+    // Первая ячейка группы получает размер span
+    rowSpans.push(span);
+
+    // Остальные ячейки в этой группе скрываются (span = 0)
+    for (let j = 1; j < span; j++) {
+      rowSpans.push(0);
+    }
+
+    i += span;
+  }
+  return rowSpans;
+};
 
 export default function OxytropisAnalysis() {
   const [activeTab, setActiveTab] = useState('text');
   const [activeTable, setActiveTable] = useState('table1');
   const [selectedSystem, setSelectedSystem] = useState('bunge');
+
+  // Расчет вертикального объединения ячеек для Таблицы 2 и Таблицы 3
+  const table2RowSpans = computeRowSpans(table2Data, 'subgenus');
+  const table3RowSpans = computeRowSpans(table3Data, 'clade');
 
   return (
       <>
@@ -127,7 +156,7 @@ export default function OxytropisAnalysis() {
                         <p className={style['viz-scale-text']}>
                           {selectedSystem === 'bunge'
                               ? 'Включал absolute разнообразие видов (75%). Согласно Бунге, наличие перегородок определяло монофилию группы.'
-                              : 'Глубокое сужение объема подрода. Генетически истинный подрод ограничен лишь ядром секции Janthina. Остальные секции оказались конвергентными.'
+                                  : 'Глубокое сужение объема подрода. Генетически истинный подрод ограничен лишь ядром секции Janthina. Остальные секции оказались конвергентными.'
                           }
                         </p>
                       </div>
@@ -202,14 +231,21 @@ export default function OxytropisAnalysis() {
                           </tr>
                           </thead>
                           <tbody>
-                          {table2Data.map((row, idx) => (
-                              <tr key={idx}>
-                                <td className={style['td__bold']}>{row.subgenus}</td>
-                                <td className={style['td__italic-blue']}>{row.section}</td>
-                                <td className={`${style['td__center']} ${style['td__bold']}`}>{row.count}</td>
-                                <td className={style['td__light-muted']}>{row.species}</td>
-                              </tr>
-                          ))}
+                          {table2Data.map((row, idx) => {
+                            const span = table2RowSpans[idx];
+                            return (
+                                <tr key={idx}>
+                                  {span > 0 && (
+                                      <td rowSpan={span} className={style['td__bold']}>
+                                        {row.subgenus}
+                                      </td>
+                                  )}
+                                  <td className={style['td__italic-blue']}>{row.section}</td>
+                                  <td className={`${style['td__center']} ${style['td__bold']}`}>{row.count}</td>
+                                  <td className={style['td__light-muted']}>{row.species}</td>
+                                </tr>
+                            );
+                          })}
                           </tbody>
                         </table>
                       </div>
@@ -228,15 +264,22 @@ export default function OxytropisAnalysis() {
                           </tr>
                           </thead>
                           <tbody>
-                          {table3Data.map((row, idx) => (
-                              <tr key={idx}>
-                                <td className={style['td__bold']}>{row.clade}</td>
-                                <td className={style['td__italic-green']}>{row.line}</td>
-                                <td className={`${style['td__center']} ${style['td__bold']}`}>{row.count}</td>
-                                <td><span className={style['status-badge']}>{row.status}</span></td>
-                                <td className={style['td__light-muted']}>{row.species}</td>
-                              </tr>
-                          ))}
+                          {table3Data.map((row, idx) => {
+                            const span = table3RowSpans[idx];
+                            return (
+                                <tr key={idx}>
+                                  {span > 0 && (
+                                      <td rowSpan={span} className={style['td__bold']}>
+                                        {row.clade}
+                                      </td>
+                                  )}
+                                  <td className={style['td__italic-green']}>{row.line}</td>
+                                  <td className={`${style['td__center']} ${style['td__bold']}`}>{row.count}</td>
+                                  <td><span className={style['status-badge']}>{row.status}</span></td>
+                                  <td className={style['td__light-muted']}>{row.species}</td>
+                                </tr>
+                            );
+                          })}
                           </tbody>
                         </table>
                       </div>

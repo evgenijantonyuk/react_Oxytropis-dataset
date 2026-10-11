@@ -423,6 +423,21 @@
     text-align: left;
 }
 
+/* ================== Интеграция группировки таблиц =================== */
+
+.data-table__t3 td {
+    vertical-align: top; /* Базовое выравнивание всех ячеек верхнее */
+}
+
+/* Специфический стиль для первой объединенной ячейки подрода */
+.data-table__t3 td[rowspan] {
+    vertical-align: middle; /* Текст клады встает ровно по центру объединенной области */
+    text-align: center;
+    background-color: #fcfcfc;
+    border-right: 1px solid #dcdfe3;
+}
+
+
 .data-table th, 
 .data-table td {
     padding: 10px;
