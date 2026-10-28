@@ -1,5 +1,7 @@
 // taxonomy.js
 import oGrumGrshimailoi from "../../assets/plantImages/Оxytropis-grum-grshimailoi.jpg";
+import oKusnetzovii from '../../assets/plantImages/O.kusnetzovii.webp'
+import oLongibracteata from "../../assets/plantImages/О.longibracteata.png"
 
 
 const taxonomy = [
@@ -679,7 +681,7 @@ const taxonomy = [
         type: 'species',
         number: '28. ',
         nameLat: 'О. kusnetzovii',
-        nameLatLink: 'https://inaturalist.lu/taxa/857244-Oxytropis-kusnetzovii/browse_photos',
+        nameLatLink: oKusnetzovii,
         author: ' Kryl. et Steinb. ',
         literature: '1918, Тр. Бот. Муз. Ак. Наук, XVII : 89; В асильченко, Федченко, 1948, Фл. СССР, 13 : 86; Положий, 1960, Фл. Красноярск. края, 6 : 50; Улзийхутаг, 1982, в Грубов Опр. сосуд. раст. Монголии : 169; Положий, 1984, Опр. растя Тув. АССР : 152; Положий, 1994, Фл. Сиб. 9 :101; Губанов, 1996, Консп. фл. Внеш. Монголии : 70; Шауло, 2001, Опр. раст. Кемеровск. области   202.',
         synonyms: [],
@@ -696,7 +698,7 @@ const taxonomy = [
         type: 'species',
         number: '29. ',
         nameLat: 'О. longibracteata',
-        nameLatLink: 'images/herbSpecies/O.%20longibracteata/O.longibracteata.png',
+        nameLatLink: oLongibracteata,
         author: ' Каr. et Kir. ',
         literature: '1841, Bull. Soc. natur. Moscou, 14 : 403; Крылов, 1933, Фл. Зап. Сиб. 7 : 1739; Васильченко, Федченко, 1948, Фл. СССР, 13 : 76; Байтенов, 1961, Фл. Казах. 5 : 360; Филимонова, 1983, Опр. раст. Ср. Азии, 7 : 347; Грубов, 1998, Раст. Центр. Азии, 8б : 45.',
         synonyms: [],

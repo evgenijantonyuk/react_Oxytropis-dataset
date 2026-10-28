@@ -28,6 +28,12 @@
     margin-bottom: 25px;
     transition: all 0.25s ease;
 }
+
+.conclusion__block h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
 .conclusion__block:hover {
     background-color: rgba(79, 70, 229, 0.10);
 }
