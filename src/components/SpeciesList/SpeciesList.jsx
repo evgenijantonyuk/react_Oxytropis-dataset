@@ -1,16 +1,41 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import taxonomy from '../data/oxytropis.js';
+import { speciesDescriptionsData } from '../data/speciesDescriptionsData.js';
 import ButtonUp from '../ButtonUp/ButtonUp.jsx';
 import style from './SpeciesList.module.css';
 import OxytropisAnalysis from '../../components/OxytropisAnalis/OxytropisAnalysis.jsx';
-import { BarChart2, BookOpen } from 'lucide-react';
 
-// Функция для безопасного экранирования спецсимволов поисковой строки
+// Безопасное экранирование спецсимволов поисковой строки
 function escapeRegExp(string) {
-    return string.replace(/[.*+?^${}()|[\\]\\]/g, '\\$&');
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-// Вспомогательный компонент для динамического наложения тегов <mark>
+/**
+ * Максимально устойчивая нормализация латинского названия.
+ * Приводит к виду "o. coerulea" без точек/пробелов/регистра,
+ * унифицирует варианты caerulea/coerulea/cearulea.
+ */
+function normalizeLat(name) {
+    if (!name) return '';
+    return String(name)
+        .toLowerCase()
+        .replace(/[.,;:]/g, '')      // убираем точки и знаки
+        .replace(/\s+/g, ' ')        // схлопываем пробелы
+        .replace('caerulea', 'coerulea')
+        .replace('cearulea', 'coerulea')
+        .trim();
+}
+
+// Предварительно строим карту описаний по нормализованному названию
+const descriptionsByLat = (() => {
+    const map = new Map();
+    for (const d of speciesDescriptionsData) {
+        map.set(normalizeLat(d.nameLat), d);
+    }
+    return map;
+})();
+
+// Вспомогательный компонент для подсветки <mark>
 function HighlightedText({ text, search, className }) {
     if (!text) return null;
     if (!search || !search.trim()) return <span className={className}>{text}</span>;
@@ -84,7 +109,59 @@ function descriptionToText(desc) {
     return Array.isArray(desc) ? desc.join(' ') : desc;
 }
 
-function SpeciesListItem({ item, search }) {
+// Модальное окно с описанием вида
+function DescriptionModal({ description, onClose }) {
+    useEffect(() => {
+        const handleEsc = (e) => {
+            if (e.key === 'Escape') onClose();
+        };
+        document.addEventListener('keydown', handleEsc);
+        const prevOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        return () => {
+            document.removeEventListener('keydown', handleEsc);
+            document.body.style.overflow = prevOverflow;
+        };
+    }, [onClose]);
+
+    if (!description) return null;
+
+    return (
+        <div className={style.modal__overlay} onClick={onClose}>
+            <div
+                className={style.modal__content}
+                onClick={(e) => e.stopPropagation()}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="desc-modal-title"
+            >
+                <button
+                    className={style.modal__close}
+                    onClick={onClose}
+                    aria-label="Закрыть"
+                    type="button"
+                >
+                    ×
+                </button>
+
+                <h3 className={style.modal__title} id="desc-modal-title">
+                    <i>{description.nameLat}</i>
+                    {description.nameRu && ` — ${description.nameRu}`}
+                </h3>
+
+                <p className={style.modal__text}>{description.desc}</p>
+
+                {description.source && (
+                    <p className={style.modal__source}>
+                        Источник: {description.source}
+                    </p>
+                )}
+            </div>
+        </div>
+    );
+}
+
+function SpeciesListItem({ item, search, onShowDescription }) {
     switch (item.type) {
         case 'genus':
             return (
@@ -159,18 +236,17 @@ function SpeciesListItem({ item, search }) {
                 </div>
             );
         case 'species': {
-            // Безопасное определение o. caerulea (учитываем любые варианты написания: coerulea, caerulea, cearulea)
             const nameLower = item.nameLat ? String(item.nameLat).toLowerCase() : '';
             const isCaerulea = nameLower.includes('caerulea') || nameLower.includes('coerulea') || nameLower.includes('cearulea');
+
+            const descEntry = descriptionsByLat.get(normalizeLat(item.nameLat));
 
             return (
                 <div
                     className={`${style.species__block} search ${item.mistake ? style.species__block_mistake : ''} ${isCaerulea ? style.species__block_skipNumber : ''}`}
                     id={item.id}
                 >
-                    {/* Жесткая нумерация удалена. Все выводится автоматически через CSS-счетчики */}
-                    
-                    <span className={style['species__name-lat']} >
+                    <span className={style['species__name-lat']}>
                         {item.nameLatLink ? (
                             <a href={item.nameLatLink} target="_blank" rel="noreferrer">
                                 <HighlightedText text={item.nameLat} search={search} />
@@ -198,6 +274,21 @@ function SpeciesListItem({ item, search }) {
 
                     {item.nameRu && (
                         <HighlightedText text={`\u00A0${item.nameRu}`} search={search} className={style['species__name-ru']} />
+                    )}
+
+                    {descEntry ? (
+                        <button
+                            type="button"
+                            className={style['species__desc-btn']}
+                            onClick={() => onShowDescription(descEntry)}
+                            title="Показать описание вида"
+                        >
+                            Описание
+                        </button>
+                    ) : (
+                        <span className={style['species__desc-missing']} title="Описание не найдено в speciesDescriptionsData.js">
+                            [нет описания]
+                        </span>
                     )}
 
                     {item.place && (
@@ -252,17 +343,45 @@ function SpeciesListItem({ item, search }) {
 
 export default function SpeciesList({ items = taxonomy }) {
     const [query, setQuery] = useState('');
+    const [activeDescription, setActiveDescription] = useState(null);
 
-    // Инициализация состояния из localStorage
     const [showAnalysis, setShowAnalysis] = useState(() => {
         const savedState = localStorage.getItem('oxytropis_show_analysis');
         return savedState === 'true';
     });
 
-    // Синхронизация состояния с localStorage
     useEffect(() => {
         localStorage.setItem('oxytropis_show_analysis', showAnalysis);
     }, [showAnalysis]);
+
+    // Отладка: какие виды taxonomy не нашли описание
+    useEffect(() => {
+        const speciesItems = items.filter((i) => i.type === 'species');
+        const missing = speciesItems.filter(
+            (i) => !descriptionsByLat.has(normalizeLat(i.nameLat))
+        );
+        const orphanDescriptions = speciesDescriptionsData.filter(
+            (d) => !speciesItems.some((i) => normalizeLat(i.nameLat) === normalizeLat(d.nameLat))
+        );
+        if (missing.length || orphanDescriptions.length) {
+            console.group('%c[SpeciesList] Сопоставление описаний', 'color:#c00;font-weight:bold');
+            if (missing.length) {
+                console.warn(
+                    `Видов в taxonomy без описания: ${missing.length}`,
+                    missing.map((i) => i.nameLat)
+                );
+            }
+            if (orphanDescriptions.length) {
+                console.warn(
+                    `Описаний без вида в taxonomy: ${orphanDescriptions.length}`,
+                    orphanDescriptions.map((d) => d.nameLat)
+                );
+            }
+            console.groupEnd();
+        } else {
+            console.info('%c[SpeciesList] Все виды сопоставлены с описаниями ✓', 'color:#2e6b4f;font-weight:bold');
+        }
+    }, [items]);
 
     const handleToggleAnalysis = () => {
         setShowAnalysis(prev => !prev);
@@ -306,14 +425,13 @@ export default function SpeciesList({ items = taxonomy }) {
                         </div>
                     </div>
 
-                    {/* Панель управления: переключатель конспекта/анализа и инпут поиска */}
                     <div className={style['species-list__controls']}>
                         <button
                             className={`${style['analysis-toggle-btn']} ${showAnalysis ? style['analysis-toggle-btn_active'] : ''}`}
                             onClick={handleToggleAnalysis}
+                            type="button"
                         >
-                            {showAnalysis ? <BookOpen size={18} /> : <BarChart2 size={18} />}
-                            {showAnalysis ? 'Показать конспект видов' : 'Анализ рода'}
+                            {showAnalysis ? 'Конспект видов' : 'Анализ рода'}
                         </button>
 
                         {!showAnalysis && (
@@ -341,7 +459,12 @@ export default function SpeciesList({ items = taxonomy }) {
                                     <p className={style['species-list__empty']}>Ничего не найдено.</p>
                                 ) : (
                                     filtered.map((item) => (
-                                        <SpeciesListItem key={item.id} item={item} search={query} />
+                                        <SpeciesListItem
+                                            key={item.id}
+                                            item={item}
+                                            search={query}
+                                            onShowDescription={setActiveDescription}
+                                        />
                                     ))
                                 )}
                             </div>
@@ -349,6 +472,13 @@ export default function SpeciesList({ items = taxonomy }) {
                     </div>
                 </section>
             </main>
+
+            {activeDescription && (
+                <DescriptionModal
+                    description={activeDescription}
+                    onClose={() => setActiveDescription(null)}
+                />
+            )}
         </>
     );
 }

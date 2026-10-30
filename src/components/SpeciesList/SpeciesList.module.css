@@ -53,7 +53,7 @@
 
 /* Правило для всех абзацев: красная строка 30px */
 .container p {
-    text-indent: 30px; 
+    text-indent: 30px;
     text-align: justify;
 }
 
@@ -135,7 +135,7 @@
 
 .species-list__search {
     width: 100%;
-    display: flex; 
+    display: flex;
     box-sizing: border-box;
 }
 
@@ -399,6 +399,117 @@
     font-style: italic;
     font-weight: bold;
     color: #2c3e50;
+}
+
+/**/
+/* ===== Кнопка "Описание" рядом с русским названием ===== */
+.species__desc-btn {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 1px 8px;
+    font-size: 11px;
+    line-height: 1.6;
+    font-family: inherit;
+    color: #2e6b4f;
+    background: transparent;
+    border: 1px solid #2e6b4f;
+    border-radius: 12px;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.species__desc-btn:hover {
+    background: #2e6b4f;
+    color: #fff;
+}
+
+.species__desc-btn:focus-visible {
+    outline: 2px solid #2e6b4f;
+    outline-offset: 2px;
+}
+
+/* ===== Модальное окно описания вида ===== */
+.modal__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+    animation: modalFadeIn 0.15s ease-out;
+}
+
+.modal__content {
+    position: relative;
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 640px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    animation: modalSlideIn 0.2s ease-out;
+}
+
+.modal__close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 26px;
+    line-height: 1;
+    color: #666;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.modal__close:hover {
+    color: #000;
+}
+
+.modal__title {
+    margin: 0 0 16px;
+    font-size: 20px;
+    padding-right: 28px;
+    color: #222;
+}
+
+.modal__text {
+    margin: 0 0 16px;
+    line-height: 1.65;
+    font-size: 15px;
+    color: #333;
+    text-align: justify;
+}
+
+.modal__source {
+    margin: 0;
+    font-size: 13px;
+    color: #777;
+    font-style: italic;
+    border-top: 1px solid #eee;
+    padding-top: 12px;
+}
+
+.analysis-toggle-btn::before {
+    content: "▤";
+    margin-right: 6px;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modalSlideIn {
+    from { transform: translateY(-12px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 /* ================== Media Queries (Адаптив) ================== */

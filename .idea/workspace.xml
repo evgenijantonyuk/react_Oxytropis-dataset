@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21b0877e-92e5-4bc8-9f77-a250eb008b0a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/data/speciesDescriptionsData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Afterword/Conclusion.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Afterword/Conclusion.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LiteratureList/references.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LiteratureList/references.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SpeciesList/SpeciesList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SpeciesList/SpeciesList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SpeciesList/SpeciesList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SpeciesList/SpeciesList.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +104,10 @@
       <workItem from="1790104701376" duration="126507000" />
       <workItem from="1790487823535" duration="619000" />
       <workItem from="1790786871595" duration="1143000" />
-      <workItem from="1790831524030" duration="241446000" />
+      <workItem from="1790831524030" duration="299282000" />
+      <workItem from="1793281276918" duration="174000" />
+      <workItem from="1793283687220" duration="14000" />
+      <workItem from="1793283721677" duration="31645000" />
     </task>
     <servers />
   </component>
@@ -111,5 +116,22 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.php" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/LiteratureList/references.js</url>
+          <line>18</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/data/speciesDescriptionsData.js</url>
+          <line>1</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
