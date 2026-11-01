@@ -10,11 +10,6 @@ function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-/**
- * Максимально устойчивая нормализация латинского названия.
- * Приводит к виду "o. coerulea" без точек/пробелов/регистра,
- * унифицирует варианты caerulea/coerulea/cearulea.
- */
 function normalizeLat(name) {
     if (!name) return '';
     return String(name)
