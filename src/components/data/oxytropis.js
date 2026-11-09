@@ -576,7 +576,7 @@ const taxonomy = [
         nameLat: 'O. argentata',
         nameLatLink: 'https://www.plantarium.ru/page/image/id/50369.html',
         author: ' (Pall.) Pers. ',
-        literature: '1807, Syn. pl. 2 : 331; Крылов, 1933, Фл. Зап. Сиб. 7 : 1735; Васильченко, Федченко, Фл. CCCP, 13 : 72; Байтенов, 1961, Фл. Казах. 5   358; Положий, 1994, Фл. Сиб. 9 : 96; Грубов, 1998, Раст Центр. Азии, 8б : 42.',
+        literature: '1807, Syn. pl. 2 : 331; Крылов, 1933, Фл. Зап. Сиб. 7 : 1747; Васильченко, Федченко, Фл. CCCP, 13 : 72; Байтенов, 1961, Фл. Казах. 5   358; Положий, 1994, Фл. Сиб. 9 : 96; Грубов, 1998, Раст Центр. Азии, 8б : 42.',
         synonyms: [
             { id: 'species-22-syn-1', lat: 'Astragalus argentatus', author: 'Pall.', lit: '1800. Sp. Astrag.: 60.' },
             { id: 'species-22-syn-2', lat: 'О. argyrophylla', author: 'Ledeb.', lit: '1831, Fl. Alt. 3 : 288.' },
