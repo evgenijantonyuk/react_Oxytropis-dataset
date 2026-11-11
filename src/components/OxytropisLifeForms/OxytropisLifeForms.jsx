@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { LIFE_FORMS_DATA } from '../data/oxytropisLiveForm.js'
+import { LIFE_FORMS_DATA } from '../data/oxytropisLiveForm.js';
 import './OxytropisLifeForms.css';
 
 export default function OxytropisLifeForms() {
     // По умолчанию активируем первую вкладку из массива данных
-    const [activeTab, setActiveTab] = useState(LIFE_FORMS_DATA[0].id);
+    const [activeTab, setActiveTab] = useState(LIFE_FORMS_DATA[0]?.id);
 
     const activeData = LIFE_FORMS_DATA.find((item) => item.id === activeTab);
 
@@ -65,7 +65,7 @@ export default function OxytropisLifeForms() {
                         <div className="oxytropis-adaptations">
                             <h4 className="oxytropis-adaptations-title">Ключевые адаптации:</h4>
                             <ul className="oxytropis-list">
-                                {activeData.adaptations.map((adaptation, index) => (
+                                {activeData.adaptations?.map((adaptation, index) => (
                                     <li key={index} className="oxytropis-list-item">
                                         <span className="oxytropis-bullet" />
                                         {adaptation}
@@ -73,6 +73,17 @@ export default function OxytropisLifeForms() {
                                 ))}
                             </ul>
                         </div>
+
+                        {/* Источники */}
+                        {activeData.resource && (
+                            <div className="oxytropis-sources">
+                                <h4 className="oxytropis-adaptations-title">Источник:</h4>
+                                <p className="oxytropis-source">
+                                    {activeData.resource}
+                                </p>
+                            </div>
+                        )}
+
 
                     </div>
                 </div>
