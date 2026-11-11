@@ -77,14 +77,14 @@ export default function OxytropisLifeForms() {
                         {/* Источники */}
                         {activeData.resource && (
                             <div className="oxytropis-sources">
-                                <h4 className="oxytropis-adaptations-title">Источник:</h4>
-                                <p className="oxytropis-source">
+                                <p className="oxytropis-adaptations-title__resource">Источник:&#32;
+                                    <span>
                                     {activeData.resource}
+                                </span>
                                 </p>
+
                             </div>
                         )}
-
-
                     </div>
                 </div>
             )}

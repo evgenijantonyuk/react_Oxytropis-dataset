@@ -176,6 +176,7 @@
 .oxytropis-adaptations {
     border-top: 1px solid #f5f5f4;
     padding-top: 0.75rem;
+    margin-bottom: 0.75rem;
 }
 
 .oxytropis-adaptations-title {
@@ -184,6 +185,12 @@
     color: #78716c;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    margin: 0 0 0.5rem 0;
+}
+.oxytropis-adaptations-title__resource {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #78716c;
     margin: 0 0 0.5rem 0;
 }
 
@@ -201,7 +208,7 @@
     font-weight: 700;
     letter-spacing: 0.1em;
     margin: 0 0 0.5rem 0;
-    color: #555;
+    color: #78716c;
 }
 
 @media (min-width: 640px) {
