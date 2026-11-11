@@ -2,7 +2,8 @@
 import './MainText.css'
 import MountCountryMap from "../MountCountryMap/MountCountryMap.jsx"
 import AltaiGallery from "../Slider/Slider.jsx"
-import ButtonUp from "../ButtonUp/ButtonUp.jsx";
+import ButtonUp from "../ButtonUp/ButtonUp.jsx"
+import OxytropisLifeForms from "../OxytropisLifeForms/OxytropisLifeForms.jsx"
 
 
 const MainText = () => {
@@ -10,9 +11,9 @@ const MainText = () => {
        <>
            <div className="container">
                <h1 className="title">Остролодочники (род <i>Oxytropis</i> DC.) Алтайской <br />горной страны</h1>
+               <OxytropisLifeForms />
                <h2 className="subtitle">Алтайская горная страна</h2>
                <MountCountryMap />
-
                <ButtonUp />
                <div className="map-descr">
                    <p className="ags__regions">

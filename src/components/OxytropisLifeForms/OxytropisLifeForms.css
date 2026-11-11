@@ -1,0 +1,220 @@
+/* Основной контейнер */
+.oxytropis-container {
+    max-width: 896px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #f5f5f4; /* stone-50 */
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e7e5e4;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Шапка */
+.oxytropis-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.oxytropis-title {
+    text-align: center;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.oxytropis-title-latin {
+    font-style: italic;
+    font-family: Georgia, serif;
+    color: #047857; /* emerald-700 */
+}
+
+.oxytropis-subtitle {
+    font-size: 0.875rem;
+    color: #57534e;
+    margin-top: 0.5rem;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Табы / Вкладки */
+.oxytropis-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #e7e5e4;
+    padding-bottom: 1rem;
+}
+
+.oxytropis-tab-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    border: 1px solid #e7e5e4;
+    background-color: #ffffff;
+    color: #44403c;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.oxytropis-tab-btn:hover {
+    background-color: #f5f5f4;
+}
+
+.oxytropis-tab-btn.active {
+    background-color: #047857; /* emerald-700 */
+    color: #ffffff;
+    border-color: #047857;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Карточка контента */
+.oxytropis-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    background-color: #ffffff;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid #f5f5f4;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 768px) {
+    .oxytropis-card {
+        grid-template-columns: rep(12, minmax(0, 1fr));
+    }
+}
+
+/* Секция изображения */
+.oxytropis-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    height: 16rem;
+}
+
+@media (min-width: 768px) {
+    .oxytropis-image-wrapper {
+        grid-column: span 5 / span 5;
+        height: 100%;
+        min-height: 240px;
+    }
+}
+
+.oxytropis-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.oxytropis-image-wrapper:hover .oxytropis-img {
+    transform: scale(1.05);
+}
+
+.oxytropis-badge {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    background-color: rgba(28, 25, 23, 0.7);
+    color: #ffffff;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    backdrop-filter: blur(4px);
+}
+
+/* Текстовая секция */
+.oxytropis-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    .oxytropis-info {
+        grid-column: span 7 / span 7;
+    }
+}
+
+.oxytropis-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #292524;
+    margin: 0 0 0.25rem 0;
+}
+
+.oxytropis-examples {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #065f46;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.oxytropis-examples-list {
+    font-style: italic;
+    color: #57534e;
+    text-transform: none;
+}
+
+.oxytropis-description {
+    color: #57534e;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin: 0 0 1rem 0;
+}
+
+/* Блок адаптаций */
+.oxytropis-adaptations {
+    border-top: 1px solid #f5f5f4;
+    padding-top: 0.75rem;
+}
+
+.oxytropis-adaptations-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #78716c;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0 0 0.5rem 0;
+}
+
+.oxytropis-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@media (min-width: 640px) {
+    .oxytropis-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.oxytropis-list-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #44403c;
+}
+
+.oxytropis-bullet {
+    width: 6px;
+    height: 6px;
+    background-color: #059669;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+}
