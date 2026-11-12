@@ -42,8 +42,23 @@
     border-bottom: 1px dashed #e3ecef;
     transition: all 0.25s ease;
 }
+.person:active {
+    transform: translateY(-2px);
+    border-color: #4a6572;
+    box-shadow: 0 10px 25px rgba(44, 62, 80, .06);
+    background-color: rgba(79, 70, 229, .10);
+}
 .person:hover {
-    background-color: rgba(79, 70, 229, 0.10);
+    transform: translateY(-2px);
+    border-color: #4a6572;
+    box-shadow: 0 10px 25px rgba(44, 62, 80, .06);
+    background-color: rgba(79, 70, 229, .10);
+}
+.person:focus {
+    transform: translateY(-2px);
+    border-color: #4a6572;
+    box-shadow: 0 10px 25px rgba(44, 62, 80, .06);
+    background-color: rgba(79, 70, 229, .10);
 }
 
 .person:last-of-type {
