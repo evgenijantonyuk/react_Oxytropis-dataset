@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { LIFE_FORMS_DATA } from '../data/oxytropisLiveForm.js';
 import './OxytropisLifeForms.css';
 
@@ -37,7 +37,6 @@ export default function OxytropisLifeForms() {
             {activeData && (
                 <div className="oxytropis-card">
 
-                    {/* Изображение с бэджем */}
                     <div className="oxytropis-image-wrapper">
                         <img
                             src={activeData.imageUrl}

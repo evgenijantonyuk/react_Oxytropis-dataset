@@ -20,14 +20,14 @@
     text-align: center;
     margin-bottom: 15px;
     padding-top: 15px;
-    font-weight: 700;
-    font-size: 24px;
+    font-weight: 500;
+    font-size: 22px;
 }
 
 .oxytropis-title-latin {
     font-style: italic;
     font-family: Georgia, serif;
-    color: #047857; /* emerald-700 */
+    color: #047857;
 }
 
 .oxytropis-subtitle {

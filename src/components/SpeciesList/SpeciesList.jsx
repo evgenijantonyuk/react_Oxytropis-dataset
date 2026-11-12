@@ -256,7 +256,7 @@ function SpeciesListItem({ item, search, onShowDescription }) {
 
                     {item.literature && (
                         <span className={style['species-literature']}>
-                            <HighlightedText text={item.literature} search={search} />{' '}
+                            &nbsp;<HighlightedText text={item.literature} search={search} />{' '}
                             {item.synonyms?.map((sItem) => (
                                 <React.Fragment key={sItem.id}>
                                     <HighlightedText text={sItem.lat} search={search} className={style.species__synonym} />{' '}
