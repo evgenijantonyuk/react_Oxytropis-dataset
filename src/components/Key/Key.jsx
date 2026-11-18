@@ -57,7 +57,7 @@ function Key() {
                         <p className="key__string">
                         <span className="key__text">4. Цветоносы 1–3 цветковые. Колючки жесткие
                             не ломкие. Бобы ко времени созревания<br />
-                            выступают из чашечки и разрывают ее.</span>
+                            выступают из чашечки и разрывают ее</span>
                             <span className="key__species-block">
                             <span className="key__species-number">92. </span>
                             <span className="key__species">

@@ -109,13 +109,6 @@ export const REFERENCES = [
     { id: 94, authors: "Turczaninow N.S.", title: "Animadversiones ad catalogum plantarum in regionibus Baicalensibus et Dahuria sponte crescentium.", source: "Bulletin de la Société Impériale des Naturalistes de Moscou", year: 1832, details: "T. 5. P. 187.", url: "https://www.biodiversitylibrary.org/item/124268#page/193/mode/1up" },
     { id: 95, authors: "Ulbrich E.", title: "Additamenta astragalogica.", source: "Botanische Jahrbücher für Systematik, Pflanzengeschichte und Pflanzengeographie", year: 1905, details: "Bd. 35. S. 678. - описанный Ульбрихом на с. 680 Oxytropis holdereri в современной систематике (включая базы данных Kew и Flora of China) признан синонимом Oxytropis falcata Bunge (Остролодочник серповидный).", url: "https://www.biodiversitylibrary.org/page/42874128#page/690/mode/1up" },
     { id: 96, authors: "Vaganov A., Shmakov A., Zaikov V., Zholnerova E., Shalimov A., Belkin D., Batkin A., Kasatkin D., Kosachev P., Antonyuk E., Medvedeva K., Usik N., Gudkova P., Kriuchkova E., Ryzhakova D., Dmitriev D. (2021).", title: "Virtual Herbarium ALTB (South-Siberian Botanical Garden). Occurrence dataset. Version 1.27. Altai State University. doi.org (accessed via GBIF.org on 2026-10-26).", source: "Altai State University. Occurrence dataset", year: 2020, details: "accessed via GBIF.org on 2020-07-28.", url: "https://www.gbif.org/dataset/2dda31ff-f776-452f-9a4b-d5229f6e3494#contacts" },
-    {
-        id: 97,
-        title: "Оригинальное описание вида основанное на описании во «Флора СССР».",
-        details: "Текст описания видов - оригинальное научно-компилятивное описание вида созданное искусственным интеллектом. В неизменном виде в каком-либо печатном издании этого текста не существует, так как он представляет собой компилятивный синтез. При его создании ИИ выступил в роли автора-составителя и основывался на строгих диагностических признаках, пропорциях и размерах органов взятых напрямую из 13-го тома академической монографии «Флора СССР» (1948 г., Том 13), где Б. А. Федченко и И. Т. Васильченко описывают виды Oxytropis DC.",
-        year: 2026,
-        url: "https://scholar.google.com/"
-    }
 ];
 
 // --- ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ И СИНХРОНИЗАЦИЯ ССЫЛОК С ИСПРАВЛЕНИЕМ ЛИНТИНГА ---
