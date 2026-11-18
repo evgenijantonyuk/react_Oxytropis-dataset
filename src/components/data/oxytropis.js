@@ -1857,7 +1857,7 @@ const taxonomy = [
         type: 'species',
         number: '87.',
         nameLat: 'О. fragilifolia',
-        nameLatLink: 'https://www.plantarium.ru/page/image/id/176735.html',
+        nameLatLink: 'https://www.inaturalist.org/observations/326116858',
         author: 'Ulzij.',
         literature: '1979, Бот. ж. 64, 9 : 1234; Улзийхутаг, 1982, в Грубов, Опр. сосуд. раст. Монголии : 164; Губанов, 1996, Консп. фл. Внеш. Монголии : 70; Грубов, 1998, Раст. Центр. Азии, 8б : 69.',
         synonyms: [],
