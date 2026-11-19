@@ -238,7 +238,8 @@ function Key() {
                             <span className="key__species">
                                 <a
                                     className="species__name-lat"
-                                    href="#"
+                                    href="https://www.academia.edu/34543880/Introduction_Atlas_of_the_Endemic_Vascular_Plants_of_Mongolia_2017_pdf"
+                                    target="_blank"
                                 >О. ulzijchutagii</a>
                             </span>
                         </span>
