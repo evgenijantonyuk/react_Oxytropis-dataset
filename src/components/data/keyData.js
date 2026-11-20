@@ -1,4 +1,5 @@
 import oUlzijchutagii from '../../assets/plantImages/oUlzij.jpg'
+import oGrumGrshimailoi from "../../assets/plantImages/Оxytropis-grum-grshimailoi.jpg"
 
 export const OXYTROPIS_KEY_DATA = [
   {
@@ -124,7 +125,7 @@ export const OXYTROPIS_KEY_DATA = [
     id: 18,
     steps: [
       { text: "18. Сероватое или почти зеленое растение. Листочки 12–17 парные. Венчик 12–15 мм дл. Прицветники линейно-шиловидные, 4–5 мм длины. Носик лодочки около 2,5 мм.", speciesNumber: "53.", speciesName: "O. teres", url: "https://www.gbif.org/ru/occurrence/1697257847" },
-      { text: "+ Седоватое растение. Листочки 3–4 парные. Венчик 15–17 мм дл.", speciesNumber: "45.", speciesName: "O. grum-grshimailoi", url: null }
+      { text: "+ Седоватое растение. Листочки 3–4 парные. Венчик 15–17 мм дл.", speciesNumber: "45.", speciesName: "O. grum-grshimailoi", url: oGrumGrshimailoi  }
     ]
   },
   {
