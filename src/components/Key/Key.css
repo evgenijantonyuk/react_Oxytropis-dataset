@@ -1,32 +1,28 @@
-
-/* Базовое состояние строки определительного ключа */
 .key__string {
-    margin-bottom: 8px;                  /* Чуть увеличили отступ между строками */
-    padding: 0.75rem 1.5rem 0.75rem 25px;/* Внутренние отступы для формы карточки */
+    margin-bottom: 8px;
+    padding: 0.75rem 1.5rem 0.75rem 25px;
     display: flex;
     justify-content: space-between;
-    align-items: center;                 /* Выравниваем элементы строки по центру */
+    align-items: center;
+    gap: 16px;
 
-    background-color: #ffffff;           /* Чистый белый фон карточки */
-    border: 1px solid #dcdfe3;           /* Тонкая спокойная граница */
-    border-radius: 8px;                  /* Закругление углов */
+    background-color: #ffffff;
+    border: 1px solid #dcdfe3;
+    border-radius: 8px;
     position: relative;
     overflow: hidden;
 
-    /* Плавный переход Безье для эффекта приподнимания */
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     box-shadow: 0 2px 8px rgba(44, 62, 80, 0.02);
 }
 
-/* Интерактивный эффект при наведении на строку */
 .key__string:hover {
-    transform: translateY(-1px);         /* Легкое приподнимание (меньше, чем у больших карточек) */
-    border-color: #4a6572;               /* Сдержанный стальной акцент */
-    box-shadow: 0 6px 16px rgba(44, 62, 80, 0.05); /* Мягкая тень */
-    background-color: rgba(79, 70, 229, 0.10);
+    transform: translateY(-1px);
+    border-color: #4a6572;
+    box-shadow: 0 6px 16px rgba(44, 62, 80, 0.05);
+    background-color: rgba(79, 70, 229, 0.06);
 }
 
-/* Вертикальная декоративная полоса слева */
 .key__string::before {
     content: '';
     position: absolute;
@@ -34,17 +30,15 @@
     left: 0;
     bottom: 0;
     width: 4px;
-    background-color: #4a6572;           /* Цвет полосы */
-    opacity: 0.3;                        /* Приглушена по умолчанию */
+    background-color: #4a6572;
+    opacity: 0.3;
     transition: opacity 0.3s ease;
 }
 
-/* Полоса становится ярче при наведении */
 .key__string:hover::before {
     opacity: 0.8;
 }
 
-/**/
 .main__content {
     width: 100%;
 }
@@ -59,70 +53,85 @@
 }
 
 .species-key {
-    padding: 25px 25px
+    padding: 25px;
 }
 
 .key__block {
     width: 100%;
     margin-bottom: 25px;
+    border-radius: 10px;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-.key__string {
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: space-between;
+/* Подсветка блока при переходе по клику */
+.key__block_highlighted .key__string {
+    border-color: #4f46e5;
+    background-color: rgba(79, 70, 229, 0.08);
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+/* Кнопка-ссылка на следующую ступень */
+.key__number-btn {
+    flex-shrink: 0;
+    min-width: 38px;
+    height: 32px;
+    padding: 0 10px;
+    font-weight: 700;
+    font-size: 15px;
+    color: #2c3e50;
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.key__number-btn:hover {
+    background-color: #4a6572;
+    border-color: #4a6572;
+    color: #ffffff;
+}
+
+.key__species-block {
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .key__species {
-    width: 35%;
     font-weight: bold;
-}
-/* ======================= hover ==================*/
-.key__species-block {
-    white-space: nowrap;
 }
 
 .species__name-lat {
     font-size: 18px;
-    transition: color .3s;
+    font-style: italic;
+    transition: color 0.3s;
 }
 
-.species__name-lat:active {
-    color: #808080;
-}
-.species__name-lat:hover {
-    color: #808080;
-}
-.species__name-lat:focus {
-    color: #808080;
+a.species__name-lat:hover,
+a.species__name-lat:focus,
+a.species__name-lat:active {
+    color: #636363;
 }
 
-/* Button Up */
-.button__up-key {
-    position: fixed;
-    bottom: 20px;
-    right: -100px;
-    width: 60px;
-    height: 60px;
-    z-index: 99;
-    border-radius: 50%;
-    background-color: rgb(20, 3, 3);
-    cursor: pointer;
-    color: #fff;
-    border: none;
-    transition: right 0.2s ease-in-out;
-}
-.button__up-key:hover {
-    animation: icon 1s ease-in-out;
-}
+/* Адаптация под мобильные экраны */
+@media screen and (max-width: 720px) {
+    .species-key {
+        padding: 15px 10px;
+    }
 
-@keyframes icon {
-    0%,50%,100%{ bottom: 20px; }
-    25%,75% { bottom: 27px; }
-}
+    .key__header {
+        font-size: 20px;
+    }
 
-.button__up-key.show {
-    right: 30px;
-}
+    .key__string {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 15px 12px 20px;
+        gap: 10px;
+    }
 
-/*================ footer =============================*/
+    .key__species-block,
+    .key__number-btn {
+        align-self: flex-end;
+    }
+}
