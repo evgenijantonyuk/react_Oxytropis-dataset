@@ -1,3 +1,5 @@
+import oUlzijchutagii from '../../assets/plantImages/oUlzij.jpg'
+
 export const OXYTROPIS_KEY_DATA = [
   {
     id: 1,
@@ -80,7 +82,7 @@ export const OXYTROPIS_KEY_DATA = [
     id: 12,
     steps: [
       { text: "12. Соцветие — многоцветковая густая кисть. Листочки 15–25 пар. Растения до 20 см выс.", speciesNumber: "12.", speciesName: "O. deflexa", url: "https://www.gbif.org/occurrence/4406453522" },
-      { text: "+ Соцветия 5–8 цветковые, головчатые. Листочки в числе 10–14 пар. Растения до 10 см.", speciesNumber: "16.", speciesName: "O. ulzijchutagii", url: "https://www.academia.edu/34543880/Introduction_Atlas_of_the_Endemic_Vascular_Plants_of_Mongolia_2017_pdf" }
+      { text: "+ Соцветия 5–8 цветковые, головчатые. Листочки в числе 10–14 пар. Растения до 10 см.", speciesNumber: "16.", speciesName: "O. ulzijchutagii", url: oUlzijchutagii }
     ]
   },
   {

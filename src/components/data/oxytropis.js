@@ -2,6 +2,7 @@
 import oGrumGrshimailoi from "../../assets/plantImages/Оxytropis-grum-grshimailoi.jpg";
 import oKusnetzovii from '../../assets/plantImages/O.kusnetzovii.webp'
 import oLongibracteata from "../../assets/plantImages/О.longibracteata.png"
+import oUlzijchutagii from '../../assets/plantImages/oUlzij.jpg'
 
 
 const taxonomy = [
@@ -266,7 +267,7 @@ const taxonomy = [
         type: 'species',
         number: '8. ',
         nameLat: 'О. ladyginii',
-        nameLatLink: 'images/herbSpecies/O.ladyginii/O.ladyginii.png',
+        nameLatLink: 'https://plant.depo.msu.ru/open/public/search?searchBy=any&queryString=Oxytropis%20ladyginii',
         author: ' Krylov ',
         literature: '1903, Тр. Петерб. бот. сада 21, 1 : 5; Крылов, 1933, Фл. Зап. Сиб. 7 : 1724; Васильченко, Федченко, 1948, Фл. СССР, 13 : 22; Байтенов, 1961, Фл. Казах. 5 : 345; Улзийхутаг, 1982, в Грубов, Опр. сосуд, раст. Монголии   164; Положий, 1994, Фл. Сиб. 9 : 8б; Губанов, 1996, Консп. фл. Внеш. Монголии. : 70; Грубов, 1998, Раст. Центр. Азии, 8б : 28.',
         synonyms: [],
@@ -428,7 +429,7 @@ const taxonomy = [
         type: 'species',
         number: '16. ',
         nameLat: 'О. ulzijchutagii',
-        nameLatLink: '',
+        nameLatLink: oUlzijchutagii,
         author: 'Sanchir',
         literature: '1985, Тр. Инст. бот. АН МНР, 7 : 93; Губанов, 1996, Консп. фл. Внеш. Монголии (сосуд. раст.): 72; Грубов, 1998, Раст. Центр. Азии, 8б : 39.',
         synonyms: [],
