@@ -135,7 +135,7 @@ export const OXYTROPIS_KEY_DATA = [
   {
     id: 20,
     steps: [
-      { text: "20. Листочки 8–12 парные, 7–16 мм дл., линейно-продолговатые. Зубцы чашечки почти равны трубке. Завязь покрыта прижатыми белыми волосками.", speciesNumber: "47.", speciesName: "O. macrobotrys", url: null },
+      { text: "20. Листочки 8–12 парные, 7–16 мм дл., линейно-продолговатые. Зубцы чашечки почти равны трубке. Завязь покрыта прижатыми белыми волосками.", speciesNumber: "47.", speciesName: "O. macrobotrys", url: "https://www.gbif.org/occurrence/search?taxonKey=4BMB6&datasetKey=b2931dbf-fdc1-41e3-a2ed-fa54b420afaa&publishingOrg=d65215c0-cc3a-44be-be68-c1a7774ed73c&entity=o_6360144257" },
       { text: "+ Листочки 5–8 парные, 5–6 мм дл., линейные. Зубцы чашечки короче трубки. Завязь почти голая.", speciesNumber: "52.", speciesName: "O. tenuis", url: "https://commons.wikimedia.org/wiki/Category:Oxytropis_tenuis" }
     ]
   },
@@ -346,7 +346,7 @@ export const OXYTROPIS_KEY_DATA = [
   {
     id: 50,
     steps: [
-      { text: "50. Густо седовато-шелковистое растение. Листья 1–2 см дл., листочки 5–6 парные, около 2 мм дл. и 0,75–1 мм шир., обычно вдоль сложенные, шелковистые с обеих сторон.", speciesNumber: "48.", speciesName: "O. pulvinoides", url: null },
+      { text: "50. Густо седовато-шелковистое растение. Листья 1–2 см дл., листочки 5–6 парные, около 2 мм дл. и 0,75–1 мм шир., обычно вдоль сложенные, шелковистые с обеих сторон.", speciesNumber: "48.", speciesName: "O. pulvinoides", url: "https://www.gbif.org/ru/occurrence/search?taxonKey=4BMG3&view=gallery&entity=o_3889490179" },
       { text: "+ Менее опушенные растения, 5–10(15) см выс.", nextStep: "51" }
     ]
   },
@@ -487,7 +487,7 @@ export const OXYTROPIS_KEY_DATA = [
     id: 70,
     steps: [
       { text: "70. Прицветники около 5 мм дл. Венчик голубой, флаг на верхушке выемчатый.", speciesNumber: null, speciesName: "O. coerulea", url: "https://plant.depo.msu.ru/open/public/item/MW0100791" },
-      { text: "+ Прицветники около 3 мм дл. Венчик пурпуровый (при высушивании — сиреневый), флаг на верхушке округлый, без выемки.", speciesNumber: "6.", speciesName: "O. kaspensis", url: "https://www.legumedata.org/data/?taxonKey=5361247&view=GALLERY" }
+      { text: "+ Прицветники около 3 мм дл. Венчик пурпуровый (при высушивании — сиреневый), флаг на верхушке округлый, без выемки.", speciesNumber: "6.", speciesName: "O. kaspensis", url: "https://www.inaturalist.org/ru/taxa/1072909-Oxytropis-kaspensis" }
     ]
   },
   {
@@ -564,7 +564,7 @@ export const OXYTROPIS_KEY_DATA = [
     id: 81,
     steps: [
       { text: "81. Растения образуют плотноватые дерновинки, листочки с обеих сторон шелковисто-волосистые. Бобы длинно оттопыренно-беломохнатые.", speciesNumber: "43.", speciesName: "O. dichroantha", url: "https://plant.depo.msu.ru/open/public/item/MW0848078" },
-      { text: "+ Растения не образуют дерновинки. Листочки с нижней стороны шелковисто-волосистые, а с верхней — рассеянно-прижато-волосистые. Бобы покрыты густыми, короткими буро-черными волосками.", speciesNumber: "51.", speciesName: "O. schrenkii", url: null }
+      { text: "+ Растения не образуют дерновинки. Листочки с нижней стороны шелковисто-волосистые, а с верхней — рассеянно-прижато-волосистые. Бобы покрыты густыми, короткими буро-черными волосками.", speciesNumber: "51.", speciesName: "O. schrenkii", url: "https://www.gbif.org/ru/occurrence/search?taxonKey=4BMJ6&view=gallery&entity=o_438396174" }
     ]
   },
   {
