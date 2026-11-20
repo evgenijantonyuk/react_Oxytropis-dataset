@@ -194,6 +194,7 @@ export default function OxytropisAnalysis() {
                     <button className={`${style['table-nav-btn']} ${activeTable === 'table3' ? style.active : ''}`} onClick={() => setActiveTable('table3')}>Таблица 3</button>
                   </div>
 
+                  {/* ТАБЛИЦА 1 */}
                   {activeTable === 'table1' && (
                       <div className={style['table-wrapper']}>
                         <table className={`${style['data-table']} ${style['data-table__t1']}`}>
@@ -208,10 +209,10 @@ export default function OxytropisAnalysis() {
                           <tbody>
                           {table1Data.map((row, idx) => (
                               <tr key={idx}>
-                                <td className={style['td__bold']}>{row.group}</td>
-                                <td className={`${style['td__center']} ${style['td__blue-bold']}`}>{row.bunge}</td>
-                                <td className={`${style['td__center']} ${style['td__green-bold']}`}>{row.kholina}</td>
-                                <td className={style['td__muted']}>{row.change}</td>
+                                <td data-label="Подрод / Клада" className={style['td__bold']}>{row.group}</td>
+                                <td data-label="По Бунге (1874)" className={`${style['td__center']} ${style['td__blue-bold']}`}>{row.bunge}</td>
+                                <td data-label="По Kholina (2016)" className={`${style['td__center']} ${style['td__green-bold']}`}>{row.kholina}</td>
+                                <td data-label="Изменения" className={style['td__muted']}>{row.change}</td>
                               </tr>
                           ))}
                           </tbody>
@@ -219,6 +220,7 @@ export default function OxytropisAnalysis() {
                       </div>
                   )}
 
+                  {/* ТАБЛИЦА 2 */}
                   {activeTable === 'table2' && (
                       <div className={style['table-wrapper']}>
                         <table className={`${style['data-table']} ${style['data-table__t2']}`}>
@@ -236,13 +238,13 @@ export default function OxytropisAnalysis() {
                             return (
                                 <tr key={idx}>
                                   {span > 0 && (
-                                      <td rowSpan={span} className={style['td__bold']}>
+                                      <td rowSpan={span} className={`${style['td__bold']} ${style['td__group-header']}`}>
                                         {row.subgenus}
                                       </td>
                                   )}
-                                  <td className={style['td__italic-blue']}>{row.section}</td>
-                                  <td className={`${style['td__center']} ${style['td__bold']}`}>{row.count}</td>
-                                  <td className={style['td__light-muted']}>{row.species}</td>
+                                  <td data-label="Секция" className={style['td__italic-blue']}>{row.section}</td>
+                                  <td data-label="Видов" className={`${style['td__center']} ${style['td__bold']}`}>{row.count}</td>
+                                  <td data-label="Представители" className={style['td__light-muted']}>{row.species}</td>
                                 </tr>
                             );
                           })}
@@ -251,6 +253,7 @@ export default function OxytropisAnalysis() {
                       </div>
                   )}
 
+                  {/* ТАБЛИЦА 3 */}
                   {activeTable === 'table3' && (
                       <div className={style['table-wrapper']}>
                         <table className={`${style['data-table']} ${style['data-table__t3']}`}>
@@ -269,14 +272,14 @@ export default function OxytropisAnalysis() {
                             return (
                                 <tr key={idx}>
                                   {span > 0 && (
-                                      <td rowSpan={span} className={style['td__bold']}>
+                                      <td rowSpan={span} className={`${style['td__bold']} ${style['td__group-header']}`}>
                                         {row.clade}
                                       </td>
                                   )}
-                                  <td className={style['td__italic-green']}>{row.line}</td>
-                                  <td className={`${style['td__center']} ${style['td__bold']}`}>{row.count}</td>
-                                  <td><span className={style['status-badge']}>{row.status}</span></td>
-                                  <td className={style['td__light-muted']}>{row.species}</td>
+                                  <td data-label="Филолиния" className={style['td__italic-green']}>{row.line}</td>
+                                  <td data-label="Видов" className={`${style['td__center']} ${style['td__bold']}`}>{row.count}</td>
+                                  <td data-label="Статус"><span className={style['status-badge']}>{row.status}</span></td>
+                                  <td data-label="Видовой состав" className={style['td__light-muted']}>{row.species}</td>
                                 </tr>
                             );
                           })}
@@ -284,6 +287,7 @@ export default function OxytropisAnalysis() {
                         </table>
                       </div>
                   )}
+
                 </div>
             )}
           </div>

@@ -614,7 +614,7 @@ export const speciesDescriptionsData = [
         nameLat: 'О. microphylla',
     nameRu: 'О. мелколистный',
     desc: 'Бесстебельное многолетнее травянистое растение, по характеру роста сходное с O. oxyphylla, но с головками корня, совершенно не вытягивающимися над землёй в стебли и покрытыми сухоплёнчатыми, густомохнатыми прилистниками. Листья прикорневые, длинные, перистые, с многочисленными мелкими овальными листочками, которые располагаются попарно или реже по два–три (мутовчато), сверху голые, снизу шерстистые и щетинисто-волосистые. Цветоносные стрелки прикорневые, равные по длине листьям, прямостоячие или отклонённые, с цветками, скученными почти в головчатое соцветие. Прицветники короче чашечки. Чашечка бледная, шерстистая, усаженная выступающими бурыми бугорчатыми железками. Венчик мотылькового типа, крупный, пурпуровый. Бобы в протологе не описаны. Обитает в Сибири.',
-    source: 'Перевод с латинского языка первоописания вида Oxytropis microphylla (Pall.) DC.)опубликованного в Candolle A. P. de. Astragalogia, nempe Astragali, Biserrulae et Oxytropidis, nec non Phacae, Colutae et Lessertiae, historia iconibus illustrata. - Parisiis: Sumptibus J. B. Garnery, 1802. - P. 83-84.'
+    source: 'Перевод с латинского языка первоописания вида Oxytropis microphylla (Pall.) DC.) опубликованного в Candolle A. P. de. Astragalogia, nempe Astragali, Biserrulae et Oxytropidis, nec non Phacae, Colutae et Lessertiae, historia iconibus illustrata. - Parisiis: Sumptibus J. B. Garnery, 1802. - P. 83-84.'
 },
 {
     id: 'species-87',

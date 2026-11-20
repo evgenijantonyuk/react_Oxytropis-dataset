@@ -495,40 +495,139 @@
 }
 
 /* ================== Media Queries (Адаптив) =================================== */
-
 @media screen and (max-width: 720px) {
-    .species-list__controls {
-        flex-direction: column;
-        gap: 8px;
-    }
+    /* ... ваши существующие мобильные стили ... */
 
-    .analysis-tab-btn {
-        width: 100%;
+    .table-wrapper {
+        overflow-x: visible;
         padding: 10px;
+        background-color: transparent;
+        border: none;
     }
 
-    .analysis-systems-container {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .system-toggle-btn {
+    .data-table,
+    .data-table tbody,
+    .data-table tr,
+    .data-table td {
+        display: block;
         width: 100%;
+        box-sizing: border-box;
     }
 
-    .species__block {
-        padding: 15px 15px 15px 20px;
-    }
-    
-    .species__block_highlighted {
-        padding: 15px 20px;
+    /* Прячем десктопную шапку таблицы */
+    .data-table thead {
+        display: none;
     }
 
-    .species-list {
-        padding: 0 10px;
+    /* Каждая строка превращается в карточку */
+    .data-table tr {
+        background-color: #ffffff;
+        border: 1px solid #dcdfe3;
+        border-radius: 8px;
+        margin-bottom: 12px;
+        padding: 10px 12px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
     }
 
-    .species__title {
-        font-size: 20px;
+    /* Оформление объединенной ячейки (Подрод / Клада) как заголовка группы */
+    .data-table td[rowspan].td__group-header {
+        display: block;
+        width: calc(100% + 24px);
+        margin: -10px -12px 10px -12px;
+        padding: 10px 12px;
+        background-color: #4a6572;
+        color: #ffffff;
+        border-radius: 7px 7px 0 0;
+        text-align: left;
+        border-right: none;
+        font-size: 14px;
+    }
+
+    /* Обычные ячейки выстраиваются в строку: Слева заголовок, справа значение */
+    .data-table td:not([rowspan]) {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f0f0;
+        text-align: right;
+        font-size: 13px;
+    }
+
+    .data-table td:not([rowspan]):last-child {
+        border-bottom: none;
+        padding-bottom: 2px;
+    }
+
+    /* Подставляем название столбца из атрибута data-label */
+    .data-table td:not([rowspan])::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #666666;
+        text-align: left;
+        flex-shrink: 0;
+        max-width: 45%;
+    }
+
+    /* Длинные списки видов и описания переносим под заголовок для удобства чтения */
+    .data-table td[data-label="Представители"],
+    .data-table td[data-label="Видовой состав"],
+    .data-table td[data-label="Изменения"] {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 4px;
+    }
+
+    .data-table td[data-label="Представители"]::before,
+    .data-table td[data-label="Видовой состав"]::before,
+    .data-table td[data-label="Изменения"]::before {
+        max-width: 100%;
+    }
+
+    /* Сбрасываем десктопное выравнивание по центру */
+    .td__center {
+        text-align: right;
     }
 }
+
+
+
+
+/*@media screen and (max-width: 720px) {*/
+/*    .species-list__controls {*/
+/*        flex-direction: column;*/
+/*        gap: 8px;*/
+/*    }*/
+
+/*    .analysis-tab-btn {*/
+/*        width: 100%;*/
+/*        padding: 10px;*/
+/*    }*/
+
+/*    .analysis-systems-container {*/
+/*        flex-direction: column;*/
+/*        gap: 10px;*/
+/*    }*/
+
+/*    .system-toggle-btn {*/
+/*        width: 100%;*/
+/*    }*/
+
+/*    .species__block {*/
+/*        padding: 15px 15px 15px 20px;*/
+/*    }*/
+/*    */
+/*    .species__block_highlighted {*/
+/*        padding: 15px 20px;*/
+/*    }*/
+
+/*    .species-list {*/
+/*        padding: 0 10px;*/
+/*    }*/
+
+/*    .species__title {*/
+/*        font-size: 20px;*/
+/*    }*/
+/*}*/
