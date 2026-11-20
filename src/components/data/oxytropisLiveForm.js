@@ -1,7 +1,7 @@
-import oTschujae from '../../assets/oxytropisLiveForm/oTschujae.jpg'
-import oAcanthacea from '../../assets/oxytropisLiveForm/oAcanthacea.jpeg'
-import oAlpina from '../../assets/oxytropisLiveForm/oAlpina.jpg'
-import oPilosa from '../../assets/oxytropisLiveForm/oPilosa.jpg'
+import oTschujae from '../../assets/oxytropisLiveForm/oTschujae.webp'
+import oAcanthacea from '../../assets/oxytropisLiveForm/oAcanthacea.webp'
+import oAlpina from '../../assets/oxytropisLiveForm/oAlpina.webp'
+import oPilosa from '../../assets/oxytropisLiveForm/oPilosa.webp'
 export const LIFE_FORMS_DATA = [
     {
         id: 'cushion',

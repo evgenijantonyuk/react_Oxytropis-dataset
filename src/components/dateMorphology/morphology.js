@@ -34,9 +34,9 @@ const morphology = [
         subtitle2: 'Каулесные (стеблевые) формы',
         description2: 'Каулесные (стеблевые) формы: Представлены на Алтае меньшим числом видов, приуроченных к более мезофитным или затененным экотопам (например, остролодочник отклонённый Oxytropis Pilosa (Lam.) DC или Oxytropis deflexa (Pall.) DC.) (Megabook, 2026; КиберЛенинка, 2026; SaskWildflower, 2026). У них развиваются ортотропные или восходящие облиственные побеги, а генеративные цветоносы закладываются метамерно в пазухах стеблевых листьев. Высота стебля у таких видов напрямую коррелирует со степенью проективного покрытия окружающей травянистой растительности, что позволяет им успешно конкурировать за световые ресурсы в луговых сообществах.',
         description3: '',
-        image: '/images/morphology/acaules-plants.png',
+        image: '/images/morphology/acaules-plants.webp',
         imageAlt: 'Биоморфологическая структура акаулесных розеточных и подушковидных жизненных форм',
-        image1: '/images/morphology/Oxytropis-pilosa-caules-plants.png',
+        image1: '/images/morphology/Oxytropis-pilosa-caules-plants.webp',
         imageAlt1: 'Стеблевые жизненные формы. (Wikipedia)'
     },
     {
