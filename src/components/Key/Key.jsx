@@ -1,28 +1,74 @@
-import { useState } from 'react'
-import './Key.css'
-import ButtonUp from "../ButtonUp/ButtonUp.jsx"
-import { OXYTROPIS_KEY_DATA } from '../data/keyData.js'
+import { useState, useRef } from 'react';
+import './Key.css';
+import ButtonUp from "../ButtonUp/ButtonUp.jsx";
+import { OXYTROPIS_KEY_DATA } from '../data/keyData.js';
 
 function Key() {
     const [activeBlockId, setActiveBlockId] = useState(null);
+    const [history, setHistory] = useState([]);
+    const highlightTimeoutRef = useRef(null);
 
-    const handleStepClick = (targetId) => {
-        const idNum = Number(targetId);
-        const element = document.getElementById(`key-step-${idNum}`);
+    const scrollToBlock = (targetId) => {
+        const element = document.getElementById(`key-step-${targetId}`);
 
         if (element) {
             element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            setActiveBlockId(idNum);
+            setActiveBlockId(targetId);
 
-            setTimeout(() => {
-                setActiveBlockId((prev) => (prev === idNum ? null : prev));
+            if (highlightTimeoutRef.current) {
+                clearTimeout(highlightTimeoutRef.current);
+            }
+
+            highlightTimeoutRef.current = setTimeout(() => {
+                setActiveBlockId((prev) => (prev === targetId ? null : prev));
             }, 1800);
         }
+    };
+
+    const handleStepClick = (currentBlockId, targetId) => {
+        const idNum = Number(targetId);
+        setHistory((prev) => [...prev, currentBlockId]);
+        scrollToBlock(idNum);
+    };
+
+    const handleBackClick = () => {
+        if (history.length === 0) return;
+        const previousId = history[history.length - 1];
+        setHistory((prev) => prev.slice(0, -1));
+        scrollToBlock(previousId);
+    };
+
+    const handleResetHistory = () => {
+        setHistory([]);
+        scrollToBlock(1);
     };
 
     return (
         <>
             <ButtonUp />
+            {history.length > 0 && (
+                <div className="key-nav-panel">
+                    <button
+                        type="button"
+                        className="key-nav-panel__back-btn"
+                        onClick={handleBackClick}
+                        title={`Вернуться к ступени ${history[history.length - 1]}`}
+                    >
+                        ← Назад (к ст. {history[history.length - 1]})
+                    </button>
+                    {history.length > 1 && (
+                        <button
+                            type="button"
+                            className="key-nav-panel__reset-btn"
+                            onClick={handleResetHistory}
+                            title="Сбросить историю и вернуться к началу ключа"
+                        >
+                            В начало
+                        </button>
+                    )}
+                </div>
+            )}
+
             <section className="container main-content">
                 <h3 className="key__header">
                     Ключ для определения видов рода <i>Oxytropis</i> DC. на территории АГС.
@@ -43,7 +89,7 @@ function Key() {
                                         <button
                                             type="button"
                                             className="key__number-btn"
-                                            onClick={() => handleStepClick(step.nextStep)}
+                                            onClick={() => handleStepClick(block.id, step.nextStep)}
                                             title={`Перейти к ступени ${step.nextStep}`}
                                         >
                                             {step.nextStep}
