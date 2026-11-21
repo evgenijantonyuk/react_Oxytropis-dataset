@@ -1,8 +1,8 @@
 // taxonomy.js
-import oGrumGrshimailoi from "../../assets/plantImages/Оxytropis-grum-grshimailoi.jpg"
+import oGrumGrshimailoi from "../../assets/plantImages/О.grum-grshimailoi.webp"
 import oKusnetzovii from '../../assets/plantImages/O.kusnetzovii.webp'
-import oLongibracteata from "../../assets/plantImages/О.longibracteata.png"
-import oUlzijchutagii from '../../assets/plantImages/oUlzij.jpg'
+import oLongibracteata from "../../assets/plantImages/О.longibracteata.webp"
+import oUlzijchutagii from '../../assets/plantImages/oUlzij.webp'
 
 
 const taxonomy = [

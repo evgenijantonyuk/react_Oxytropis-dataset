@@ -1,5 +1,5 @@
-import oUlzijchutagii from '../../assets/plantImages/oUlzij.jpg'
-import oGrumGrshimailoi from "../../assets/plantImages/Оxytropis-grum-grshimailoi.jpg"
+import oUlzijchutagii from '../../assets/plantImages/oUlzij.webp'
+import oGrumGrshimailoi from "../../assets/plantImages/О.grum-grshimailoi.webp"
 
 export const OXYTROPIS_KEY_DATA = [
   {
