@@ -1,4 +1,5 @@
 
+import EndemiVascularPlantsofMongolia from '../../assets/books/Introduction_Atlas_of_the_Endemic_Vascul.pdf'
 
 export const REFERENCES = [
     // --- РУССКИЕ АВТОРЫ И ИСТОЧНИКИ ---
@@ -110,7 +111,7 @@ export const REFERENCES = [
     { id: 96, authors: "Turczaninow N.S.", title: "Animadversiones ad catalogum plantarum in regionibus Baicalensibus et Dahuria sponte crescentium.", source: "Bulletin de la Société Impériale des Naturalistes de Moscou", year: 1832, details: "T. 5. P. 187.", url: "https://www.biodiversitylibrary.org/item/124268#page/193/mode/1up" },
     { id: 97, authors: "Ulbrich E.", title: "Additamenta astragalogica.", source: "Botanische Jahrbücher für Systematik, Pflanzengeschichte und Pflanzengeographie", year: 1905, details: "Bd. 35. S. 678. - описанный Ульбрихом на с. 680 Oxytropis holdereri в современной систематике (включая базы данных Kew и Flora of China) признан синонимом Oxytropis falcata Bunge (Остролодочник серповидный).", url: "https://www.biodiversitylibrary.org/page/42874128#page/690/mode/1up" },
     { id: 98, authors: "Vaganov A., Shmakov A., Zaikov V., Zholnerova E., Shalimov A., Belkin D., Batkin A., Kasatkin D., Kosachev P., Antonyuk E., Medvedeva K., Usik N., Gudkova P., Kriuchkova E., Ryzhakova D., Dmitriev D. (2021).", title: "Virtual Herbarium ALTB (South-Siberian Botanical Garden). Occurrence dataset. Version 1.27. Altai State University. doi.org (accessed via GBIF.org on 2026-10-26).", source: "Altai State University. Occurrence dataset", year: 2020, details: "accessed via GBIF.org on 2020-07-28.", url: "https://www.gbif.org/dataset/2dda31ff-f776-452f-9a4b-d5229f6e3494#contacts" },
-    { id: 99, authors: "Urgamal, M.", title: "Atlas of the Endemic Vascular Plants of Mongolia.", source: "Ulaanbaatar: Bembi San Press. ", year: 2017, details: "Фото О. ulzijchutagii / O. bungei / O. sutaica. P. 35-36.", url: "https://www.researchgate.net/publication/318959400_Introduction_Atlas_of_the_Endemic_Vascular_Plants_of_Mongolia_2017" },
+    { id: 99, authors: "Urgamal, M.", title: "Atlas of the Endemic Vascular Plants of Mongolia.", source: "Ulaanbaatar: Bembi San Press. ", year: 2017, details: "Фото О. ulzijchutagii / O. bungei / O. sutaica. P. 35-36.", url: EndemiVascularPlantsofMongolia },
 ];
 
 // --- ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ И СИНХРОНИЗАЦИЯ ССЫЛОК С ИСПРАВЛЕНИЕМ ЛИНТИНГА ---
