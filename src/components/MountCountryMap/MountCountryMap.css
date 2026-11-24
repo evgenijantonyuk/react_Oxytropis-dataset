@@ -1,3 +1,10 @@
+.subtitle {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 24px;
+}
+
 .ags__title {
     text-align: center;
     margin-bottom: 15px;
