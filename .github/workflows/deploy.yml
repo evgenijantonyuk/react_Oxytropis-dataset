@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch: # Позволяет запускать деплой вручную из вкладки Actions
 
 permissions:
   contents: read
@@ -15,10 +16,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # Задача 1: Сборка и загрузка артефакта
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,6 +29,9 @@ jobs:
           node-version: 20
           cache: 'npm'
 
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
       - name: Install dependencies
         run: npm ci
 
@@ -39,8 +41,16 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # Папка сборки Vite
+          path: './dist'
 
+  # Задача 2: Деплой (запускается строго после завершения build)
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
