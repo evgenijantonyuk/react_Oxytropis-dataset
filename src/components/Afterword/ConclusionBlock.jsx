@@ -1,7 +1,7 @@
+import React, { memo } from 'react';
+import styles from './Conclusion.module.css';
 
-import styles from './Conclusion.module.css'
-
-export default function ConclusionBlock({ title, paragraphs }) {
+function ConclusionBlock({ title, paragraphs }) {
     return (
         <div className={styles.conclusion__block}>
             <h3 className={styles.block__title}>{title}</h3>
@@ -11,3 +11,5 @@ export default function ConclusionBlock({ title, paragraphs }) {
         </div>
     );
 }
+
+export default memo(ConclusionBlock);
