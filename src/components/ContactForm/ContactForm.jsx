@@ -171,7 +171,7 @@ const ContactForm = ({ isOpen, onClose }) => {
                                 id="phone"
                                 value={formData.phone}
                                 onChange={handleChange}
-                                required
+                                // required
                             />
                             <label htmlFor="phone">В формате: 88000000000 или 78000000000</label>
                         </div>
