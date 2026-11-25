@@ -1,3 +1,10 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
 
 /*.ags__regions {*/
 /*    margin-bottom: 2rem;*/
@@ -111,19 +118,3 @@
 /*.ags__link:focus {*/
 /*    color: #808080;*/
 /*}*/
-
-/*footer-main {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: center;*/
-/*    text-align: center;*/
-/*    align-items: center;*/
-/*    width: 100%;*/
-/*    min-height: 100px;*/
-/*    background-color: #cfdffc;*/
-/*}*/
-
-/*.footer__text {*/
-/*    max-width: 600px;*/
-/*    line-height: 2rem;*/
-/*}.*/
