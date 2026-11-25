@@ -1,7 +1,37 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./Aterword.module.css";
 import Conclusion from "./Conclusion.jsx";
 import { teachersList, colleaguesList } from "../data/afterwordData.js";
+
+// Вынесенный и мемоизированный компонент карточки человека
+const PersonItem = memo(function PersonItem({ person }) {
+    const { name, link, years, regalia, isPassedAway, note } = person;
+
+    const nameClassName = `${styles.person__teacher} ${
+        isPassedAway ? styles.person__teacher_frame : ""
+    }`.trim();
+
+    return (
+        <li className={styles.person}>
+            <p>
+                {link ? (
+                    <a
+                        className={nameClassName}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={link}
+                    >
+                        {name}
+                    </a>
+                ) : (
+                    <span className={nameClassName}>{name}</span>
+                )}
+                {years && ` ${years}`} {regalia}
+            </p>
+            {note && <p className={styles.colleague__note}>{note}</p>}
+        </li>
+    );
+});
 
 function Afterword() {
     return (
@@ -18,22 +48,11 @@ function Afterword() {
                         душевное тепло и неоценимую поддержку как в профессиональной деятельности, так и в повседневной жизни:
                     </p>
 
-                    {/* Рендеринг списка учителей */}
-                    {teachersList.map((teacher) => (
-                        <div key={teacher.id} className={styles.person}>
-                            <p>
-                                <a
-                                    className={`${styles.person__teacher} ${teacher.isPassedAway ? styles.person__teacher_frame : ""}`}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    href={teacher.link}
-                                >
-                                    {teacher.name}
-                                </a>
-                                {teacher.years && ` ${teacher.years}`} {teacher.regalia}
-                            </p>
-                        </div>
-                    ))}
+                    <ul className={styles.persons__list}>
+                        {teachersList.map((teacher) => (
+                            <PersonItem key={teacher.id} person={teacher} />
+                        ))}
+                    </ul>
 
                     <p className={styles.person__thanks}>
                         Искреннюю признательность и глубокую благодарность автор выражает коллегам и единомышленникам,
@@ -41,31 +60,15 @@ function Afterword() {
                         критической обработке контента. Отдельная благодарность верным друзьям и товарищам по экспедиционным выездам:
                     </p>
 
-                    {/* Рендеринг списка коллег */}
-                    {colleaguesList.map((colleague) => (
-                        <div key={colleague.id} className={styles.person}>
-                            <p>
-                                <a
-                                    className={styles.person__teacher}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    href={colleague.link}
-                                >
-                                    {colleague.name}
-                                </a>{" "}
-                                {colleague.regalia}
-                            </p>
-                            {colleague.note && (
-                                <p className={styles.colleague__note}>
-                                    {colleague.note}
-                                </p>
-                            )}
-                        </div>
-                    ))}
+                    <ul className={styles.persons__list}>
+                        {colleaguesList.map((colleague) => (
+                            <PersonItem key={colleague.id} person={colleague} />
+                        ))}
+                    </ul>
                 </section>
             </main>
         </>
     );
 }
 
-export default Afterword;
+export default memo(Afterword);

@@ -1,17 +1,17 @@
-import ButtonUp from '../ButtonUp/ButtonUp.jsx'; // Интегрируем кнопку "Наверх" из вашего шаблона
+import React, { memo } from 'react';
+import ButtonUp from '../ButtonUp/ButtonUp.jsx';
 import ConclusionBlock from './ConclusionBlock.jsx';
 import SectionCard from './SectionCard.jsx';
 import { blocksData, sectionsData } from '../data/conclusionData.js';
 import styles from './Conclusion.module.css';
 
-export default function Conclusion() {
+function Conclusion() {
     return (
         <>
             <ButtonUp />
-            <main className={styles.container}>
+            {/* Заменил main на div, чтобы не дублировать тег main из Afterword */}
+            <div className={styles.container}>
                 <section className={styles.conclusion}>
-
-                    {/* Шапка */}
                     <header className={styles.conclusion__header}>
                         <h2 className={styles.conclusion__title}>ЗАКЛЮЧЕНИЕ</h2>
                         <p className={styles.conclusion__subtitle}>
@@ -20,7 +20,6 @@ export default function Conclusion() {
                         </p>
                     </header>
 
-                    {/* Блок 1. Эколого-анатомическая пластичность */}
                     {blocksData.map((block) => (
                         <ConclusionBlock
                             key={block.id}
@@ -29,7 +28,6 @@ export default function Conclusion() {
                         />
                     ))}
 
-                    {/* Блок 2. Секционная дифференциация */}
                     <div className={styles.sections__wrapper}>
                         <h3 className={styles.sections__main_title}>
                             Секционная дифференциация и морфогенетические особенности таксонов
@@ -39,7 +37,6 @@ export default function Conclusion() {
                             охарактеризовать морфологическую специфику всех ключевых секций...
                         </p>
 
-                        {/* Сетка/список всех 16 секций */}
                         <div className={styles.sections__grid}>
                             {sectionsData.map((sect) => (
                                 <SectionCard
@@ -51,16 +48,16 @@ export default function Conclusion() {
                         </div>
                     </div>
 
-                    {/* Общий итог */}
                     <div className={styles.conclusion__end}>
                         <h3>Общий итог</h3>
                         <p>
                             Проведенное исследование доказывает, что классический сравнительно-морфологический метод, опирающийся на детальный анализ репродуктивных и вегетативных структур во всем спектре секционного разнообразия, в сочетании с текстологической ревизией первоописаний и исторических гербарных фондов, остается фундаментальной и надежной основой для построения естественной системы, уточнения границ видов и создания точных диагностических ключей для определения обширного рода Oxytropis.
                         </p>
                     </div>
-
                 </section>
-            </main>
+            </div>
         </>
     );
 }
+
+export default memo(Conclusion);

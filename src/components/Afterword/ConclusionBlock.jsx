@@ -1,5 +1,5 @@
 
-import styles from './Conclusion.module.css'; // Используем модульные стили по аналогии с вашим кодом
+import styles from './Conclusion.module.css'
 
 export default function ConclusionBlock({ title, paragraphs }) {
     return (

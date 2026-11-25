@@ -5,6 +5,8 @@
     background-color: #fbf7f7;
 }
 
+.conclusion {}
+
 .conclusion__header {
     padding: 30px;
     background-color: #ffffff;
@@ -52,6 +54,8 @@
     flex-direction: column;
     gap: 20px;
     margin-top: 20px;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 220px; /* примерная высота одной карточки */
 }
 
 .section__card {

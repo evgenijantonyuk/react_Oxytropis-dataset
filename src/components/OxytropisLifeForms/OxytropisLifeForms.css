@@ -211,11 +211,11 @@
     color: #78716c;
 }
 
-@media (min-width: 640px) {
-    .oxytropis-list {
-        grid-template-columns: 1fr 1fr;
-    }
-}
+/*@media (min-width: 640px) {*/
+/*    .oxytropis-list {*/
+/*        grid-template-columns: 1fr 1fr;*/
+/*    }*/
+/*}*/
 
 .oxytropis-list-item {
     display: flex;
