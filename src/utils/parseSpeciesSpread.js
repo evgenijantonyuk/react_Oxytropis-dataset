@@ -16,8 +16,7 @@ const SPECIES_DISTRICT_OVERRIDES = {
   "species-49": ["КАД3"], // O. sarkandensis — Тарбагатай, Дачен (Чугучак)
   "species-53": ["А1", "А3", "А5", "А6", "КАД1", "КАД5", "КАД6"], // O. teres — Алт. кр., Респ. Алтай, Тыва, Вост. Каз.
   "species-71": ["ЗМ3", "ЮМ"], // O. pavlovii — Баян-Хонгорский аймак, вост. склон Монг. Алтая
-};
-
+}
 // Детализированный справочник конкретных местонахождений из taxonomy.js
 const GAZETTEER = [
   // ЗМ3 и ЮМ (включая точные пункты O. ulzijchutagii, O. sutaica, O. fragilifolia, O. pavlovii)
@@ -39,7 +38,8 @@ const GAZETTEER = [
   { pattern: /тарбагата|аягуз|тасбеит/i, name: "хр. Тарбагатай", coords: [47.20, 82.80] },
   { pattern: /сартау/i, name: "г. Сартау (Тарбагатай)", coords: [47.15, 83.60] },
   { pattern: /дачен|чугучак/i, name: "окр. г. Чугучак (Тачэн)", coords: [46.75, 82.98] },
-  { pattern: /зайсан|нор-зайсан/i, name: "окр. оз. Зайсан", coords: [48.00, 84.00] },
+  { pattern: /(?:^|[^а-яё])(?:нор-)?зайсан(?![а-яё])/i, name: "окр. оз. Зайсан", coords: [48.00, 84.00] },
+
 
   // КАД6, КАД7, КАД8, КАД9 (Южный и Китайский Алтай, Булган, Байтаг-Богдо)
   { pattern: /марка-?кул|маркаколь|кальджир|чанглы-?булак|тас-кайнад/i, name: "оз. Маркаколь / р. Кальджир", coords: [48.75, 85.75] },
@@ -94,21 +94,22 @@ const DISTRICT_CENTERS = {
   "ЗМ2": [48.15, 90.35],
   "ЗМ3": [46.85, 92.85],
   "ЮМ": [45.65, 96.85],
-};
+}
 
 function normalizeTextForCodes(text) {
   if (!text) return "";
   return String(text)
-    .toUpperCase()
-    .replace(/A/g, "А")
-    .replace(/K/g, "К")
-    .replace(/D/g, "Д")
-    .replace(/M/g, "М")
-    .replace(/([АДМ])З/g, "$13")
-    .replace(/3М/g, "ЗМ")
-    .replace(/AL\b/g, "А1")
-    .replace(/КАД\s+([1-9])/g, "КАД$1");
+      .toUpperCase()
+      .replace(/A/g, "А")
+      .replace(/K/g, "К")
+      .replace(/D/g, "Д")
+      .replace(/M/g, "М")
+      .replace(/(?<![А-ЯЁ])([АДМ])З(?![А-ЯЁ])/g, "$13") // заменяет З на 3 только в отдельных кодах (АЗ -> А3), но не в слове КАЗ.
+      .replace(/(?<![А-ЯЁ])3М(?![А-ЯЁ])/g, "ЗМ")
+      .replace(/(?<![А-ЯЁ])AL(?![А-ЯЁ])/g, "А1")
+      .replace(/КАД\s+([1-9])/g, "КАД$1");
 }
+
 
 export function extractAgsDistricts(speciesOrText) {
   const isObj = speciesOrText && typeof speciesOrText === "object";

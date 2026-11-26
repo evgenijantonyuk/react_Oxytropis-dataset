@@ -4,7 +4,6 @@ import { speciesDescriptionsData } from '../data/speciesDescriptionsData.js'
 import ButtonUp from '../ButtonUp/ButtonUp.jsx'
 import style from './SpeciesList.module.css'
 import OxytropisAnalysis from '../../components/OxytropisAnalis/OxytropisAnalysis.jsx'
-import { MapComponent } from '../MapComponent/MapComponent.jsx'
 import { SpeciesMapModal } from '../MapComponent/SpeciesMapModal.jsx'
 
 function escapeRegExp(string) {
