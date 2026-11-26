@@ -1,4 +1,4 @@
-// src/utils/parseSpeciesSpread.js
+
 
 const ALL_AGS_CODES = [
   "А1", "А2", "А3", "А4", "А5", "А6",
@@ -144,7 +144,7 @@ export function extractSpeciesLocations(speciesItem) {
 
   // 1. Точные координаты из гербарных цитат
   const coordRegex =
-    /(\d{2})[°\s]+(\d{1,2})?(?:[′ʹ'\s]+(\d{1,2}))?[″"ʹ']?\s*с\.?\s*ш\.?[,\s]+(\d{2,3})[°\s]+(\d{1,2})?(?:[′ʹ'\s]+(\d{1,2}))?[″"ʹ']?\s*в\.?\s*д\.?/gi;
+      /(\d{2})[°\s]+(\d{1,2})?(?:[′ʹ'\s]+(\d{1,2}))?[″"ʹ']?\s*с\.?\s*ш\.?[,\s]+(\d{2,3})[°\s]+(\d{1,2})?(?:[′ʹ'\s]+(\d{1,2}))?[″"ʹ']?\s*в\.?\s*д\.?/gi;
 
   let match;
   let idx = 1;
@@ -161,18 +161,21 @@ export function extractSpeciesLocations(speciesItem) {
     const lng = +(lngDeg + lngMin / 60 + lngSec / 3600).toFixed(4);
 
     if (lat >= 40 && lat <= 60 && lng >= 75 && lng <= 105) {
-      const contextStart = Math.max(0, match.index - 110);
+      const contextStart = Math.max(0, match.index - 150);
       const snippet = text
-        .slice(contextStart, match.index)
-        .replace(/^[^:;–—(]*[:;–—(]/, "")
-        .trim();
+          .slice(contextStart, match.index)
+          .replace(/^[^:;–—(]*[:;–—(]/, "")
+          .replace(/^\S*\s+/, "") // убирает обрезанное слово в начале, если не было двоеточия/скобки
+          .replace(/^[\s.,;:-]+/, "")
+          .trim();
+
 
       locations.push({
         title: `${speciesItem.nameLat} — точка №${idx}`,
         shortLabel: snippet ? snippet.slice(0, 48) + (snippet.length > 48 ? "…" : "") : `Точка №${idx}`,
         desc: snippet
-          ? `<strong>Местонахождение:</strong> ${snippet}<br/>Координаты: ${lat}° с.ш., ${lng}° в.д.`
-          : `Координаты по гербарной этикетке: ${lat}° с.ш., ${lng}° в.д.`,
+            ? `<strong>Местонахождение:</strong> ${snippet}<br/>Координаты: ${lat}° с.ш., ${lng}° в.д.`
+            : `Координаты по гербарной этикетке: ${lat}° с.ш., ${lng}° в.д.`,
         region: "Точное местонахождение",
         coords: [lat, lng],
         approx: latMin === 0 && lngMin === 0,
@@ -186,9 +189,9 @@ export function extractSpeciesLocations(speciesItem) {
   for (const entry of GAZETTEER) {
     if (entry.pattern.test(text) && !usedNames.has(entry.name)) {
       const hasCloseExact = locations.some(
-        (loc) =>
-          Math.abs(loc.coords[0] - entry.coords[0]) < 0.35 &&
-          Math.abs(loc.coords[1] - entry.coords[1]) < 0.35
+          (loc) =>
+              Math.abs(loc.coords[0] - entry.coords[0]) < 0.35 &&
+              Math.abs(loc.coords[1] - entry.coords[1]) < 0.35
       );
       if (!hasCloseExact) {
         usedNames.add(entry.name);

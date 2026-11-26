@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21b0877e-92e5-4bc8-9f77-a250eb008b0a" name="Changes" comment="" />
+    <list default="true" id="21b0877e-92e5-4bc8-9f77-a250eb008b0a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/data/oxytropis.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/data/oxytropis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/parseSpeciesSpread.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/parseSpeciesSpread.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +44,9 @@
   <component name="HttpClientOnboardingState">{
   &quot;isOnboardingCommentShown&quot;: true
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -74,11 +81,11 @@
       <recent name="$PROJECT_DIR$/src/components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/env" />
       <recent name="$PROJECT_DIR$/src/components/data" />
       <recent name="$PROJECT_DIR$/src/assets" />
-      <recent name="$PROJECT_DIR$/src/components" />
-      <recent name="$PROJECT_DIR$/src/pages" />
-      <recent name="$PROJECT_DIR$/src/pages/Afterword" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -104,7 +111,9 @@
       <workItem from="1793283721677" duration="55683000" />
       <workItem from="1793559565012" duration="66839000" />
       <workItem from="1794414367572" duration="3588000" />
-      <workItem from="1794426529901" duration="129645000" />
+      <workItem from="1794426529901" duration="178105000" />
+      <workItem from="1795704362663" duration="37000" />
+      <workItem from="1795705237982" duration="1596000" />
     </task>
     <servers />
   </component>
