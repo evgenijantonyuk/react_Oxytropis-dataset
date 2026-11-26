@@ -1,11 +1,12 @@
-import React, { useMemo, useState, useEffect } from 'react';
-import taxonomy from '../data/oxytropis.js';
-import { speciesDescriptionsData } from '../data/speciesDescriptionsData.js';
-import ButtonUp from '../ButtonUp/ButtonUp.jsx';
-import style from './SpeciesList.module.css';
-import OxytropisAnalysis from '../../components/OxytropisAnalis/OxytropisAnalysis.jsx';
+import React, { useMemo, useState, useEffect } from 'react'
+import taxonomy from '../data/oxytropis.js'
+import { speciesDescriptionsData } from '../data/speciesDescriptionsData.js'
+import ButtonUp from '../ButtonUp/ButtonUp.jsx'
+import style from './SpeciesList.module.css'
+import OxytropisAnalysis from '../../components/OxytropisAnalis/OxytropisAnalysis.jsx'
+import { MapComponent } from '../MapComponent/MapComponent.jsx'
+import { SpeciesMapModal } from '../MapComponent/SpeciesMapModal.jsx'
 
-// Безопасное экранирование спецсимволов поисковой строки
 function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
@@ -14,14 +15,13 @@ function normalizeLat(name) {
     if (!name) return '';
     return String(name)
         .toLowerCase()
-        .replace(/[.,;:]/g, '')      // убираем точки и знаки
-        .replace(/\s+/g, ' ')        // схлопываем пробелы
+        .replace(/[.,;:]/g, '')
+        .replace(/\s+/g, ' ')
         .replace('caerulea', 'coerulea')
         .replace('cearulea', 'coerulea')
         .trim();
 }
 
-// Предварительно строим карту описаний по нормализованному названию
 const descriptionsByLat = (() => {
     const map = new Map();
     for (const d of speciesDescriptionsData) {
@@ -30,7 +30,6 @@ const descriptionsByLat = (() => {
     return map;
 })();
 
-// Вспомогательный компонент для подсветки <mark>
 function HighlightedText({ text, search, className }) {
     if (!text) return null;
     if (!search || !search.trim()) return <span className={className}>{text}</span>;
@@ -104,7 +103,6 @@ function descriptionToText(desc) {
     return Array.isArray(desc) ? desc.join(' ') : desc;
 }
 
-// Модальное окно с описанием вида
 function DescriptionModal({ description, onClose }) {
     useEffect(() => {
         const handleEsc = (e) => {
@@ -156,7 +154,7 @@ function DescriptionModal({ description, onClose }) {
     );
 }
 
-function SpeciesListItem({ item, search, onShowDescription }) {
+function SpeciesListItem({ item, search, onShowDescription, onShowMap }) {
     switch (item.type) {
         case 'genus':
             return (
@@ -250,6 +248,7 @@ function SpeciesListItem({ item, search, onShowDescription }) {
                             <HighlightedText text={item.nameLat} search={search} />
                         )}
                     </span>
+
                     {item.author && (
                         <HighlightedText text={`\u00A0${item.author}`} search={search} className={style.species__author} />
                     )}
@@ -284,6 +283,17 @@ function SpeciesListItem({ item, search, onShowDescription }) {
                         <span className={style['species__desc-missing']} title="Описание не найдено в speciesDescriptionsData.js">
                             [нет описания]
                         </span>
+                    )}
+
+                    {(item.spreadLocal || item.spreadGeneral) && (
+                        <button
+                            type="button"
+                            className={style['species__map-btn']}
+                            onClick={() => onShowMap(item)}
+                            title="Показать распространение вида на карте"
+                        >
+                            Карта
+                        </button>
                     )}
 
                     {item.place && (
@@ -339,6 +349,7 @@ function SpeciesListItem({ item, search, onShowDescription }) {
 export default function SpeciesList({ items = taxonomy }) {
     const [query, setQuery] = useState('');
     const [activeDescription, setActiveDescription] = useState(null);
+    const [activeMapSpecies, setActiveMapSpecies] = useState(null);
 
     const [showAnalysis, setShowAnalysis] = useState(() => {
         const savedState = localStorage.getItem('oxytropis_show_analysis');
@@ -349,7 +360,6 @@ export default function SpeciesList({ items = taxonomy }) {
         localStorage.setItem('oxytropis_show_analysis', showAnalysis);
     }, [showAnalysis]);
 
-    // Отладка: какие виды taxonomy не нашли описание
     useEffect(() => {
         const speciesItems = items.filter((i) => i.type === 'species');
         const missing = speciesItems.filter(
@@ -459,6 +469,7 @@ export default function SpeciesList({ items = taxonomy }) {
                                             item={item}
                                             search={query}
                                             onShowDescription={setActiveDescription}
+                                            onShowMap={setActiveMapSpecies}
                                         />
                                     ))
                                 )}
@@ -472,6 +483,13 @@ export default function SpeciesList({ items = taxonomy }) {
                 <DescriptionModal
                     description={activeDescription}
                     onClose={() => setActiveDescription(null)}
+                />
+            )}
+
+            {activeMapSpecies && (
+                <SpeciesMapModal
+                    species={activeMapSpecies}
+                    onClose={() => setActiveMapSpecies(null)}
                 />
             )}
         </>

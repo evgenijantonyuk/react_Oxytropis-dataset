@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import arrowUp from '../../assets/icons/up-arrow1.png' // Укажите правильный путь к вашей картинке
+import arrowUp from '../../assets/icons/up-arrow1.png' // правильный путь картинке
 import './ButtonUp.css';
 
 export default function ScrollToTopButton() {
@@ -17,7 +17,7 @@ export default function ScrollToTopButton() {
 
         window.addEventListener('scroll', toggleVisibility);
 
-        // Важно: удаляем обработчик при размонтировании компонента
+        // удаляем обработчик при размонтировании компонента
         return () => window.removeEventListener('scroll', toggleVisibility);
     }, []);
 

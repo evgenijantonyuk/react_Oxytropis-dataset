@@ -1,0 +1,86 @@
+/* MapComponent.css */
+
+.leaflet-control-attribution,
+.leaflet-control {
+    display: none !important;
+}
+
+.ags-map-wrapper {
+    position: relative;
+    width: 100%;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.ags-map-container {
+    width: 100%;
+    height: 600px;
+    z-index: 1;
+}
+
+.ags-district-label {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    font-weight: 700;
+    font-size: 12px;
+    color: #1a1a1a;
+    text-shadow: 0 0 3px #fff, 0 0 3px #fff;
+    pointer-events: none;
+}
+
+.ags-custom-marker {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.ags-legend {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: #ffffff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    font-size: 13px;
+    line-height: 1.6;
+    z-index: 1000;
+    max-width: 310px;
+}
+
+.ags-legend-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #222;
+}
+
+.ags-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ags-legend-swatch-box {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    border: 1px solid #444;
+    opacity: 0.75;
+}
+
+.ags-legend-swatch-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 1px solid #fff;
+    box-shadow: 0 0 1px #000;
+}
+
+.ags-legend-divider {
+    border-top: 1px solid #e5e5e5;
+    margin: 6px 0;
+}

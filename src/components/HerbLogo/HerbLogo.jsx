@@ -7,7 +7,7 @@ const HerbLogo = () => {
     return (
         <div>
             <a href="#">
-                <img className="herb__logo" src={herbLogo} alt="Лого АлтГУ"/>
+                <img className="herb__logo" src={herbLogo} alt="Лого Гербария"/>
             </a>
         </div>
     );
