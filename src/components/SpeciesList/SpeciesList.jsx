@@ -21,6 +21,15 @@ function normalizeLat(name) {
         .trim();
 }
 
+function isSkippedSpecies(nameLat) {
+    const nameLower = nameLat ? String(nameLat).toLowerCase() : '';
+    return (
+        nameLower.includes('caerulea') ||
+        nameLower.includes('coerulea') ||
+        nameLower.includes('cearulea')
+    );
+}
+
 const descriptionsByLat = (() => {
     const map = new Map();
     for (const d of speciesDescriptionsData) {
@@ -228,9 +237,7 @@ function SpeciesListItem({ item, search, onShowDescription, onShowMap }) {
                 </div>
             );
         case 'species': {
-            const nameLower = item.nameLat ? String(item.nameLat).toLowerCase() : '';
-            const isCaerulea = nameLower.includes('caerulea') || nameLower.includes('coerulea') || nameLower.includes('cearulea');
-
+            const isCaerulea = isSkippedSpecies(item.nameLat);
             const descEntry = descriptionsByLat.get(normalizeLat(item.nameLat));
 
             return (
@@ -238,6 +245,12 @@ function SpeciesListItem({ item, search, onShowDescription, onShowMap }) {
                     className={`${style.species__block} search ${item.mistake ? style.species__block_mistake : ''} ${isCaerulea ? style.species__block_skipNumber : ''}`}
                     id={item.id}
                 >
+                    {!isCaerulea && item.speciesNumber && (
+                        <span className={style.species__number} aria-hidden="true">
+                            {item.speciesNumber}
+                        </span>
+                    )}
+
                     <span className={style['species__name-lat']}>
                         {item.nameLatLink ? (
                             <a href={item.nameLatLink} target="_blank" rel="noreferrer">
@@ -392,10 +405,21 @@ export default function SpeciesList({ items = taxonomy }) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
+    const itemsWithNumbers = useMemo(() => {
+        let counter = 0;
+        return items.map((item) => {
+            if (item.type === 'species' && !isSkippedSpecies(item.nameLat)) {
+                counter += 1;
+                return { ...item, speciesNumber: counter };
+            }
+            return item;
+        });
+    }, [items]);
+
     const filtered = useMemo(() => {
         const q = query.trim().toLowerCase();
-        if (!q) return items;
-        return items.filter((item) => {
+        if (!q) return itemsWithNumbers;
+        return itemsWithNumbers.filter((item) => {
             const haystack = [
                 item.title,
                 item.name,
@@ -413,7 +437,7 @@ export default function SpeciesList({ items = taxonomy }) {
                 .toLowerCase();
             return haystack.includes(q);
         });
-    }, [items, query]);
+    }, [itemsWithNumbers, query]);
 
     return (
         <>

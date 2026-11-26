@@ -4,6 +4,7 @@ import { MapComponent } from "./MapComponent.jsx";
 import {
   extractAgsDistricts,
   extractSpeciesLocations,
+  findDistrictCodeByCoords,
 } from "../../utils/parseSpeciesSpread.js";
 import style from "../SpeciesList/SpeciesList.module.css";
 
@@ -21,15 +22,26 @@ export function SpeciesMapModal({ species, onClose }) {
     };
   }, [onClose]);
 
-  const districtCodes = useMemo(
-    () => (species ? extractAgsDistricts(species) : []),
-    [species]
-  );
-
   const speciesPoints = useMemo(
     () => (species ? extractSpeciesLocations(species) : []),
     [species]
   );
+
+  const districtCodes = useMemo(() => {
+    if (!species) return [];
+    const codes = new Set(extractAgsDistricts(species));
+
+    if (!species.mistake) {
+      for (const pt of speciesPoints) {
+        const codeByPoint = findDistrictCodeByCoords(pt.coords);
+        if (codeByPoint) {
+          codes.add(codeByPoint);
+        }
+      }
+    }
+
+    return Array.from(codes);
+  }, [species, speciesPoints]);
 
   if (!species) return null;
 

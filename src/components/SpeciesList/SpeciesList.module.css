@@ -178,12 +178,10 @@
     width: 100%;
 }
 
-/* Инициализация автоматического счетчика */
 .species-list__body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    counter-reset: species-counter;
 }
 
 .species-list__empty {
@@ -292,7 +290,7 @@
     font-weight: normal;
 }
 
-/* ================= Карточки видов & Автонумерация ================== */
+/* ================= Карточки видов & Постоянная нумерация ================== */
 
 .species__block {
     margin: 0 0 15px 0;
@@ -351,14 +349,8 @@
     opacity: 0.4;
 }
 
-/* Наращиваем счетчик только если у элемента НЕТ класса пропуска */
-.species__block:not(.species__block_skipNumber) {
-    counter-increment: species-counter;
-}
-
-/* Выводим номер */
-.species__block:not(.species__block_skipNumber)::after {
-    content: counter(species-counter);
+/* Выводим постоянный номер вида из конспекта */
+.species__number {
     position: absolute;
     left: 15px;
     top: 1.5rem;
@@ -649,13 +641,13 @@
         padding: 15px 15px 15px 40px !important;
     }
 
-    .species__block:not(.species__block_skipNumber)::after {
-        position: absolute;
-        display: block;
+    .species__number {
         left: 15px;
         top: 15px;
-        margin-right: 0;
-        content: counter(species-counter) ".";
+    }
+
+    .species__number::after {
+        content: ".";
     }
 
     .species__block_skipNumber {
