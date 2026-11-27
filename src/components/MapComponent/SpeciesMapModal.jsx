@@ -8,6 +8,8 @@ import {
 } from "../../utils/parseSpeciesSpread.js";
 import style from "../SpeciesList/SpeciesList.module.css";
 
+const TYPE_REGION_KEY = "Точка сбора типового материала (протолог)";
+
 export function SpeciesMapModal({ species, onClose }) {
   useEffect(() => {
     const handleEsc = (e) => {
@@ -27,25 +29,27 @@ export function SpeciesMapModal({ species, onClose }) {
     [species]
   );
 
+  // Объединяем районы из текста конспекта с районами, в которые попадают точки сбора (кроме типовых из протолога)
   const districtCodes = useMemo(() => {
     if (!species) return [];
     const codes = new Set(extractAgsDistricts(species));
-
     if (!species.mistake) {
       for (const pt of speciesPoints) {
-        const codeByPoint = findDistrictCodeByCoords(pt.coords);
-        if (codeByPoint) {
-          codes.add(codeByPoint);
+        if (pt.isType) continue;
+        const code = findDistrictCodeByCoords(pt.coords);
+        if (code) {
+          codes.add(code);
         }
       }
     }
-
     return Array.from(codes);
   }, [species, speciesPoints]);
 
   if (!species) return null;
 
-  const isFewPoints = speciesPoints.length > 0 && speciesPoints.length < 5;
+  const regularPoints = speciesPoints.filter((pt) => !pt.isType);
+  const typePoints = speciesPoints.filter((pt) => pt.isType);
+  const isFewPoints = regularPoints.length > 0 && regularPoints.length < 5;
 
   return (
     <div className={style.modal__overlay} onClick={onClose}>
@@ -79,6 +83,7 @@ export function SpeciesMapModal({ species, onClose }) {
             regionColors={{
               "Точное местонахождение": "#1d3557",
               "Местонахождение по конспекту": "#2a9d8f",
+              [TYPE_REGION_KEY]: "#d97706",
             }}
             height="430px"
             showLegend={false}
@@ -99,25 +104,36 @@ export function SpeciesMapModal({ species, onClose }) {
                 : "(не уточнены по индексам)"}
           </span>
 
-          {speciesPoints.length > 0 && (
+          {regularPoints.length > 0 && (
             <span className={style.modal__legend_item}>
               <span
                 className={style.modal__legend_dot}
                 style={{ background: "#1d3557" }}
               />
               {isFewPoints
-                ? `Конкретные местонахождения (${speciesPoints.length}) — наведите на точку`
-                : `Точки сборов (${speciesPoints.length}) — наведите на точку`}
+                ? `Конкретные местонахождения (${regularPoints.length}) — наведите на точку`
+                : `Точки сборов (${regularPoints.length}) — наведите на точку`}
+            </span>
+          )}
+
+          {typePoints.length > 0 && (
+            <span className={style.modal__legend_item}>
+              <span
+                className={style.modal__legend_dot}
+                style={{ background: "#d97706" }}
+              />
+              Точка сбора типового материала (протолог)
             </span>
           )}
         </div>
 
-        {isFewPoints && (
+        {(isFewPoints || typePoints.length > 0) && (
           <div className={style.modal__few_points}>
             <strong>Конкретные местонахождения вида:</strong>
             <ul>
               {speciesPoints.map((pt, i) => (
                 <li key={i}>
+                  {pt.isType ? <strong>[Типовой сбор] </strong> : null}
                   {pt.shortLabel} ({pt.coords[0]}° с.ш., {pt.coords[1]}° в.д.)
                 </li>
               ))}
