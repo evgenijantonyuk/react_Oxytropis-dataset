@@ -1,4 +1,4 @@
-import herbLogo from '../../assets/herb-logo/logoHerb.png'
+import herbLogo from '../../assets/herb-logo/herbarium_altg_altb.png'
 import './HerbLogo.css'
 
 

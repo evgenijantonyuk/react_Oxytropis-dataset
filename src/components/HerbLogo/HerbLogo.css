@@ -1,6 +1,7 @@
 .herb__logo {
     width: 75px;
     height: 70px;
+    border-radius: 50%;
 }
 
 @media screen and (max-width: 720px) {

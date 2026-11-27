@@ -1,8 +1,8 @@
 
-import './Header.css';
-import LogoAsu from "../LogoAsu/LogoAsu.jsx";
-import LogoUsbs from "../LogoUsbs/LogoUsbs.jsx";
-import HerbLogo from "../HerbLogo/HerbLogo.jsx";
+import './Header.css'
+import LogoAsu from "../LogoAsu/LogoAsu.jsx"
+import LogoUsbs from "../LogoUsbs/LogoUsbs.jsx"
+import HerbLogo from "../HerbLogo/HerbLogo.jsx"
 
 export default function Header() {
     return (
